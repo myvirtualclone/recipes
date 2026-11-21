@@ -7,6 +7,7 @@ import { MacroTiles } from './Macros';
 import { Thumb } from './Thumb';
 import { TagLinks } from './TagChips';
 import { Star } from './Star';
+import { CreatorChip } from './CreatorChip';
 import type { TagKind } from '../lib/tags';
 
 interface Props {
@@ -18,13 +19,14 @@ interface Props {
   onKindTag: (kind: TagKind, key: string) => void;
   onSetStatus: (s: Recipe['status']) => void;
   onFav: () => void;
+  onCreator?: (name: string) => void;
 }
 
 function NotTranslated({ show, lang }: { show: boolean; lang: Lang }) {
   return show ? <span className="nt-badge">{t('notTranslated', lang)}</span> : null;
 }
 
-export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetStatus, onFav }: Props) {
+export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetStatus, onFav, onCreator }: Props) {
   const L = localize(r, lang);
   const showAuto = lang === 'es' && !r.es_reviewed && !L.titleFallback && Boolean(r.title_es);
   const meta: [string, string | null][] = [
@@ -71,7 +73,8 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
           <p className="muted small detail-byline">
             {r.author && (
               <>
-                {t('by', lang)} {r.author}
+                {t('by', lang)}{' '}
+                <CreatorChip name={r.author} lang={lang} onClick={onCreator ? () => onCreator(r.author!) : undefined} />
               </>
             )}
             {r.post_date && ` · ${t('posted', lang)} ${fmtDate(r.post_date, lang)}`}

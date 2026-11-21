@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Lang } from '../lib/i18n';
 import { t } from '../lib/i18n';
-import { fold } from '../lib/recipe';
+import { authorKey, creatorCounts, fold } from '../lib/recipe';
 import type { Recipe } from '../types';
 import { tagText, variantShort } from '../lib/tags';
 
@@ -10,6 +10,7 @@ interface Props {
   recipes: Recipe[];
   onOpenParent: (key: string) => void;
   onOpenVariant: (key: string) => void;
+  onOpenCreator: (name: string) => void;
 }
 
 interface VariantEntry {
@@ -50,9 +51,10 @@ function indexOf(recipes: Recipe[]): ParentEntry[] {
     .sort((a, b) => a.key.localeCompare(b.key));
 }
 
-export function IngredientIndex({ lang, recipes, onOpenParent, onOpenVariant }: Props) {
+export function IngredientIndex({ lang, recipes, onOpenParent, onOpenVariant, onOpenCreator }: Props) {
   const [q, setQ] = useState('');
   const [open, setOpen] = useState<string | null>(null);
+  const [tab, setTab] = useState<'ingredients' | 'creators'>('ingredients');
   const all = useMemo(
     () => indexOf(recipes).sort((a, b) => tagText('ingredient', a.key, lang).localeCompare(tagText('ingredient', b.key, lang), lang)),
     [recipes, lang],
@@ -67,20 +69,54 @@ export function IngredientIndex({ lang, recipes, onOpenParent, onOpenVariant }: 
     });
   }, [all, q, lang]);
 
+  const creators = useMemo(() => creatorCounts(recipes), [recipes]);
+  const creatorItems = useMemo(() => {
+    const needle = fold(q).trim().replace(/^@/, '');
+    if (!needle) return creators;
+    return creators.filter((c) => fold(c.name).includes(needle) || authorKey(c.name).includes(needle));
+  }, [creators, q]);
+
   return (
     <div className="screen index-screen">
-      <h2 className="screen-title">{t('indexTitle', lang)}</h2>
-      <p className="muted small">{t('indexSub', lang)}</p>
+      <h2 className="screen-title">{tab === 'creators' ? t('indexCreators', lang) : t('indexTitle', lang)}</h2>
+      <div className="index-subtabs" role="tablist">
+        <button type="button" role="tab" aria-selected={tab === 'ingredients'} className={tab === 'ingredients' ? 'on' : ''} onClick={() => { setTab('ingredients'); setQ(''); }}>
+          {t('indexTitle', lang)}
+        </button>
+        <button type="button" role="tab" aria-selected={tab === 'creators'} className={tab === 'creators' ? 'on' : ''} onClick={() => { setTab('creators'); setQ(''); }}>
+          {t('indexCreators', lang)}
+        </button>
+      </div>
+      <p className="muted small">{tab === 'creators' ? t('indexCreatorsSub', lang) : t('indexSub', lang)}</p>
       <div className="search-bar index-search">
         <input
           type="search"
           value={q}
-          placeholder={t('indexSearch', lang)}
+          placeholder={tab === 'creators' ? t('indexCreatorSearch', lang) : t('indexSearch', lang)}
           onChange={(e) => setQ(e.target.value)}
-          aria-label={t('indexSearch', lang)}
+          aria-label={tab === 'creators' ? t('indexCreatorSearch', lang) : t('indexSearch', lang)}
         />
       </div>
-      {items.length === 0 ? (
+      {tab === 'creators' ? (
+        creatorItems.length === 0 ? (
+          <p className="muted center empty">{t('indexCreatorsEmpty', lang)}</p>
+        ) : (
+          <ul className="index-list">
+            {creatorItems.map((c) => (
+              <li key={authorKey(c.name)} className="index-item">
+                <div className="index-parent">
+                  <button type="button" className="index-toggle" onClick={() => onOpenCreator(c.name)}>
+                    <span className="index-name">@{c.name}</span>
+                    <span className="index-count">
+                      {c.count === 1 ? t('recipesWith1', lang) : t('recipesWith', lang, { n: c.count })}
+                    </span>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )
+      ) : items.length === 0 ? (
         <p className="muted center empty">{t('indexEmpty', lang)}</p>
       ) : (
         <ul className="index-list">

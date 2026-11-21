@@ -2,11 +2,12 @@ import { useMemo, useState } from 'react';
 import type { Lang } from '../lib/i18n';
 import { t, tagLabel } from '../lib/i18n';
 import type { Filters, SortKey } from '../lib/recipe';
-import { activeFilterCount, allTags, applyFilters, EMPTY_FILTERS, tagCounts, variantCounts } from '../lib/recipe';
+import { activeFilterCount, allTags, applyFilters, authorKey, creatorCounts, EMPTY_FILTERS, tagCounts, variantCounts } from '../lib/recipe';
 import { TagFilterRow } from './TagChips';
 import type { Recipe } from '../types';
 import { COLLECTIONS } from '../types';
 import { RecipeCard } from './RecipeCard';
+import { CreatorChip } from './CreatorChip';
 
 interface Props {
   lang: Lang;
@@ -16,11 +17,12 @@ interface Props {
   onOpen: (id: string) => void;
   onAdd: () => void;
   onFav: (r: Recipe) => void;
+  onCreator: (name: string) => void;
 }
 
 const SORTS: SortKey[] = ['newest', 'oldest', 'protein', 'calories', 'title'];
 
-export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onFav }: Props) {
+export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onFav, onCreator }: Props) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const results = useMemo(() => applyFilters(recipes, filters, lang), [recipes, filters, lang]);
   const tags = useMemo(() => allTags(recipes), [recipes]);
@@ -93,6 +95,12 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onF
           />
         )}
       </div>
+      <CreatorFilter
+        lang={lang}
+        recipes={recipes}
+        selected={filters.author}
+        onSelect={(name) => set({ author: name })}
+      />
       <div className="lib-toolbar">
         <span className="muted">
           {results.length === 1 ? t('recipesCount1', lang) : t('recipesCount', lang, { n: results.length })}
@@ -124,7 +132,7 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onF
       ) : (
         <div className="recipe-grid">
           {results.map((r) => (
-            <RecipeCard key={r.id} r={r} lang={lang} onOpen={() => onOpen(r.id)} onFav={() => onFav(r)} />
+            <RecipeCard key={r.id} r={r} lang={lang} onOpen={() => onOpen(r.id)} onFav={() => onFav(r)} onCreator={onCreator} />
           ))}
         </div>
       )}
@@ -303,6 +311,61 @@ function RangeRow({
             </button>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function CreatorFilter({
+  lang,
+  recipes,
+  selected,
+  onSelect,
+}: {
+  lang: Lang;
+  recipes: Recipe[];
+  selected: string;
+  onSelect: (name: string) => void;
+}) {
+  const [q, setQ] = useState('');
+  const all = useMemo(() => creatorCounts(recipes), [recipes]);
+  const needle = q.trim().toLowerCase();
+  const matched = needle
+    ? all.filter((c) => c.name.toLowerCase().includes(needle) || authorKey(c.name).includes(needle.replace(/^@/, '')))
+    : all;
+  const shown = needle ? matched : matched.slice(0, 8);
+  const hidden = needle ? 0 : Math.max(0, matched.length - shown.length);
+  // Always keep the selected chip visible.
+  const rows =
+    selected && !shown.some((c) => authorKey(c.name) === authorKey(selected))
+      ? [...shown, all.find((c) => authorKey(c.name) === authorKey(selected))].filter(Boolean)
+      : shown;
+
+  return (
+    <div className="tagrow creator-row">
+      <div className="tagrow-label">{t('filterCreator', lang)}</div>
+      <input
+        type="search"
+        className="creator-search"
+        value={q}
+        placeholder={t('creatorSearch', lang)}
+        onChange={(e) => setQ(e.target.value)}
+        aria-label={t('creatorSearch', lang)}
+      />
+      <div className="tagrow-chips">
+        {rows.map((c) => (
+          <CreatorChip
+            key={authorKey(c!.name)}
+            name={c!.name}
+            lang={lang}
+            count={c!.count}
+            on={authorKey(selected) === authorKey(c!.name)}
+            onClick={() => onSelect(authorKey(selected) === authorKey(c!.name) ? '' : c!.name)}
+          />
+        ))}
+        {hidden > 0 && (
+          <span className="ftag more">{t('moreCreators', lang, { n: hidden })}</span>
+        )}
       </div>
     </div>
   );

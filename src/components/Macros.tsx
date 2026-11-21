@@ -41,6 +41,7 @@ export function MacroTiles({ r, lang }: { r: Recipe; lang: Lang }) {
     );
   }
   const est = r.macro_source === 'estimated';
+  const fromSub = r.is_substitute && !est;
   const tiles: { v: number | null; unit: string; label: string; cls: string }[] = [
     { v: r.calories, unit: '', label: t('calories', lang), cls: 'cal' },
     { v: r.protein_g, unit: 'g', label: t('protein', lang), cls: 'pro' },
@@ -63,8 +64,8 @@ export function MacroTiles({ r, lang }: { r: Recipe; lang: Lang }) {
       <div className="macro-basis">
         {t('basis', lang)}: {basisLabel(r, lang)}
         {r.servings ? ` · ${t('servings', lang)}: ${r.servings}` : ''}
-        <span className={`source-pill ${est ? 'est' : 'post'}`}>
-          {est ? t('estimated', lang) : t('fromPost', lang)}
+        <span className={`source-pill ${est ? 'est' : fromSub ? 'substitute' : 'post'}`}>
+          {est ? t('estimated', lang) : fromSub ? t('fromSubstitute', lang) : t('fromPost', lang)}
         </span>
       </div>
     </div>

@@ -314,5 +314,6 @@ TITLES_V6 = {
 "CK-062": "McMuffin gigante de claras con jamón y queso",
 }
 TITLES.update(TITLES_V6)
+TITLES["CK-043"] = "Brownies de 2 ingredientes con claras de huevo y chocolate"
 TITLES["SL-088"] = "Bocaditos crujientes de papel de arroz con queso"
 TITLE_EN.clear()

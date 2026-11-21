@@ -1,5 +1,5 @@
 /* Offline cache for the Recipe Box PWA. Scope is /recipes/ only (never the site root). */
-const CACHE = 'recipes-app-v3-2';
+const CACHE = 'recipes-app-v3-3';
 const BASE = new URL(self.registration.scope).pathname; // '/recipes/'
 const PRECACHE = [BASE, `${BASE}index.html`, `${BASE}manifest.webmanifest`, `${BASE}icons/icon.svg`];
 

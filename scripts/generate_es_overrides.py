@@ -51,6 +51,21 @@ SPECIALS = {
         ],
         "es_reviewed": True,
     },
+    "CK-043": {
+        "title_es": "Brownies de 2 ingredientes con claras de huevo y chocolate",
+        "ingredients_es": [
+            "4 claras de huevo grandes, batidas a punto de nieve",
+            "1 taza (170 g) de chispas de chocolate semiamargo, derretidas",
+            "2 cucharadas de chispas de chocolate, para decorar",
+        ],
+        "steps_es": [
+            "Bata las claras a punto de nieve.",
+            "Incorpore las chispas derretidas con movimientos envolventes.",
+            "Vierta en un molde de pan pequeño forrado con papel de hornear (unos 15 × 10 cm) y cubra con las chispas.",
+            "Hornee a 165 °C (325 °F) por 30 minutos.",
+        ],
+        "es_reviewed": True,
+    },
     "CK-015": {
         "ingredients_es": [
             "2 huevos grandes",
@@ -84,13 +99,13 @@ def main() -> None:
         if code in SPECIALS:
             ov = dict(SPECIALS[code])
             ov["es_reviewed"] = True
-            ov["src_title"] = src_titles.get(code)
+            ov["src_title"] = r.get("title_en") or src_titles.get(code)
             if code in TITLES:
                 ov["title_es"] = TITLES[code]
             out[code] = ov
             reviewed += 1
             continue
-        ov = {"es_reviewed": True, "src_title": src_titles.get(code)}
+        ov = {"es_reviewed": True, "src_title": r.get("title_en") or src_titles.get(code)}
         if code in TITLE_EN:
             ov["title_en"] = TITLE_EN[code]
         if code in TITLES:

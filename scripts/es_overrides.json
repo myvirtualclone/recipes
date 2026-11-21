@@ -3935,21 +3935,20 @@
   ]
  },
  "CK-043": {
-  "es_reviewed": true,
-  "src_title": "Healthy Protein Brownies (Egg Whites + Chocolate Chips)",
-  "title_es": "Brownies proteicos saludables (claras de huevo y chispas de chocolate)",
+  "title_es": "Brownies de 2 ingredientes con claras de huevo y chocolate",
   "ingredients_es": [
-   "2 tazas (342 g) de chocolate con leche",
-   "3 grandes (97 g) claras de huevo, a temperatura ambiente",
-   "(Del equivalente elegido. El video de Facebook en sí mismo no enumera cantidades.)"
+   "4 claras de huevo grandes, batidas a punto de nieve",
+   "1 taza (170 g) de chispas de chocolate semiamargo, derretidas",
+   "2 cucharadas de chispas de chocolate, para decorar"
   ],
   "steps_es": [
-   "Precaliente el horno a 350°F (177°C). Línea un molde de 8x8 pulgadas con papel pergamino.",
-   "Derrita los chispas de chocolate en un recipiente seguro para microondas en intervalos de 15 a 30 segundos, revolviendo hasta que estén suaves (o utilice una caldera doble).",
-   "Añada las claras de huevo a temperatura ambiente. Batir vigorosamente hasta que se incorpore completamente y la masa sea suave, sin rastros visibles de huevo (las claras frías pueden agarrar el chocolate).",
-   "Vierta en la sartén preparada. Hornee de 13 a 16 minutos, hasta que la parte superior esté brillante y arrugada y un palillo de dientes muestre migajas húmedas, no masa líquida. Los brownies pueden soplar y luego hundirse a medida que se enfrían.",
-   "Enfríe completamente (15–30 minutos) antes de cortar."
-  ]
+   "Bata las claras a punto de nieve.",
+   "Incorpore las chispas derretidas con movimientos envolventes.",
+   "Vierta en un molde de pan pequeño forrado con papel de hornear (unos 15 × 10 cm) y cubra con las chispas.",
+   "Hornee a 165 °C (325 °F) por 30 minutos."
+  ],
+  "es_reviewed": true,
+  "src_title": "2-Ingredient Chocolate Egg-White Brownies"
  },
  "CK-044": {
   "es_reviewed": true,

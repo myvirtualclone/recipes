@@ -229,6 +229,10 @@ export default function App() {
         }}
         onSetStatus={(s) => void setStatus(r, s)}
         onFav={() => void persist({ ...r, is_favorite: !r.is_favorite })}
+        onCreator={(name) => {
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, author: name });
+          go('/');
+        }}
       />
     ) : (
       <p className="muted center empty">{t('notFound', lang)}</p>
@@ -287,6 +291,10 @@ export default function App() {
           setFilters({ ...EMPTY_FILTERS, sort: filters.sort, variantTags: [key] });
           go('/');
         }}
+        onOpenCreator={(name) => {
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, author: name });
+          go('/');
+        }}
       />
     );
   } else if (route.name === 'log') {
@@ -301,6 +309,9 @@ export default function App() {
         onOpen={(id) => go(`/r/${id}`)}
         onAdd={() => go('/new')}
         onFav={(r) => void persist({ ...r, is_favorite: !r.is_favorite })}
+        onCreator={(name) => {
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, author: name });
+        }}
       />
     );
   }

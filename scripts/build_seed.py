@@ -11,6 +11,7 @@ Run: python3 scripts/build_seed.py
 import json, os, re, sys, uuid, collections, shutil
 sys.path.insert(0, os.path.dirname(__file__))
 from seedlib import is_spanish, lines, strip_num, sentence_case, pre_mt, post_mt, makes_line
+from authors import normalize_author
 from variants import ingredient_variants as derive_variants
 
 APP = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -56,6 +57,9 @@ SEASONING = re.compile(
 # Weak titles we can repair from the captured body.
 TITLE_FIXES = {
     "CK-015": "Low-GI pancakes",
+}
+TITLE_RENAMES = {
+    "CK-043": "2-Ingredient Chocolate Egg-White Brownies",
 }
 
 # Recipes whose source language is not English or Spanish (even if some fields were rewritten).
@@ -292,10 +296,32 @@ for row in rows:
     title_src = (row.get("Title") or "").strip()
     if code in TITLE_FIXES and (not title_src or title_src.lower() in {"large eggs", "large egg", "eggs"}):
         title_src = TITLE_FIXES[code]
+    notes = (row.get("Notes") or "").strip() or None
+    if code in TITLE_RENAMES:
+        orig = title_src
+        title_src = TITLE_RENAMES[code]
+        if orig and orig != title_src:
+            extra = f'Original title: "{orig}"'
+            notes = ((notes + " | ") if notes else "") + extra
     ing = lines(row.get("Ingredients"))
     steps = [strip_num(x) for x in lines(row.get("Steps"))]
     if code == "CK-015":
         title_src, ing, steps = clean_ck015(title_src, ing, steps)
+    if code == "CK-043":
+        ing = [
+            "4 large egg whites, beaten to stiff peaks",
+            "1 cup (170 g) semi-sweet chocolate chips, melted",
+            "2 tbsp chocolate chips, for topping",
+        ]
+        steps = [
+            "Beat the egg whites to stiff peaks.",
+            "Fold in the melted chocolate chips.",
+            "Pour into a small parchment-lined loaf pan (about 6×4 in), and top with the remaining chips.",
+            "Bake at 325°F (165°C) for 30 minutes.",
+        ]
+        extra_note = "Amounts estimated from the video (no amounts given); whole pan ≈ 980 kcal / 22 g protein."
+        if not notes or extra_note not in notes:
+            notes = ((notes + " | ") if notes else "") + extra_note
 
     # Detect language from title + ingredients + steps (not the caption, which can skew).
     body_for_lang = " ".join([title_src, " ".join(ing), " ".join(steps)])
@@ -338,6 +364,13 @@ for row in rows:
     cal, pro, carb, fat = (num(row.get(k)) for k in ("Calories", "Protein (g)", "Carbs (g)", "Fat (g)"))
     has_macros = any(v is not None for v in (cal, pro, carb, fat))
     mb, servings = basis(row.get("Macros Basis"), (row.get("Servings") or "").strip() or None)
+    macro_source = "post" if has_macros else None
+    if code == "CK-043":
+        servings = "4 pieces"
+        cal, pro, carb, fat = 245, 5.5, 26, 14
+        mb = "per_serving"
+        has_macros = True
+        macro_source = "estimated"
     thumb = None
     src_thumb = os.path.join(THUMBS_IN, f"{pid}.jpg")
     hd = os.path.join(THUMBS_HD, f"{code}.jpg")
@@ -376,8 +409,8 @@ for row in rows:
         "ingredients_es": i_es,
         "steps_en": s_en,
         "steps_es": s_es,
-        "notes": (row.get("Notes") or "").strip() or None,
-        "author": (row.get("Author") or "").strip() or None,
+        "notes": notes,
+        "author": normalize_author(row.get("Author")),
         "caption": caption,
         "collection": collection,
         "tags": general_tags(row.get("Tags")),
@@ -400,7 +433,7 @@ for row in rows:
         "carbs_g": carb,
         "fat_g": fat,
         "macro_basis": mb if has_macros else None,
-        "macro_source": "post" if has_macros else None,
+        "macro_source": macro_source,
         "es_reviewed": False,
         "is_favorite": False,
         "source_type": source_type,
@@ -504,7 +537,7 @@ with_es = sum(1 for r in recipes if r["title_es"] and (r["ingredients_es"] or no
 stats = {
     "recipes": len(recipes),
     "source_rows": ROWS,
-    "with_macros": sum(1 for r in recipes if r["macro_source"] == "post"),
+    "with_macros": sum(1 for r in recipes if r.get("macro_source")),
     "with_spanish": with_es,
     "es_reviewed": sum(1 for r in recipes if r["es_reviewed"]),
     "missing_spanish": missing_es,

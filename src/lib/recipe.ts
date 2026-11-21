@@ -84,6 +84,7 @@ export interface Filters {
   eqTags: string[];
   variantTags: string[];
   favOnly: boolean;
+  author: string;
   proteinMin: string;
   proteinMax: string;
   calMin: string;
@@ -101,6 +102,7 @@ export const EMPTY_FILTERS: Filters = {
   eqTags: [],
   variantTags: [],
   favOnly: false,
+  author: '',
   proteinMin: '',
   proteinMax: '',
   calMin: '',
@@ -118,6 +120,7 @@ export function activeFilterCount(f: Filters): number {
   if (f.calMin || f.calMax) n++;
   if (f.postedOnly) n++;
   if (f.favOnly) n++;
+  if (f.author) n++;
   if (f.showArchived) n++;
   return n;
 }
@@ -136,6 +139,7 @@ export function applyFilters(all: Recipe[], f: Filters, lang: Lang): Recipe[] {
     if (r.status === 'archived' && !f.showArchived) return false;
     if (f.collection && r.collection !== f.collection) return false;
     if (f.favOnly && !r.is_favorite) return false;
+    if (f.author && authorKey(r.author) !== authorKey(f.author)) return false;
     if (f.tags.length && !f.tags.every((tg) => r.tags.includes(tg))) return false;
     if (f.ingTags.length && !f.ingTags.every((tg) => r.ingredient_tags.includes(tg))) return false;
     if (f.eqTags.length && !f.eqTags.every((tg) => r.equipment_tags.includes(tg))) return false;
@@ -257,4 +261,22 @@ export function displayIngredientKeys(r: Recipe): string[] {
     else out.push(p);
   }
   return out;
+}
+
+export function authorKey(name: string | null | undefined): string {
+  return (name ?? '').replace(/^@+/, '').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+export function creatorCounts(recipes: Recipe[]): { name: string; count: number }[] {
+  const map = new Map<string, { name: string; count: number }>();
+  for (const r of recipes) {
+    if (r.status === 'archived') continue;
+    const name = (r.author ?? '').trim();
+    if (!name) continue;
+    const k = authorKey(name);
+    const cur = map.get(k);
+    if (cur) cur.count += 1;
+    else map.set(k, { name, count: 1 });
+  }
+  return [...map.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }

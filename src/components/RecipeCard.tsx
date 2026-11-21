@@ -6,8 +6,9 @@ import { needsReview } from '../types';
 import { MacroChips } from './Macros';
 import { Thumb } from './Thumb';
 import { Star } from './Star';
+import { CreatorChip } from './CreatorChip';
 
-export function RecipeCard({ r, lang, onOpen, onFav }: { r: Recipe; lang: Lang; onOpen: () => void; onFav: () => void }) {
+export function RecipeCard({ r, lang, onOpen, onFav, onCreator }: { r: Recipe; lang: Lang; onOpen: () => void; onFav: () => void; onCreator?: (name: string) => void }) {
   const L = localize(r, lang);
   const flag = needsReview(r);
   return (
@@ -22,6 +23,9 @@ export function RecipeCard({ r, lang, onOpen, onFav }: { r: Recipe; lang: Lang; 
       </button>
       <Star on={r.is_favorite} lang={lang} onToggle={onFav} className="card-star" />
       <div className="recipe-card-foot">
+        {r.author && (
+          <CreatorChip name={r.author} lang={lang} onClick={onCreator ? () => onCreator(r.author!) : undefined} />
+        )}
         {r.is_substitute && <span className="sub-badge">{t('substituteBadge', lang)}</span>}
         {r.fb_url && (
           <a className="fb-mini" href={r.fb_url} target="_blank" rel="noopener noreferrer">
