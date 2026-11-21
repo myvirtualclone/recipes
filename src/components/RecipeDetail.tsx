@@ -6,6 +6,7 @@ import { needsReview } from '../types';
 import { MacroTiles } from './Macros';
 import { Thumb } from './Thumb';
 import { TagLinks } from './TagChips';
+import { Star } from './Star';
 import type { TagKind } from '../lib/tags';
 
 interface Props {
@@ -16,13 +17,14 @@ interface Props {
   onTag: (tag: string) => void;
   onKindTag: (kind: TagKind, key: string) => void;
   onSetStatus: (s: Recipe['status']) => void;
+  onFav: () => void;
 }
 
 function NotTranslated({ show, lang }: { show: boolean; lang: Lang }) {
   return show ? <span className="nt-badge">{t('notTranslated', lang)}</span> : null;
 }
 
-export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetStatus }: Props) {
+export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetStatus, onFav }: Props) {
   const L = localize(r, lang);
   const showAuto = lang === 'es' && !r.es_reviewed && !L.titleFallback && Boolean(r.title_es);
   const meta: [string, string | null][] = [
@@ -39,6 +41,7 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
           {t('back', lang)}
         </button>
         <div className="detail-actions">
+          <Star on={r.is_favorite} lang={lang} onToggle={onFav} className="detail-star" />
           <button type="button" className="btn sm" onClick={onEdit}>
             ✎ {t('edit', lang)}
           </button>
@@ -57,9 +60,6 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
 
         <div className="detail-main">
           <div className="status-row tight">
-            {r.collection && (
-              <span className={`coll-badge ${r.collection === 'Cooking - SL' ? 'sl' : ''}`}>{r.collection}</span>
-            )}
             {r.status !== 'approved' && <span className={`status-pill ${r.status}`}>{t(`status_${r.status}`, lang)}</span>}
             {r.is_substitute && <span className="sub-badge">{t('substituteBadge', lang)}</span>}
             {needsReview(r) && <span className="reason-chip">{t('needsReview', lang)}</span>}
@@ -131,7 +131,7 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
         )}
       </section>
 
-      {(r.ingredient_tags.length > 0 || r.equipment_tags.length > 0 || r.tags.length > 0) && (
+      {(r.ingredient_tags.length > 0 || r.equipment_tags.length > 0 || r.tags.length > 0 || r.collection) && (
         <section className="category detail-section tag-section">
           {r.ingredient_tags.length > 0 && (
             <>
@@ -145,10 +145,13 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
               <TagLinks lang={lang} kind="equipment" keys={r.equipment_tags} onTap={(k) => onKindTag('equipment', k)} />
             </>
           )}
-          {r.tags.length > 0 && (
+          {(r.tags.length > 0 || r.collection) && (
             <>
               <h3 className="tag-heading">{t('generalTags', lang)}</h3>
               <div className="tag-row">
+                {r.collection && (
+                  <span className="tag-chip coll-tag">#{r.collection}</span>
+                )}
                 {r.tags.map((tg) => (
                   <button type="button" key={tg} className="tag-chip" onClick={() => onTag(tg)}>
                     #{tagLabel(tg, lang)}

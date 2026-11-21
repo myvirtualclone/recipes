@@ -27,6 +27,7 @@ OVERRIDES_PATH = os.path.join(APP, "scripts/es_overrides.json")
 OUT = os.path.join(APP, "public/seed/recipes.json")
 
 defs = json.load(open(os.path.join(APP, "src/lib/tagdefs.json")))
+WEAK_TITLES = json.load(open(os.path.join(APP, "src/lib/weakTitles.json")))
 ING = {k: re.compile(v[2], re.I) for k, v in defs["ingredient"].items()}
 EQ = {k: re.compile(v[2], re.I) for k, v in defs["equipment"].items() if v[2]}
 HEAT = {"air_fryer", "oven", "microwave", "slow_cooker", "pressure_cooker", "stovetop", "grill", "waffle_maker"}
@@ -461,6 +462,8 @@ def compute_review_reasons(all_recipes):
         if r["code"] in NON_EN_ES_IDS or looks_foreign(r["code"], r.get("title_en") or r.get("title_es") or "", r.get("ingredients_en") or r.get("ingredients_es") or [], r.get("steps_en") or r.get("steps_es") or [], r.get("caption")):
             if "non_en_es" not in reasons:
                 reasons.append("non_en_es")
+        if r["code"] in WEAK_TITLES:
+            reasons.append("weak_title")
         if r.get("is_substitute"):
             reasons.append("substitute")
         if r["id"] in fb_dupes:

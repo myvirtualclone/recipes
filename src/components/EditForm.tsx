@@ -7,6 +7,7 @@ import type { Collection, MacroBasis, MacroSource, Recipe, RecipeStatus } from '
 import { COLLECTIONS, MACRO_BASES } from '../types';
 import { Thumb } from './Thumb';
 import { TagEditor } from './TagEditor';
+import weakTitles from '../lib/weakTitles.json';
 
 interface Props {
   lang: Lang;
@@ -106,6 +107,17 @@ export function EditForm({ lang, recipe, isNew, all, onCancel, onSave, onOpen }:
         <span>🇨🇴 {t('spanish', lang)}</span>
       </div>
       <Field label={t('title', lang)}>
+        {(() => {
+          const sug = r.code ? (weakTitles as Record<string, string>)[r.code] : '';
+          return sug && sug !== r.title_en ? (
+            <p className="suggest-title small">
+              {t('suggestedTitle', lang)}: <strong>{sug}</strong>{' '}
+              <button type="button" className="btn sm" onClick={() => set({ title_en: sug })}>
+                {t('useSuggestion', lang)}
+              </button>
+            </p>
+          ) : null;
+        })()}
         <div className="bi-grid">
           <input value={r.title_en ?? ''} onChange={(e) => set({ title_en: e.target.value })} lang="en" aria-label={`${t('title', lang)} EN`} />
           <input value={r.title_es ?? ''} onChange={(e) => set({ title_es: e.target.value })} lang="es" aria-label={`${t('title', lang)} ES`} />

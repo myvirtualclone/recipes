@@ -15,11 +15,12 @@ interface Props {
   setFilters: (f: Filters) => void;
   onOpen: (id: string) => void;
   onAdd: () => void;
+  onFav: (r: Recipe) => void;
 }
 
 const SORTS: SortKey[] = ['newest', 'oldest', 'protein', 'calories', 'title'];
 
-export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: Props) {
+export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onFav }: Props) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const results = useMemo(() => applyFilters(recipes, filters, lang), [recipes, filters, lang]);
   const tags = useMemo(() => allTags(recipes), [recipes]);
@@ -51,21 +52,12 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: P
       <div className="provider-tabs">
         <button
           type="button"
-          className={`provider-tab ${!filters.collection ? 'active' : ''}`}
-          onClick={() => set({ collection: '' })}
+          className={`provider-tab fav-tab ${filters.favOnly ? 'active' : ''}`}
+          aria-pressed={filters.favOnly}
+          onClick={() => set({ favOnly: !filters.favOnly })}
         >
-          {t('all', lang)}
+          {t('favorites', lang)}
         </button>
-        {COLLECTIONS.map((c) => (
-          <button
-            type="button"
-            key={c}
-            className={`provider-tab ${filters.collection === c ? 'active' : ''}`}
-            onClick={() => set({ collection: filters.collection === c ? '' : c })}
-          >
-            {c}
-          </button>
-        ))}
         <button type="button" className={`provider-tab filter-btn ${nActive ? 'on' : ''}`} onClick={() => setSheetOpen(true)}>
           ⚙ {t('filters', lang)}
           {nActive > 0 && <i className="badge">{nActive}</i>}
@@ -132,7 +124,7 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: P
       ) : (
         <div className="recipe-grid">
           {results.map((r) => (
-            <RecipeCard key={r.id} r={r} lang={lang} onOpen={() => onOpen(r.id)} />
+            <RecipeCard key={r.id} r={r} lang={lang} onOpen={() => onOpen(r.id)} onFav={() => onFav(r)} />
           ))}
         </div>
       )}

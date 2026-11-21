@@ -1834,3 +1834,11 @@ textarea {
 .review-text strong .reason-chip {
   margin-left: 6px;
 }
+
+.star-btn{border:none;background:rgba(255,255,255,.92);color:#b8860b;width:32px;height:32px;border-radius:50%;font-size:1.15rem;line-height:1;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.18);cursor:pointer}
+.star-btn.on{color:#e0a800}
+.card-star{position:absolute;top:6px;left:6px;z-index:2}
+.detail-star{margin-right:6px}
+.fav-tab.active{background:#e0a800;border-color:#e0a800}
+.coll-tag{opacity:.8}
+.suggest-title{margin:0 0 6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}

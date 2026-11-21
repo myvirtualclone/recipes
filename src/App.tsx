@@ -228,6 +228,7 @@ export default function App() {
           go('/');
         }}
         onSetStatus={(s) => void setStatus(r, s)}
+        onFav={() => void persist({ ...r, is_favorite: !r.is_favorite })}
       />
     ) : (
       <p className="muted center empty">{t('notFound', lang)}</p>
@@ -299,6 +300,7 @@ export default function App() {
         setFilters={setFilters}
         onOpen={(id) => go(`/r/${id}`)}
         onAdd={() => go('/new')}
+        onFav={(r) => void persist({ ...r, is_favorite: !r.is_favorite })}
       />
     );
   }

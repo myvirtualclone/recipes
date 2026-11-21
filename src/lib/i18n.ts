@@ -143,6 +143,12 @@ const dict = {
   reason_missing_steps: { en: 'Missing steps', es: 'Faltan pasos' },
   reason_non_en_es: { en: 'Not English or Spanish', es: 'Idioma distinto al inglés o al español' },
   reason_substitute: { en: 'Substitute recipe', es: 'Receta sustituta' },
+  reason_weak_title: { en: 'Weak title', es: 'Título poco claro' },
+  favorites: { en: 'Favorites ★', es: 'Favoritos ★' },
+  addFavorite: { en: 'Add to favorites', es: 'Agregar a favoritos' },
+  removeFavorite: { en: 'Remove from favorites', es: 'Quitar de favoritos' },
+  suggestedTitle: { en: 'Suggested title', es: 'Título sugerido' },
+  useSuggestion: { en: 'Use it', es: 'Usarlo' },
   indexTitle: { en: 'Ingredients', es: 'Ingredientes' },
   indexSub: {
     en: 'Browse by main ingredient. Open a row to see variants like chocolate or zero-sugar, then tap to filter the library.',

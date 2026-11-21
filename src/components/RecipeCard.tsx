@@ -5,8 +5,9 @@ import type { Recipe } from '../types';
 import { needsReview } from '../types';
 import { MacroChips } from './Macros';
 import { Thumb } from './Thumb';
+import { Star } from './Star';
 
-export function RecipeCard({ r, lang, onOpen }: { r: Recipe; lang: Lang; onOpen: () => void }) {
+export function RecipeCard({ r, lang, onOpen, onFav }: { r: Recipe; lang: Lang; onOpen: () => void; onFav: () => void }) {
   const L = localize(r, lang);
   const flag = needsReview(r);
   return (
@@ -19,12 +20,8 @@ export function RecipeCard({ r, lang, onOpen }: { r: Recipe; lang: Lang; onOpen:
           <MacroChips r={r} lang={lang} />
         </div>
       </button>
+      <Star on={r.is_favorite} lang={lang} onToggle={onFav} className="card-star" />
       <div className="recipe-card-foot">
-        {r.collection && (
-          <span className={`coll-badge ${r.collection === 'Cooking - SL' ? 'sl' : ''}`}>
-            {r.collection === 'Cooking - SL' ? 'SL' : 'Cooking'}
-          </span>
-        )}
         {r.is_substitute && <span className="sub-badge">{t('substituteBadge', lang)}</span>}
         {r.fb_url && (
           <a className="fb-mini" href={r.fb_url} target="_blank" rel="noopener noreferrer">

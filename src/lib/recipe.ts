@@ -83,6 +83,7 @@ export interface Filters {
   ingTags: string[];
   eqTags: string[];
   variantTags: string[];
+  favOnly: boolean;
   proteinMin: string;
   proteinMax: string;
   calMin: string;
@@ -99,6 +100,7 @@ export const EMPTY_FILTERS: Filters = {
   ingTags: [],
   eqTags: [],
   variantTags: [],
+  favOnly: false,
   proteinMin: '',
   proteinMax: '',
   calMin: '',
@@ -115,6 +117,7 @@ export function activeFilterCount(f: Filters): number {
   if (f.proteinMin || f.proteinMax) n++;
   if (f.calMin || f.calMax) n++;
   if (f.postedOnly) n++;
+  if (f.favOnly) n++;
   if (f.showArchived) n++;
   return n;
 }
@@ -132,6 +135,7 @@ export function applyFilters(all: Recipe[], f: Filters, lang: Lang): Recipe[] {
   const out = all.filter((r) => {
     if (r.status === 'archived' && !f.showArchived) return false;
     if (f.collection && r.collection !== f.collection) return false;
+    if (f.favOnly && !r.is_favorite) return false;
     if (f.tags.length && !f.tags.every((tg) => r.tags.includes(tg))) return false;
     if (f.ingTags.length && !f.ingTags.every((tg) => r.ingredient_tags.includes(tg))) return false;
     if (f.eqTags.length && !f.eqTags.every((tg) => r.equipment_tags.includes(tg))) return false;
