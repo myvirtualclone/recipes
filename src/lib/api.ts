@@ -1,11 +1,23 @@
 import { supabase } from './supabase';
 import { loadDemoEdits, saveDemoEdit } from './storage';
-import seed from '../seed/recipes.json';
 import type { CaptureLogEntry, Recipe } from '../types';
 
 export type DataMode = 'db' | 'demo';
 
-const SEED = seed as unknown as Recipe[];
+let seedPromise: Promise<Recipe[]> | null = null;
+/** Bundled sample/seed recipes, fetched lazily from public/seed/ (kept out of the JS bundle). */
+export function loadSeed(): Promise<Recipe[]> {
+  seedPromise ??= fetch(`${import.meta.env.BASE_URL}seed/recipes.json`)
+    .then((r) => {
+      if (!r.ok) throw new Error(`seed ${r.status}`);
+      return r.json() as Promise<Recipe[]>;
+    })
+    .catch((e) => {
+      seedPromise = null;
+      throw e;
+    });
+  return seedPromise;
+}
 const TABLE = 'rec_recipes';
 const LOG_TABLE = 'rec_capture_log';
 
@@ -19,6 +31,8 @@ function normalize(r: Partial<Recipe>): Recipe {
     steps_en: arr(r.steps_en),
     steps_es: arr(r.steps_es),
     tags: arr(r.tags),
+    ingredient_tags: arr(r.ingredient_tags),
+    equipment_tags: arr(r.equipment_tags),
     calories: num(r.calories),
     protein_g: num(r.protein_g),
     carbs_g: num(r.carbs_g),
@@ -50,7 +64,7 @@ export async function listRecipes(mode: DataMode): Promise<Recipe[]> {
   }
   const edits = loadDemoEdits();
   const byId = new Map<string, Recipe>();
-  for (const r of SEED) byId.set(r.id, normalize(r));
+  for (const r of await loadSeed()) byId.set(r.id, normalize(r));
   for (const r of Object.values(edits)) byId.set(r.id, normalize(r));
   return [...byId.values()];
 }

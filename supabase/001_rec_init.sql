@@ -22,6 +22,8 @@ create table if not exists public.rec_recipes (
   caption text,
   collection text,
   tags text[] not null default '{}',
+  ingredient_tags text[] not null default '{}',   -- canonical keys, e.g. greek_yogurt, rice_paper
+  equipment_tags text[] not null default '{}',    -- canonical keys, e.g. air_fryer, oven, no_cook
   fb_url text,
   fb_post_id text,                              -- canonical FB reel/post id, dedupe key
   thumbnail_url text,
@@ -49,6 +51,8 @@ alter table public.rec_recipes add column if not exists prep_time text;
 alter table public.rec_recipes add column if not exists cook_time text;
 alter table public.rec_recipes add column if not exists cuisine text;
 alter table public.rec_recipes add column if not exists meal_type text;
+alter table public.rec_recipes add column if not exists ingredient_tags text[] not null default '{}';
+alter table public.rec_recipes add column if not exists equipment_tags text[] not null default '{}';
 
 do $$
 begin
@@ -72,6 +76,8 @@ end $$;
 create index if not exists rec_recipes_status_idx on public.rec_recipes (status);
 create index if not exists rec_recipes_collection_idx on public.rec_recipes (collection);
 create index if not exists rec_recipes_code_idx on public.rec_recipes (code);
+create index if not exists rec_recipes_ingredient_tags_idx on public.rec_recipes using gin (ingredient_tags);
+create index if not exists rec_recipes_equipment_tags_idx on public.rec_recipes using gin (equipment_tags);
 
 create table if not exists public.rec_capture_log (
   id uuid primary key default gen_random_uuid(),

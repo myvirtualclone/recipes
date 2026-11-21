@@ -46,14 +46,25 @@ Open the Margory project's **SQL Editor** in Supabase (account droitman@outlook.
 - `rec_capture_log`: one row per capture run (found / new / duplicate / failed).
 - RLS on, with anon select/insert/update/delete policies (MVP, PIN-gated like Margory), plus its own `rec_set_updated_at()` trigger.
 
-## 2. Seed the first recipes
+## 2. Seed the recipes
 
 ```bash
 npm run seed -- --dry-run   # checks the table is reachable
-npm run seed                # upserts src/seed/recipes.json on fb_post_id
+npm run seed                # upserts public/seed/recipes.json (215 recipes) on fb_post_id, in batches of 50
 ```
 
-The seed is SL-001…SL-005 from Rosa's sheet "Dan's Recipe Box (Rosa)", with Spanish versions (marked `es_reviewed = false`). Macros are exactly as the posts stated them, or empty when the post gave none.
+`public/seed/recipes.json` holds all 215 recipes from Rosa's capture (SL-* → collection "Cooking - SL", CK-* → "Cooking"), status `approved`. It is fetched lazily at runtime (demo mode) and is not in the JS bundle. Macros are only present when the post stated them (`macro_source = 'post'`); none are estimated. Spanish title/ingredients/steps are offline machine translations (Helsinki-NLP opus-mt-en-es, no paid API) marked `es_reviewed = false`; SL-001…005 are hand-translated.
+
+To rebuild it (e.g. after Rosa captures more thumbnails):
+
+```bash
+python3 scripts/translate_seed.py   # needs the MT venv; caches to ../meta/es_cache.json
+python3 scripts/build_seed.py       # merges scripts/seed_base.json + ../capture/rows.json, tags, thumbs → public/seed/
+```
+
+### Tags
+
+Every recipe has `ingredient_tags` (dish-defining ingredients only, not salt/pepper/oil/water) and `equipment_tags` (air_fryer, oven, blender, microwave, stovetop, freezer, no_cook, …). Tags are canonical English keys; labels in both languages come from `src/lib/tagdefs.json` (which also holds the matching rules used by `build_seed.py`). The library shows chip rows for both (most common first, with counts, "Show all"); selected chips combine with AND alongside the other filters and search. Tapping a tag on a recipe filters the library; the edit form edits both lists. The SQL adds both `text[]` columns idempotently (`ADD COLUMN IF NOT EXISTS`) with GIN indexes.
 
 ## 3. Deploy
 

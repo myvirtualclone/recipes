@@ -1,0 +1,366 @@
+{
+ "ingredient": {
+  "cottage_cheese": [
+   "Cottage cheese",
+   "Queso cottage",
+   "cottage cheese|cottage|queso cottage|reques[oó]n"
+  ],
+  "greek_yogurt": [
+   "Greek yogurt",
+   "Yogur griego",
+   "greek yog(h)?urt|greek-style yog(h)?urt|fage|skyr|oikos|yogur griego|yogurt griego"
+  ],
+  "yogurt": [
+   "Yogurt",
+   "Yogur",
+   "(?<!greek )(?<!greek-style )yog(h)?urt(?! griego)|yogur(?! griego)"
+  ],
+  "rice_paper": [
+   "Rice paper",
+   "Papel de arroz",
+   "rice paper|ricepaper|papel de arroz"
+  ],
+  "rice_cakes": [
+   "Rice cakes",
+   "Galletas de arroz",
+   "rice ?cakes?|galletas? de arroz|tortitas? de arroz"
+  ],
+  "protein_powder": [
+   "Protein powder",
+   "Proteína en polvo",
+   "protein powder|whey|casein|scoops? (of )?(vanilla |chocolate )?protein|prote[ií]na en polvo|protein isolate"
+  ],
+  "egg_whites": [
+   "Egg whites",
+   "Claras de huevo",
+   "egg whites?|liquid egg|claras?( de huevo)?"
+  ],
+  "eggs": [
+   "Eggs",
+   "Huevos",
+   "\\beggs?\\b(?! whites?)(?! yolk)|\\bhuevos?\\b|egg yolks?|yemas?"
+  ],
+  "chicken": [
+   "Chicken",
+   "Pollo",
+   "chicken|\\bpollo\\b"
+  ],
+  "ground_beef": [
+   "Ground beef",
+   "Carne molida",
+   "ground beef|beef mince|minced beef|lean beef|\\d+/\\d+ (ground )?beef|carne molida|carne picada"
+  ],
+  "beef": [
+   "Beef / steak",
+   "Res / bistec",
+   "steak|sirloin|brisket|\\bbeef\\b(?! mince)|\\bres\\b|lomo de res"
+  ],
+  "turkey": [
+   "Turkey",
+   "Pavo",
+   "turkey|\\bpavo\\b"
+  ],
+  "pork": [
+   "Pork",
+   "Cerdo",
+   "\\bpork\\b|\\bcerdo\\b|chorizo|sausage|salchicha"
+  ],
+  "bacon": [
+   "Bacon",
+   "Tocineta",
+   "bacon|tocineta|tocino|pancetta"
+  ],
+  "ham": [
+   "Ham",
+   "Jamón",
+   "\\bham\\b|jam[oó]n|prosciutto"
+  ],
+  "pepperoni": [
+   "Pepperoni",
+   "Pepperoni",
+   "pepperoni"
+  ],
+  "salmon": [
+   "Salmon",
+   "Salmón",
+   "salmon|salm[oó]n"
+  ],
+  "tuna": [
+   "Tuna",
+   "Atún",
+   "\\btuna\\b|at[uú]n"
+  ],
+  "shrimp": [
+   "Shrimp",
+   "Camarones",
+   "shrimp|prawns?|camarones?|langostinos?"
+  ],
+  "white_fish": [
+   "White fish",
+   "Pescado blanco",
+   "\\bcod\\b|tilapia|white fish|haddock|basa|pescado"
+  ],
+  "tofu": [
+   "Tofu",
+   "Tofu",
+   "\\btofu\\b"
+  ],
+  "cheddar": [
+   "Cheddar",
+   "Queso cheddar",
+   "cheddar"
+  ],
+  "mozzarella": [
+   "Mozzarella",
+   "Mozzarella",
+   "mozzarella|mozarella"
+  ],
+  "parmesan": [
+   "Parmesan",
+   "Parmesano",
+   "parmesan|parmigiano|parmesano"
+  ],
+  "feta": [
+   "Feta",
+   "Queso feta",
+   "\\bfett?a\\b"
+  ],
+  "cream_cheese": [
+   "Cream cheese",
+   "Queso crema",
+   "cream cheese|philadelphia|queso crema"
+  ],
+  "ricotta": [
+   "Ricotta",
+   "Ricotta",
+   "ricotta"
+  ],
+  "halloumi": [
+   "Halloumi",
+   "Halloumi",
+   "halloumi"
+  ],
+  "mascarpone": [
+   "Mascarpone",
+   "Mascarpone",
+   "mascarpone"
+  ],
+  "oats": [
+   "Oats",
+   "Avena",
+   "\\boats?\\b|oatmeal|oat flour|\\bavena\\b"
+  ],
+  "tortilla_wrap": [
+   "Tortilla / wrap",
+   "Tortilla / wrap",
+   "tortillas?|\\bwraps?\\b|flatbread|lavash|pita"
+  ],
+  "bread": [
+   "Bread / buns",
+   "Pan / bagels",
+   "sourdough|slices? of (\\w+ )?bread|bread slices?|\\bbuns?\\b|english muffins?|\\btoast\\b|bagels?(?! seasoning)|\\bpan (de molde|integral|tajado)\\b|baguette"
+  ],
+  "pasta": [
+   "Pasta",
+   "Pasta",
+   "pasta|spaghetti|penne|macaroni|\\bmac\\b|orzo|lasagn[ae]|noodles?|fideos?|gnocchi"
+  ],
+  "rice": [
+   "Rice",
+   "Arroz",
+   "\\brice\\b(?! paper)(?! cakes?)(?! krispies)|\\barroz\\b(?! de)"
+  ],
+  "potato": [
+   "Potato",
+   "Papa",
+   "(?<!sweet )potato(es)?|(?<!sweet )\\bpapas?\\b|hash browns?"
+  ],
+  "sweet_potato": [
+   "Sweet potato",
+   "Batata",
+   "sweet potato(es)?|\\bbatatas?\\b|camote|\\byams?\\b"
+  ],
+  "cauliflower": [
+   "Cauliflower",
+   "Coliflor",
+   "cauliflower|coliflor"
+  ],
+  "zucchini": [
+   "Zucchini",
+   "Calabacín",
+   "zucchini|courgette|calabac[ií]n"
+  ],
+  "cabbage": [
+   "Cabbage",
+   "Repollo",
+   "cabbage|repollo|coleslaw"
+  ],
+  "broccoli": [
+   "Broccoli",
+   "Brócoli",
+   "broccoli|br[oó]coli"
+  ],
+  "spinach": [
+   "Spinach",
+   "Espinaca",
+   "spinach|espinaca"
+  ],
+  "avocado": [
+   "Avocado",
+   "Aguacate",
+   "avocados?(?! oil)(?! spray)|aguacates?(?! aceite)|guacamole"
+  ],
+  "mushrooms": [
+   "Mushrooms",
+   "Champiñones",
+   "mushrooms?|champi[ñn]on(es)?|hongos"
+  ],
+  "tomato": [
+   "Tomato",
+   "Tomate",
+   "tomato(es)?|tomate"
+  ],
+  "peppers": [
+   "Bell peppers",
+   "Pimentón",
+   "bell peppers?|capsicum|piment[oó]n|pimientos?"
+  ],
+  "pumpkin": [
+   "Pumpkin",
+   "Ahuyama",
+   "pumpkin|ahuyama|calabaza|butternut"
+  ],
+  "banana": [
+   "Banana",
+   "Banano",
+   "bananas?|banano"
+  ],
+  "apple": [
+   "Apple",
+   "Manzana",
+   "\\bapples?\\b|manzana"
+  ],
+  "berries": [
+   "Berries",
+   "Frutos rojos",
+   "berr(y|ies)|strawberr|blueberr|raspberr|fresas?|ar[aá]ndanos?|frambuesas?|frutos rojos"
+  ],
+  "lemon": [
+   "Lemon / lime",
+   "Limón",
+   "lemon|\\blimes?\\b|lim[oó]n"
+  ],
+  "coconut": [
+   "Coconut",
+   "Coco",
+   "coconut(?! oil)(?! sugar)|\\bcoco\\b"
+  ],
+  "chickpeas_beans": [
+   "Chickpeas / beans",
+   "Garbanzos / fríjoles",
+   "chickpeas?|garbanzos?|black beans|kidney beans|\\bbeans\\b|lentils?|lentejas?|fr[ií]joles?"
+  ],
+  "chocolate": [
+   "Chocolate / cocoa",
+   "Chocolate / cacao",
+   "chocolate|cocoa|cacao"
+  ],
+  "peanut_butter": [
+   "Peanut butter",
+   "Mantequilla de maní",
+   "peanut butter|pb2|pbfit|powdered peanut|peanut powder|mantequilla de man[ií]"
+  ],
+  "nut_butter": [
+   "Nut butter",
+   "Crema de frutos secos",
+   "almond butter|cashew butter|(?<!pea)nut butter|mantequilla de almendras?"
+  ],
+  "nuts": [
+   "Nuts",
+   "Frutos secos",
+   "almonds?(?! milk)(?! flour)(?! butter)(?! extract)|walnuts?|pecans?|pistachios?(?! (jell|pudding|flavou?r))|cashews?(?! milk)|hazelnuts?(?! (milk|spread))|peanuts\\b|nueces|almendras|\\bman[ií]\\b(?! en polvo)"
+  ],
+  "oreo_cookies": [
+   "Oreo / cookies",
+   "Oreo / galletas",
+   "oreos?|biscoff|lotus|graham cracker|digestive|cookie butter"
+  ],
+  "pudding_jello": [
+   "Pudding / Jell-O",
+   "Pudín / gelatina",
+   "pudding|jell-?o|gelatin|gelatina|pud[ií]n"
+  ],
+  "almond_flour": [
+   "Almond flour",
+   "Harina de almendra",
+   "almond flour|harina de almendras?"
+  ],
+  "puff_pastry": [
+   "Puff pastry / phyllo",
+   "Hojaldre / filo",
+   "puff pastry|phyllo|filo|hojaldre"
+  ]
+ },
+ "equipment": {
+  "air_fryer": [
+   "Air fryer",
+   "Freidora de aire",
+   "air[- ]?fr(y|yer|ied|ying)|airfryer|freidora de aire"
+  ],
+  "oven": [
+   "Oven",
+   "Horno",
+   "\\boven\\b|\\bbake[ds]?\\b(?! (powder|soda))|\\bbaking\\b(?! (powder|soda|sheet in the air))|roast(ed|ing)?\\b|broil|preheat|sheet pan|\\bhorno\\b|hornea|hornear|gratinar"
+  ],
+  "blender": [
+   "Blender",
+   "Licuadora",
+   "\\bblend(ed|er|ing)?\\b|food processor|processor|ninja|nutribullet|immersion|licua|lic[uú]a|procesador"
+  ],
+  "microwave": [
+   "Microwave",
+   "Microondas",
+   "microwav|microondas"
+  ],
+  "slow_cooker": [
+   "Slow cooker",
+   "Olla de cocción lenta",
+   "slow cook|crock ?pot|olla lenta|cocci[oó]n lenta"
+  ],
+  "pressure_cooker": [
+   "Pressure cooker",
+   "Olla a presión",
+   "instant pot|pressure cook|olla (a|de) presi[oó]n"
+  ],
+  "stovetop": [
+   "Stovetop",
+   "Estufa",
+   "skillet|frying pan|saucepan|\\bwok\\b|\\bsaut[eé]|simmer|\\bboil|griddle|\\bstove|\\bpan[- ]?fr|(?<!air )(?<!air-)\\bfry\\b|(?<!air )\\bfried\\b|over (medium|high|low)|medium heat|high heat|low heat|non-?stick pan|\\bpot\\b|sart[eé]n|estufa|fuego (medio|alto|bajo)|hervir|sofr[eí]|fr[eí]r"
+  ],
+  "grill": [
+   "Grill",
+   "Parrilla",
+   "\\bgrill(ed|ing)?\\b|\\bbbq\\b|barbecue|parrilla|asador"
+  ],
+  "waffle_maker": [
+   "Waffle maker",
+   "Wafflera",
+   "waffle (maker|iron)|dash mini|wafflera"
+  ],
+  "ice_cream_maker": [
+   "Ninja Creami",
+   "Ninja Creami",
+   "creami|ice cream maker"
+  ],
+  "freezer": [
+   "Freezer",
+   "Congelador",
+   "\\bfreez(e|er|ing)\\b|congela"
+  ],
+  "no_cook": [
+   "No-cook",
+   "Sin cocción",
+   ""
+  ]
+ }
+}

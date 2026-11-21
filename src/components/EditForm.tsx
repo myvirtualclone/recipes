@@ -6,6 +6,7 @@ import { localize } from '../lib/recipe';
 import type { Collection, MacroBasis, MacroSource, Recipe, RecipeStatus } from '../types';
 import { COLLECTIONS, MACRO_BASES } from '../types';
 import { Thumb } from './Thumb';
+import { TagEditor } from './TagEditor';
 
 interface Props {
   lang: Lang;
@@ -37,6 +38,10 @@ export function EditForm({ lang, recipe, isNew, all, onCancel, onSave, onOpen }:
     carbs_g: recipe.carbs_g?.toString() ?? '',
     fat_g: recipe.fat_g?.toString() ?? '',
   });
+  const [ingTags, setIngTags] = useState<string[]>(recipe.ingredient_tags);
+  const [eqTags, setEqTags] = useState<string[]>(recipe.equipment_tags);
+  const knownIng = useMemo(() => [...new Set(all.flatMap((x) => x.ingredient_tags))], [all]);
+  const knownEq = useMemo(() => [...new Set(all.flatMap((x) => x.equipment_tags))], [all]);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const set = (patch: Partial<Recipe>) => setR((x) => ({ ...x, ...patch }));
@@ -68,6 +73,8 @@ export function EditForm({ lang, recipe, isNew, all, onCancel, onSave, onOpen }:
         .split(',')
         .map((x) => x.trim().toLowerCase())
         .filter(Boolean),
+      ingredient_tags: ingTags,
+      equipment_tags: eqTags,
       fb_post_id: fbId ?? r.fb_post_id ?? null,
       calories: numOrNull(macros.calories),
       protein_g: numOrNull(macros.protein_g),
@@ -193,6 +200,12 @@ export function EditForm({ lang, recipe, isNew, all, onCancel, onSave, onOpen }:
           </select>
         </label>
       </div>
+      <Field label={t('keyIngredients', lang)}>
+        <TagEditor lang={lang} kind="ingredient" value={ingTags} onChange={setIngTags} known={knownIng} />
+      </Field>
+      <Field label={t('equipmentMethod', lang)}>
+        <TagEditor lang={lang} kind="equipment" value={eqTags} onChange={setEqTags} known={knownEq} />
+      </Field>
       <label className="mini-field">
         <span>
           {t('tags', lang)} ({t('tagsHint', lang)})

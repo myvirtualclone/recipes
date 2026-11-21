@@ -9,7 +9,7 @@ export function RecipeCard({ r, lang, onOpen }: { r: Recipe; lang: Lang; onOpen:
   return (
     <div className={`recipe-card ${r.status === 'archived' ? 'archived' : ''}`}>
       <button type="button" className="recipe-card-main" onClick={onOpen}>
-        <Thumb url={r.thumbnail_url} alt={L.title} className="recipe-card-visual" />
+        <Thumb url={r.thumbnail_url} tags={r.ingredient_tags} alt={L.title} className="recipe-card-visual" />
         <div className="recipe-card-body">
           <span className="recipe-card-title">{L.title}</span>
           <MacroChips r={r} lang={lang} />

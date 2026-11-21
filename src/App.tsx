@@ -182,6 +182,14 @@ export default function App() {
           setFilters({ ...EMPTY_FILTERS, sort: filters.sort, tags: [tag] });
           go('/');
         }}
+        onKindTag={(kind, key) => {
+          setFilters({
+            ...EMPTY_FILTERS,
+            sort: filters.sort,
+            ...(kind === 'ingredient' ? { ingTags: [key] } : { eqTags: [key] }),
+          });
+          go('/');
+        }}
         onSetStatus={(s) => void setStatus(r, s)}
       />
     ) : (

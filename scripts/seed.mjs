@@ -1,4 +1,4 @@
-// Upsert the bundled seed recipes (src/seed/recipes.json) into rec_recipes,
+// Upsert the bundled seed recipes (public/seed/recipes.json, built by scripts/build_seed.py) into rec_recipes,
 // matching on fb_post_id (the dedupe key). Run AFTER supabase/001_rec_init.sql
 // has been applied. Uses the public anon key only (same as the app).
 //
@@ -23,7 +23,7 @@ if (!url || !key) {
 }
 const supabase = createClient(url, key, { auth: { persistSession: false } });
 
-const seed = JSON.parse(readFileSync(new URL('src/seed/recipes.json', root), 'utf8'));
+const seed = JSON.parse(readFileSync(new URL('public/seed/recipes.json', root), 'utf8'));
 const dryRun = process.argv.includes('--dry-run');
 
 const probe = await supabase.from('rec_recipes').select('id').limit(1);
@@ -35,20 +35,27 @@ if (probe.error) {
 
 // Keep whatever id an existing row already has; the seed id is only used for new rows.
 const ids = seed.map((r) => r.fb_post_id);
-const existing = await supabase.from('rec_recipes').select('id,fb_post_id').in('fb_post_id', ids);
-if (existing.error) throw existing.error;
-const idByFb = new Map(existing.data.map((r) => [r.fb_post_id, r.id]));
+const idByFb = new Map();
+for (let i = 0; i < ids.length; i += 100) {
+  const existing = await supabase.from('rec_recipes').select('id,fb_post_id').in('fb_post_id', ids.slice(i, i + 100));
+  if (existing.error) throw existing.error;
+  for (const r of existing.data) idByFb.set(r.fb_post_id, r.id);
+}
 const rows = seed.map((r) => ({ ...r, id: idByFb.get(r.fb_post_id) ?? r.id }));
 
 console.log(`${rows.length} seed recipes, ${idByFb.size} already in the table.`);
 if (dryRun) process.exit(0);
 
-const { data, error } = await supabase
-  .from('rec_recipes')
-  .upsert(rows, { onConflict: 'fb_post_id' })
-  .select('code,fb_post_id');
-if (error) {
-  console.error('Upsert failed:', error.message);
-  process.exit(1);
+let done = 0;
+for (let i = 0; i < rows.length; i += 50) {
+  const { data, error } = await supabase
+    .from('rec_recipes')
+    .upsert(rows.slice(i, i + 50), { onConflict: 'fb_post_id' })
+    .select('code');
+  if (error) {
+    console.error(`Upsert failed at rows ${i}-${i + 49}:`, error.message);
+    process.exit(1);
+  }
+  done += data.length;
 }
-console.log('Upserted:', data.map((r) => r.code).join(', '));
+console.log(`Upserted ${done} recipes (ingredient_tags + equipment_tags included).`);

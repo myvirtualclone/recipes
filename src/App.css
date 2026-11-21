@@ -1500,3 +1500,154 @@ textarea {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Ingredient / equipment tag chips (v2) */
+.tagrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0 2px;
+}
+
+.tagrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tagrow-label {
+  flex: 0 0 auto;
+  width: 5.6rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.tagrow-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tagrow-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.tagrow.open .tagrow-chips {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.ftag {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1.5px solid #c5d5c8;
+  background: #f7faf7;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ftag i {
+  font-style: normal;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.ftag.equipment {
+  border-color: #f3dd94;
+  background: var(--gold-soft);
+}
+
+.ftag.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.ftag.equipment.on {
+  background: #8a6a12;
+  border-color: #8a6a12;
+}
+
+.ftag.on i {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ftag.more {
+  background: transparent;
+  border-style: dashed;
+  color: var(--accent);
+}
+
+.ftag.more.clear {
+  color: var(--danger);
+  border-color: #f0b8bd;
+}
+
+.ftag.ghost {
+  background: transparent;
+  border-style: dashed;
+}
+
+.ftag .x {
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0 0 0 2px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.tag-section h3 + .tag-row {
+  margin-top: 0;
+}
+
+.tag-section .tag-row {
+  margin: 0 0 10px;
+}
+
+.tag-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tag-editor .tag-row {
+  margin: 0;
+}
+
+.tag-add {
+  display: flex;
+  gap: 6px;
+}
+
+.tag-add input {
+  flex: 1;
+}
+
+.tag-row.suggest {
+  align-items: center;
+}
+
+.thumb.placeholder {
+  background: linear-gradient(160deg, var(--accent-soft), #f7faf7 60%, var(--gold-soft));
+}
+
+.thumb.placeholder .thumb-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.14));
+}

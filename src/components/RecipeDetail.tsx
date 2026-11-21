@@ -4,6 +4,8 @@ import { localize } from '../lib/recipe';
 import type { Recipe } from '../types';
 import { MacroTiles } from './Macros';
 import { Thumb } from './Thumb';
+import { TagLinks } from './TagChips';
+import type { TagKind } from '../lib/tags';
 
 interface Props {
   r: Recipe;
@@ -11,6 +13,7 @@ interface Props {
   onBack: () => void;
   onEdit: () => void;
   onTag: (tag: string) => void;
+  onKindTag: (kind: TagKind, key: string) => void;
   onSetStatus: (s: Recipe['status']) => void;
 }
 
@@ -18,7 +21,7 @@ function NotTranslated({ show, lang }: { show: boolean; lang: Lang }) {
   return show ? <span className="nt-badge">{t('notTranslated', lang)}</span> : null;
 }
 
-export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onSetStatus }: Props) {
+export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetStatus }: Props) {
   const L = localize(r, lang);
   const showAuto = lang === 'es' && !r.es_reviewed && !L.titleFallback && Boolean(r.title_es);
   const meta: [string, string | null][] = [
@@ -43,7 +46,7 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onSetStatus }: Pr
 
       <div className="detail-grid">
         <div className="detail-media">
-          <Thumb url={r.thumbnail_url} alt={L.title} className="detail-thumb" />
+          <Thumb url={r.thumbnail_url} alt={L.title} className="detail-thumb" tags={r.ingredient_tags} />
           {r.fb_url && (
             <a className="btn primary full fb-btn" href={r.fb_url} target="_blank" rel="noopener noreferrer">
               ▶ {t('openOnFb', lang)} ↗
@@ -120,14 +123,33 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onSetStatus }: Pr
         )}
       </section>
 
-      {r.tags.length > 0 && (
-        <div className="tag-row">
-          {r.tags.map((tg) => (
-            <button type="button" key={tg} className="tag-chip" onClick={() => onTag(tg)}>
-              #{tagLabel(tg, lang)}
-            </button>
-          ))}
-        </div>
+      {(r.ingredient_tags.length > 0 || r.equipment_tags.length > 0 || r.tags.length > 0) && (
+        <section className="category detail-section tag-section">
+          {r.ingredient_tags.length > 0 && (
+            <>
+              <h3>{t('keyIngredients', lang)}</h3>
+              <TagLinks lang={lang} kind="ingredient" keys={r.ingredient_tags} onTap={(k) => onKindTag('ingredient', k)} />
+            </>
+          )}
+          {r.equipment_tags.length > 0 && (
+            <>
+              <h3>{t('equipmentMethod', lang)}</h3>
+              <TagLinks lang={lang} kind="equipment" keys={r.equipment_tags} onTap={(k) => onKindTag('equipment', k)} />
+            </>
+          )}
+          {r.tags.length > 0 && (
+            <>
+              <h3>{t('generalTags', lang)}</h3>
+              <div className="tag-row">
+                {r.tags.map((tg) => (
+                  <button type="button" key={tg} className="tag-chip" onClick={() => onTag(tg)}>
+                    #{tagLabel(tg, lang)}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </section>
       )}
 
       {r.notes && (

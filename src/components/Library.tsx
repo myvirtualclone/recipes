@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react';
 import type { Lang } from '../lib/i18n';
 import { t, tagLabel } from '../lib/i18n';
 import type { Filters, SortKey } from '../lib/recipe';
-import { activeFilterCount, allTags, applyFilters, EMPTY_FILTERS } from '../lib/recipe';
+import { activeFilterCount, allTags, applyFilters, EMPTY_FILTERS, tagCounts } from '../lib/recipe';
+import { TagFilterRow } from './TagChips';
 import type { Recipe } from '../types';
 import { COLLECTIONS } from '../types';
 import { RecipeCard } from './RecipeCard';
@@ -24,6 +25,9 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: P
   const tags = useMemo(() => allTags(recipes), [recipes]);
   const nActive = activeFilterCount(filters);
   const set = (patch: Partial<Filters>) => setFilters({ ...filters, ...patch });
+  const ingCounts = useMemo(() => tagCounts(results, 'ingredient'), [results]);
+  const eqCounts = useMemo(() => tagCounts(results, 'equipment'), [results]);
+  const toggle = (list: string[], k: string) => (list.includes(k) ? list.filter((x) => x !== k) : [...list, k]);
 
   return (
     <>
@@ -58,6 +62,25 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: P
           ⚙ {t('filters', lang)}
           {nActive > 0 && <i className="badge">{nActive}</i>}
         </button>
+      </div>
+      <div className="tagrows">
+        <TagFilterRow
+          lang={lang}
+          kind="ingredient"
+          counts={ingCounts}
+          selected={filters.ingTags}
+          onToggle={(k) => set({ ingTags: toggle(filters.ingTags, k) })}
+          onClear={() => set({ ingTags: [] })}
+        />
+        <TagFilterRow
+          lang={lang}
+          kind="equipment"
+          counts={eqCounts}
+          selected={filters.eqTags}
+          onToggle={(k) => set({ eqTags: toggle(filters.eqTags, k) })}
+          onClear={() => set({ eqTags: [] })}
+          initial={6}
+        />
       </div>
       <div className="lib-toolbar">
         <span className="muted">

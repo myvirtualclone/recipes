@@ -21,6 +21,8 @@ export interface Recipe {
   caption: string | null;
   collection: Collection | null;
   tags: string[];
+  ingredient_tags: string[];
+  equipment_tags: string[];
   fb_url: string | null;
   fb_post_id: string | null;
   thumbnail_url: string | null;
@@ -72,6 +74,8 @@ export function emptyRecipe(): Recipe {
     caption: null,
     collection: 'Cooking - SL',
     tags: [],
+    ingredient_tags: [],
+    equipment_tags: [],
     fb_url: null,
     fb_post_id: null,
     thumbnail_url: null,

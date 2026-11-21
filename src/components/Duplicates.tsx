@@ -31,7 +31,7 @@ export function Duplicates({ lang, groups, onOpen, onKeep }: Props) {
               return (
                 <div key={r.id} className="dupe-row">
                   <button type="button" className="review-main" onClick={() => onOpen(r.id)}>
-                    <Thumb url={r.thumbnail_url} alt={L.title} className="review-thumb" />
+                    <Thumb url={r.thumbnail_url} tags={r.ingredient_tags} alt={L.title} className="review-thumb" />
                     <div className="review-text">
                       <strong>{L.title}</strong>
                       <small className="muted">
