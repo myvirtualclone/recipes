@@ -121,6 +121,8 @@ export const REVIEW_REASONS = [
   'missing_steps',
   'non_en_es',
   'substitute',
+  'not_a_recipe',
+  'weak_title',
 ] as const;
 export type ReviewReason = (typeof REVIEW_REASONS)[number];
 

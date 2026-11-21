@@ -15,6 +15,7 @@ from variants import ingredient_variants as derive_variants
 
 APP = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 ROWS_DEFAULTS = [
+    "/workspace/recipes/capture/rows_v6.json",
     "/workspace/recipes/capture/rows_v5.json",
     "/workspace/recipes/capture/rows.json",
 ]
@@ -23,6 +24,9 @@ if not ROWS:
     ROWS = next((p for p in ROWS_DEFAULTS if os.path.exists(p)), ROWS_DEFAULTS[-1])
 CACHE = os.environ.get("ES_CACHE", "/workspace/recipes/meta/es_cache.json")
 THUMBS_IN = os.environ.get("THUMBS", "/workspace/recipes/capture/thumbs")
+THUMBS_HD = "/workspace/recipes/capture/thumbs_hd"
+NOT_RECIPE = {"SL-069", "SL-094", "CK-017", "SL-034"}
+FORCED_DUPES = [("SL-078", "SL-112"), ("SL-091", "SL-111")]
 OVERRIDES_PATH = os.path.join(APP, "scripts/es_overrides.json")
 OUT = os.path.join(APP, "public/seed/recipes.json")
 
@@ -55,7 +59,7 @@ TITLE_FIXES = {
 }
 
 # Recipes whose source language is not English or Spanish (even if some fields were rewritten).
-NON_EN_ES_IDS = {"SL-077", "SL-088"}
+NON_EN_ES_IDS = set()  # v6 gave English (or ES Notes) for former foreign rows
 
 CJK = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af\u0400-\u04ff]")
 ITALIAN = re.compile(
@@ -190,7 +194,13 @@ def parse_source(raw):
         types.append("creator_page")
     if "equivalent recipe" in low:
         types.append("equivalent_recipe")
-    is_sub = "equivalent_recipe" in types
+    if re.search(r"\bsubstitute\b", low):
+        types.append("substitute")
+    if "post description" in low:
+        types.append("post_description")
+    if re.search(r"\bvideo\b", low) and "video_text" not in types:
+        types.append("video")
+    is_sub = "equivalent_recipe" in types or "substitute" in types
     if not types:
         return s, is_sub
     return ", ".join(types), is_sub
@@ -330,13 +340,16 @@ for row in rows:
     mb, servings = basis(row.get("Macros Basis"), (row.get("Servings") or "").strip() or None)
     thumb = None
     src_thumb = os.path.join(THUMBS_IN, f"{pid}.jpg")
+    hd = os.path.join(THUMBS_HD, f"{code}.jpg")
+    if os.path.exists(hd) and os.path.getsize(hd) > 2000:
+        src_thumb = hd
     if os.path.exists(src_thumb) and os.path.getsize(src_thumb) > 2000:
         dst = os.path.join(APP, "public/thumbs", f"{code.lower()}.jpg")
         try:
             from PIL import Image
             im = Image.open(src_thumb).convert("RGB")
-            im.thumbnail((480, 480))
-            im.save(dst, quality=82)
+            im.thumbnail((600, 1100))
+            im.save(dst, quality=80, optimize=True, progressive=True)
         except Exception:
             shutil.copy(src_thumb, dst)
         thumb = f"thumbs/{code.lower()}.jpg"
@@ -402,9 +415,9 @@ for row in rows:
     # Apply reviewed Colombian Spanish overrides (persist across rebuilds).
     ov = overrides.get(code) or {}
     if ov:
-        if "title_es" in ov:
+        if "title_es" in ov and (ov.get("src_title") is None or ov.get("src_title") == title_src):
             rec["title_es"] = ov["title_es"]
-        if "title_en" in ov and ov["title_en"]:
+        if ov.get("title_en") and (ov.get("src_title") is None or ov.get("src_title") == title_src):
             rec["title_en"] = ov["title_en"]
         if "ingredients_es" in ov:
             rec["ingredients_es"] = ov["ingredients_es"]
@@ -448,6 +461,10 @@ def compute_review_reasons(all_recipes):
                 title_dupes.add(a["id"])
                 title_dupes.add(b["id"])
 
+    by_code = {r["code"]: r for r in all_recipes}
+    for a, b in FORCED_DUPES:
+        if a in by_code and b in by_code:
+            title_dupes.add(by_code[a]["id"]); title_dupes.add(by_code[b]["id"])
     for r in all_recipes:
         reasons = []
         has_title = bool((r.get("title_en") or r.get("title_es") or "").strip())
@@ -459,10 +476,12 @@ def compute_review_reasons(all_recipes):
             reasons.append("missing_ingredients")
         if not has_steps:
             reasons.append("missing_steps")
-        if r["code"] in NON_EN_ES_IDS or looks_foreign(r["code"], r.get("title_en") or r.get("title_es") or "", r.get("ingredients_en") or r.get("ingredients_es") or [], r.get("steps_en") or r.get("steps_es") or [], r.get("caption")):
+        if r["code"] in NON_EN_ES_IDS or looks_foreign(r["code"], r.get("title_en") or "", r.get("ingredients_en") or [], r.get("steps_en") or [], ""):
             if "non_en_es" not in reasons:
                 reasons.append("non_en_es")
-        if r["code"] in WEAK_TITLES:
+        if r["code"] in NOT_RECIPE:
+            reasons.append("not_a_recipe")
+        if r["code"] in WEAK_TITLES and "v6: Original title" not in (r.get("notes") or ""):
             reasons.append("weak_title")
         if r.get("is_substitute"):
             reasons.append("substitute")

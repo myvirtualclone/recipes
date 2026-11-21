@@ -15,10 +15,12 @@
    "Vierta en un ramequín y mezcle algunas chispas de chocolate en el centro, para el centro de lava.",
    "Cubra con el resto de las chispas de chocolate y hornee a 175 °C (350 °F) por 20-30 minutos. Sáquelo, deje enfriar y disfrute."
   ],
-  "es_reviewed": true
+  "es_reviewed": true,
+  "src_title": "Healthy Fudgy Protein Brownie"
  },
  "SL-002": {
   "es_reviewed": true,
+  "src_title": "Baked Camembert",
   "title_es": "Camembert al horno",
   "ingredients_es": [
    "Camembert",
@@ -38,6 +40,7 @@
  },
  "SL-003": {
   "es_reviewed": true,
+  "src_title": "3 Bacon Cheeseburgers",
   "title_es": "3 hamburguesas con queso y tocineta",
   "ingredients_es": [
    "3 Bettergoods keto bollos: 150 cal 21g de proteína",
@@ -61,6 +64,7 @@
  },
  "SL-004": {
   "es_reviewed": true,
+  "src_title": "Ham Cheddar & Chive Biscuits",
   "title_es": "Biscuits de jamón, cheddar y cebollín",
   "ingredients_es": [
    "1 taza 2% queso cottage",
@@ -89,6 +93,7 @@
  },
  "SL-005": {
   "es_reviewed": true,
+  "src_title": "Cheeseburger Cloud Bread Pizza",
   "title_es": "Pizza de pan nube estilo hamburguesa con queso",
   "ingredients_es": [
    "6 grandes claras de huevo",
@@ -110,6 +115,7 @@
  },
  "SL-006": {
   "es_reviewed": true,
+  "src_title": "Creamy Cabbage Pasta",
   "title_es": "Pasta cremosa de repollo",
   "ingredients_es": [
    "Cabeza pequeña de repollo - 280g (aprox. 1 cabeza pequeña), cortada como se ve en el vídeo",
@@ -131,6 +137,7 @@
  },
  "SL-007": {
   "es_reviewed": true,
+  "src_title": "Healthy Sweet Potato Chicken Nuggets",
   "title_es": "Nuggets de pollo y batata saludables",
   "ingredients_es": [
    "200g de puré de batata",
@@ -150,6 +157,7 @@
  },
  "SL-008": {
   "es_reviewed": true,
+  "src_title": "10 Min BBQ Chicken Pizza",
   "title_es": "Pizza de pollo BBQ en 10 minutos",
   "ingredients_es": [
    "1 pan plano (Usé una tortilla de carbohidratos bajos)",
@@ -165,6 +173,7 @@
  },
  "SL-009": {
   "es_reviewed": true,
+  "src_title": "Potato Smashburger Tacos",
   "title_es": "Tacos smashburger de papa",
   "ingredients_es": [
    "Â € € TM TM",
@@ -181,10 +190,23 @@
    "1/2 cucharadita de ajo en polvo",
    "1/2 cucharadita de pimentón Sal + pimienta negra, al gusto Para Topping Encurtidos picados Cebolla finamente picada INSTRUCCIONES",
    "Precaliente el horno a 400F y 2 bandejas para hornear con papel pergamino. Rocíe ligeramente con spray antiadherente para cocinar. Añada la papa rallada a una toalla de cocina o toallas de papel y exprimir el exceso de humedad como sea posible. ¡No te saltes esto si quieres CRISPY shells! Agregue la papa, los huevos, la mozzarella, el almidón de maíz y la sal a un tazón grande. Mezcle hasta que esté completamente combinado. Divida la mezcla en 8 porciones iguales en su bandeja de hornear preparada. Presione cada porción en un círculo muy delgado y uniforme. Hornee durante unos 20-25 minutos, o hasta que se dore profundamente alrededor de los bordes y lo suficientemente firme como para levantar fácilmente del pergamino. Si es necesario, dales unos minutos extras, quieres estos CRISPY. Mientras las conchas se cocinan, sazona tu carne molida generosamente con condimento para hamburguesas. Una vez cocidas las cáscaras de papa, añadir aproximadamente 2 onzas de carne molida cruda a la parte superior de cada cáscara y presionarla en una capa muy delgada, uniforme que cubra casi toda la cáscara. Calentar una sartén grande a fuego med-alto y rociar ligeramente con aerosol de cocción antiadherente. Coloque cada taco BEEF LADO abajo en la sartén caliente. Presione firmemente con una espátula y cocine hasta que la carne de res desarrolle una corteza crujiente y dorada de puré de hamburguesa y esté completamente cocida. Unos 2 minutos. Mezcle todos los ingredientes de la salsa en un tazón. Cubra cada taco de hamburguesa con salsa de hamburguesa, encurtidos picados y cebollas finamente picadas. Doblar 'em arriba y disfruter."
+  ],
+  "steps_es": [
+   "Precaliente el horno a 400 °F y alinea 2 bandejas para hornear con pergamino; rocía ligeramente con spray antiadherente.",
+   "Exprimir la mayor cantidad de humedad posible de la papa rallada con una toalla de cocina (no te saltes esto si quieres cáscaras crujientes).",
+   "Mezcle la papa, los huevos, la mozzarella, el almidón de maíz y la sal en un tazón grande hasta que se combine completamente.",
+   "Dividir en 8 porciones iguales en las hojas y presionar cada uno en un círculo muy delgado, incluso.",
+   "Hornee de 20 a 25 minutos, hasta que estén profundamente dorados en los bordes y lo suficientemente firmes como para levantarlos; dales unos minutos adicionales si es necesario.",
+   "Mientras tanto, sazone la carne generosamente con condimento de hamburguesas.",
+   "Presione aproximadamente 2 oz de carne cruda en cada cáscara al horno en una capa muy delgada que cubra casi toda la cáscara.",
+   "Caliente una sartén grande sobre medio-alto, rocíe ligeramente, y cocine cada lado de la carne de taco hacia abajo, presionando firmemente, unos 2 minutos hasta que esté crujiente y cocido a través.",
+   "Mezcle los ingredientes de la salsa.",
+   "Cubra cada taco con salsa, encurtidos picados y cebolla; doble y sirva."
   ]
  },
  "SL-010": {
   "es_reviewed": true,
+  "src_title": "Massive Oreo Frozen Yogurt Cookie",
   "title_es": "Galleta enorme de yogur congelado y Oreo",
   "ingredients_es": [
    "2 galletas de arroz, trituradas",
@@ -206,6 +228,7 @@
  },
  "SL-011": {
   "es_reviewed": true,
+  "src_title": "Chicken Bread",
   "title_es": "Pan de pollo",
   "ingredients_es": [
    "266 g pechuga de pollo enlatada, drenada",
@@ -221,6 +244,7 @@
  },
  "SL-012": {
   "es_reviewed": true,
+  "src_title": "Mediterranean Chicken Poppers",
   "title_es": "Poppers de pollo mediterráneos",
   "ingredients_es": [
    "448 g 92/8 pollo molido",
@@ -247,6 +271,7 @@
  },
  "SL-013": {
   "es_reviewed": true,
+  "src_title": "Jellogurt",
   "title_es": "Jellogurt",
   "ingredients_es": [
    "1 paquete de pistacho sin azúcar Jell-O",
@@ -262,7 +287,8 @@
  },
  "SL-014": {
   "es_reviewed": true,
-  "title_es": "El único tiramisú",
+  "src_title": "High-Protein Chia Tiramisu Yogurt",
+  "title_es": "Tiramisú de yogur con chía, alto en proteína",
   "ingredients_es": [
    "1 taza de yogur griego",
    "2 cucharadas de semillas de chía",
@@ -278,7 +304,8 @@
  },
  "SL-015": {
   "es_reviewed": true,
-  "title_es": "Salmón crujiente con limón y feta",
+  "src_title": "Crispy Lemon Feta Rice Paper Salmon",
+  "title_es": "Salmón crujiente en papel de arroz con limón y feta",
   "ingredients_es": [
    "2 filetes de salmón sin piel (aprox. 120-150g cada uno)",
    "2 hojas de papel de arroz 1 huevo, bien batido",
@@ -299,7 +326,8 @@
  },
  "SL-016": {
   "es_reviewed": true,
-  "title_es": "Huevos para el mejor desayuno",
+  "src_title": "Soy-Cured Egg Yolks on Cottage Cheese",
+  "title_es": "Yemas curadas en soya sobre queso cottage",
   "ingredients_es": [
    "1 cucharadita de jengibre recién rallado 4 yemas de huevo @clarence_court"
   ],
@@ -310,6 +338,7 @@
  },
  "SL-017": {
   "es_reviewed": true,
+  "src_title": "Chicken Gyro Zucchini Roll",
   "title_es": "Rollo de zucchini estilo gyro de pollo",
   "ingredients_es": [
    "1 lb de pechuga de pollo precocinada rollo de Zucchini:",
@@ -334,6 +363,7 @@
  },
  "SL-018": {
   "es_reviewed": true,
+  "src_title": "3 Ingredient Chocolate Mousse",
   "title_es": "Mousse de chocolate de 3 ingredientes",
   "ingredients_es": [
    "Mousse de chocolate Esta receta ha sido enviada a mí innumerables veces, y debo admitir, el resultado genuinamente me pilló por sorpresa Ingredientes, 1 gran servir",
@@ -351,15 +381,25 @@
  },
  "SL-019": {
   "es_reviewed": true,
-  "title_es": "Cheesecake de Oreo de 390 calorías",
+  "src_title": "390-Calorie Oreo Cheesecake Bowl",
+  "title_es": "Bowl de cheesecake de Oreo de 390 calorías",
   "ingredients_es": [
    "(1 porción)",
    "150g 0% yogur griego",
    "40g Philadelphia Queso crema ligera..."
+  ],
+  "steps_es": [
+   "Mezcle el yogur griego, queso crema ablandado, vainilla, edulcorante y sal hasta que esté suave.",
+   "Romper un Oreo Thin por la mitad, mojar brevemente cada mitad en leche y coloque en el fondo de un tazón; repetir con un segundo Oreo.",
+   "Esparza la mitad de la mezcla de tarta de queso sobre las galletas.",
+   "Repita con 2 Oreos más (rotura, inmersión, capa), luego la mezcla restante de tarta de queso.",
+   "Derriba los últimos 2 Oreos en la parte superior.",
+   "Refrigerar al menos 4 horas, idealmente durante la noche."
   ]
  },
  "SL-020": {
   "es_reviewed": true,
+  "src_title": "Healthy High Protein Avocado Bread",
   "title_es": "Pan de aguacate saludable y alto en proteína",
   "ingredients_es": [
    "1/2 aguacate, puré",
@@ -375,6 +415,7 @@
  },
  "SL-021": {
   "es_reviewed": true,
+  "src_title": "Homemade Labneh",
   "title_es": "Labneh casero",
   "ingredients_es": [
    "500 g 5% yogur griego orgánico",
@@ -390,6 +431,7 @@
  },
  "SL-022": {
   "es_reviewed": true,
+  "src_title": "Cottage Cheese Everything Bagels",
   "title_es": "Bagels de queso cottage con everything seasoning",
   "ingredients_es": [
    "1 taza (240g) de queso cottage mezclado",
@@ -406,6 +448,7 @@
  },
  "SL-023": {
   "es_reviewed": true,
+  "src_title": "High Protein Tomato Soup",
   "title_es": "Sopa de tomate alta en proteína",
   "ingredients_es": [
    "200 g de tomates en conserva",
@@ -425,14 +468,22 @@
  },
  "SL-024": {
   "es_reviewed": true,
-  "title_es": "Pudín de banano alto en proteína",
+  "src_title": "High-Protein Banana Pudding in the Yogurt Tub",
+  "title_es": "Pudín de banano alto en proteína, en el mismo envase del yogur",
   "ingredients_es": [
    "1 envase de Yogur griego de su elección",
    "1 paquete de pudín Jell-O sin azúcar 20 obleas de vainilla Opcional: Crema batida sin grasa"
+  ],
+  "steps_es": [
+   "Vacíe la envase de yogur griego en un tazón.",
+   "Agregue todo el paquete de mezcla de pudín de banano sin azúcar y revuelva hasta que esté suave.",
+   "Cubra la mezcla de nuevo en la envase de yogur, añadiendo las 20 obleas de vainilla a medida que vayas.",
+   "Cubra con crema batida sin grasa si lo desea; enfríe o coma de inmediato."
   ]
  },
  "SL-025": {
   "es_reviewed": true,
+  "src_title": "Viral 2-Ingredient Japanese Cheesecake Hack (Yogurt + Biscoff)",
   "title_es": "Truco viral de cheesecake japonés de 2 ingredientes (yogur y Biscoff)",
   "ingredients_es": [
    "1 envase de yogur griego grueso (plano o vainilla; más grasa funciona mejor)",
@@ -448,14 +499,21 @@
  },
  "SL-026": {
   "es_reviewed": true,
+  "src_title": "Cottage Cheese Mac & Cheese",
   "title_es": "Mac and cheese de queso cottage",
   "ingredients_es": [
    "1 caja Mac y queso (cualquiera)",
    "1/2 pequeño recipiente de queso cottage, mezclado (0% ahorra más cals y 2% ahorra cals y tiene más sabor) Haga el mac & queso según las instrucciones de la caja. Saltar la mantequilla y la leche, y simplemente mezclar en el queso cottage seguido por el paquete de queso incluido en la caja."
+  ],
+  "steps_es": [
+   "Cocine la pasta de macarrones y queso según las instrucciones de la caja.",
+   "Saltar la mantequilla y la leche; en su lugar, revuelva el queso cottage mezclado.",
+   "Agregue el paquete de queso de la caja y servir."
   ]
  },
  "SL-027": {
   "es_reviewed": true,
+  "src_title": "High-Protein Dirty Daddy Tiramisu (60-second breakfast)",
   "title_es": "Tiramisú Dirty Daddy alto en proteína (desayuno en 60 segundos)",
   "ingredients_es": [
    "2 disparos de expreso",
@@ -472,6 +530,7 @@
  },
  "SL-028": {
   "es_reviewed": true,
+  "src_title": "Invisible Apple Dessert",
   "title_es": "Postre invisible de manzana",
   "ingredients_es": [
    "2 manzanas peladas y cortadas en rodajas delgadas",
@@ -488,15 +547,23 @@
  },
  "SL-029": {
   "es_reviewed": true,
-  "title_es": "Pie de manzana al revés",
+  "src_title": "Upside-Down Apple Pie Yogurt Bowl",
+  "title_es": "Bowl de yogur estilo pie de manzana al revés",
   "ingredients_es": [
    "300g Oikos Triple Zero vainilla",
    "1/2 c Relleno de pastel de manzana sin azúcar",
    "3 cucharadas Girar el azúcar moreno sustituyéndolo 1 Keebler mini Galleta Graham Cubre una toalla de papel o un paño de queso sobre un tamiz y agrega yogur. Cubra completamente y agregue un pequeño peso (por ejemplo, taza pesada) a la parte superior y ponga en la nevera durante la noche. Una vez que el yogur esté listo, agrega el relleno de tarta de manzana a un tazón de microondas y microondas durante 30-60 segundos hasta que esté caliente. Luego, revuelva el sustituto de azúcar morena y vierta sobre el yogur. Derribar una mini corteza de galleta graham y espolvorear sobre la parte superior y servir."
+  ],
+  "steps_es": [
+   "Coloque un tamiz con una toalla de papel o un paño de queso, agregue el yogur, cúbralo, péselo (por ejemplo, una taza pesada) y colar en la nevera durante la noche.",
+   "Microonda el pastel de manzana llenando 30-60 segundos hasta que se caliente.",
+   "Agregue el sustituto de azúcar morena y vierta sobre el yogur colado.",
+   "Desmenuzar la corteza de la mini galleta graham sobre la parte superior y servir."
   ]
  },
  "SL-030": {
   "es_reviewed": true,
+  "src_title": "Lemon Cake",
   "title_es": "Ponqué de limón",
   "ingredients_es": [
    "Rinde 8 porciones. Para el ponqué:",
@@ -526,6 +593,7 @@
  },
  "SL-031": {
   "es_reviewed": true,
+  "src_title": "High-Protein Peanut Butter",
   "title_es": "Mantequilla de maní alta en proteína",
   "ingredients_es": [
    "Tarjeta SÍGUENOS @BakedLean para más hacks receta como este!",
@@ -543,6 +611,7 @@
  },
  "SL-032": {
   "es_reviewed": true,
+  "src_title": "Oreo McFlurry Protein Dip",
   "title_es": "Dip proteico estilo Oreo McFlurry",
   "ingredients_es": [
    "Dip",
@@ -563,6 +632,7 @@
  },
  "SL-033": {
   "es_reviewed": true,
+  "src_title": "High Protein Peanut Butter Brownie Batter",
   "title_es": "Masa de brownie de mantequilla de maní alta en proteína",
   "ingredients_es": [
    "16 oz de queso cottage Usé 2% Buena Cultura",
@@ -585,7 +655,8 @@
  },
  "SL-034": {
   "es_reviewed": true,
-  "title_es": "Recetario de batata (promo)",
+  "src_title": "Max Brady Sweet Potato Cookbook Promo (not a recipe)",
+  "title_es": "Promo del recetario de batata de Max Brady (no es una receta)",
   "ingredients_es": [
    "De cualquier supermercado",
    "Recetas exclusivas que usted no encontrará en mis sociales Nuevas recetas añadidas para ningún costo extra",
@@ -595,6 +666,7 @@
  },
  "SL-035": {
   "es_reviewed": true,
+  "src_title": "Pumpkin Greek Yogurt",
   "title_es": "Yogur griego de ahuyama",
   "ingredients_es": [
    "170g Fage 0% yogur griego",
@@ -613,15 +685,22 @@
  },
  "SL-036": {
   "es_reviewed": true,
-  "title_es": "Pudín de cheesecake de yogur griego",
+  "src_title": "2-Ingredient Greek Yogurt Cheesecake Pudding",
+  "title_es": "Pudín de cheesecake de yogur griego de 2 ingredientes",
   "ingredients_es": [
    "1 contenedor Fage 0% yogur griego",
    "1 paquete de pastel de queso sabor sin azúcar jalea-O pudín"
+  ],
+  "steps_es": [
+   "Vacíe la caja entera de la mezcla de pastel de queso sin azúcar en el recipiente de Fage 0% yogur griego.",
+   "Mezcle bien.",
+   "Comer (unas 5 porciones usando el tamaño de la porción de la envase de yogur, o todo)."
   ]
  },
  "SL-037": {
   "es_reviewed": true,
-  "title_es": "Ingredientes y macros",
+  "src_title": "Oreo Protein Ice Cream (Ninja Creami)",
+  "title_es": "Helado proteico de Oreo (Ninja Creami)",
   "ingredients_es": [
    "",
    "@ejercicio4creatmeals Ingredientes Leche húmeda 410g sin grasa 1 Oreo",
@@ -631,21 +710,35 @@
    "4g de cacao negro en polvo.5g de sal.5g de goma xantana Mezclados 2 Oreos, congelados 1 Oreo, picados Calorías de helado Oreo: 512 Grasa: 12g de carbohidratos:",
    "61g Carburos netos: 51g Proteína:",
    "49g"
+  ],
+  "steps_es": [
+   "Mezcle los ingredientes húmedos y secos hasta que estén suaves y verter en una pinta Ninja Creami.",
+   "Quieto durante la noche.",
+   "Gire el helado de Lite.",
+   "Agregue las mix-ins de Oreo y ejecute el ciclo de Mix-In."
   ]
  },
  "SL-038": {
   "es_reviewed": true,
-  "title_es": "Huevo congelado frito",
+  "src_title": "Fried Frozen Eggs in Soy-Oyster Sauce",
+  "title_es": "Huevos congelados fritos en salsa de soya y ostras",
   "ingredients_es": [
    "4 huevos congelados",
    "2 cucharadas de salsa de soja ligera",
    "1 tosp de salsa de ostras",
    "1 cucharada de vinagre negro",
    "1 tos de azúcar"
+  ],
+  "steps_es": [
+   "Pelar los huevos congelados y cortarlos en rodajas gruesas mientras estén congelados.",
+   "Freír las rodajas en un poco de aceite hasta que las blancas se pongan, volteando una vez.",
+   "Agregue la salsa de soja, la salsa de ostras, el vinagre negro y el azúcar y deja que se burbujee y recubre los huevos.",
+   "Añada chile tailandés y cebolla de resorte, espolvorear con semillas de sésamo y servir."
   ]
  },
  "SL-039": {
   "es_reviewed": true,
+  "src_title": "High-Protein Chocolate Rice Cake Bars",
   "title_es": "Barras de galleta de arroz con chocolate, altas en proteína",
   "ingredients_es": [
    "3 galletas de arroz",
@@ -664,14 +757,23 @@
  },
  "SL-040": {
   "es_reviewed": true,
-  "title_es": "Galletas carnívoras",
+  "src_title": "Zero-Carb Carnivore Chocolate Chip Cookies",
+  "title_es": "Galletas carnívoras con chispas de chocolate, cero carbohidratos",
   "ingredients_es": [
    "93 Grasa",
    "4g de azúcar"
+  ],
+  "steps_es": [
+   "Precaliente el horno a 350°F.",
+   "Mezcle los ingredientes básicos (y edulcorantes, si se utilizan) hasta que no haya grumos.",
+   "Transfiera a un tazón, revuelva las chispas de chocolate y congele la masa 30 minutos para espesar.",
+   "Scoop en una sábana forrada de pergaminos, dejando espacio para extender.",
+   "Hornee de 12 a 16 minutos. Dejar enfriar completamente antes de tocarlos o quitarlos."
   ]
  },
  "SL-041": {
   "es_reviewed": true,
+  "src_title": "OG Chicken Crust Pizza",
   "title_es": "Pizza con masa de pollo (la original)",
   "ingredients_es": [
    "Crust:",
@@ -695,6 +797,7 @@
  },
  "SL-042": {
   "es_reviewed": true,
+  "src_title": "Chocolate Mud Cake Protein Shake",
   "title_es": "Batido proteico de chocolate estilo mud cake",
   "ingredients_es": [
    "Rinde 1 MASSIVE shake",
@@ -721,6 +824,7 @@
  },
  "SL-043": {
   "es_reviewed": true,
+  "src_title": "Healthy Chocolate Brownie Overnight Oats",
   "title_es": "Avena overnight de brownie de chocolate saludable",
   "ingredients_es": [
    "1/2 taza de yogur griego sin grasa, simplemente",
@@ -736,11 +840,18 @@
    "3 cucharadas de agua hirviendo",
    "1 cucharada de edulcorante",
    "1/4 cucharaditas de extracto de vainilla - ¡Agregue cualquier complemento adicional como nueces, granola o frutas!"
+  ],
+  "steps_es": [
+   "Mezcle el yogur griego, la leche, el cacao, la avena, el edulcorante, la sal y la proteína en polvo (más arándanos, si se utilizan) hasta que esté espeso.",
+   "Para el ganache, mezclar el cacao en polvo, el agua hirviendo, el edulcorante y la vainilla en una salsa de chocolate suave.",
+   "Extender el ganach sobre la avena, tapar y refrigerar durante la noche.",
+   "Agregue tapas y coma frío."
   ]
  },
  "SL-044": {
   "es_reviewed": true,
-  "title_es": "Barras crujientes de galleta de arroz",
+  "src_title": "4-Ingredient Rice Cake Crunch Bars",
+  "title_es": "Barras crujientes de galleta de arroz con 4 ingredientes",
   "ingredients_es": [
    "Y son tan buenos directamente desde la nevera o el congelador. Guarda esto para cuando el dulce antojo golpea 4-Ingredientes Arroz Pastel Crunch Bars Hace aprox. 12 piezas Ingredientes 5 galletas de arroz, rotas en trozos pequeños",
    "1⁄2 taza de mantequilla de maní suave",
@@ -757,6 +868,7 @@
  },
  "SL-045": {
   "es_reviewed": true,
+  "src_title": "Chocolate Chip Protein Cloud Bread (whole pan)",
   "title_es": "Pan nube proteico con chispas de chocolate (bandeja completa)",
   "ingredients_es": [
    "Claras de huevo — 230 g claras de huevo líquidas (del equivalente; el poste no indica una cantidad)",
@@ -773,6 +885,7 @@
  },
  "SL-046": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Empanadas",
   "title_es": "Empanadas de batata",
   "ingredients_es": [
    "1 batata mediana",
@@ -797,6 +910,7 @@
  },
  "SL-047": {
   "es_reviewed": true,
+  "src_title": "High Protein Kinder Biscuit Dessert",
   "title_es": "Postre de galleta Kinder alto en proteína",
   "ingredients_es": [
    "250g de Skyr o 0% de yogur griego",
@@ -815,15 +929,23 @@
  },
  "SL-048": {
   "es_reviewed": true,
-  "title_es": "Carne molida con queso cottage",
+  "src_title": "30-Second Cottage Cheese & Ground Beef Protein Bowl",
+  "title_es": "Bowl proteico de queso cottage y carne molida en 30 segundos",
   "ingredients_es": [
    "180g 97% de carne molida magra",
    "200g de queso cottage bajo en grasa",
    "2 cucharaditas de aminos de coco (o tamari) - Opcional: tirar un poco de kimchi para probióticos ** En realidad tiro 1/4 de aguacate después también. 10000/10000 Guardar esto para cuando usted tiene apenas cualquier comestibles... usted se dará las gracias"
+  ],
+  "steps_es": [
+   "Agregue el queso cottage a un tazón como base.",
+   "Cubra con la carne molida magra cocida (las sobras funcionan).",
+   "Añada los aminos de coco y mezclar.",
+   "Cubra con kimchi (y aguacate si lo desea)."
   ]
  },
  "SL-049": {
   "es_reviewed": true,
+  "src_title": "One Dish Air Fryer Fajita Chicken Bake",
   "title_es": "Pollo fajita al horno en la freidora de aire, en un solo recipiente",
   "ingredients_es": [
    "Rinde 4",
@@ -841,6 +963,7 @@
  },
  "SL-050": {
   "es_reviewed": true,
+  "src_title": "Egg White Oatmeal (flavorless protein boost)",
   "title_es": "Avena con claras de huevo (plus de proteína sin sabor)",
   "ingredients_es": [
    "Avena (avena + líquido de cocción — cantidad no indicada en el vídeo)",
@@ -859,6 +982,7 @@
  },
  "SL-051": {
   "es_reviewed": true,
+  "src_title": "Crispy High Protein Chicken Nuggets",
   "title_es": "Nuggets de pollo crujientes y altos en proteína",
   "ingredients_es": [
    "11⁄2 libras de pechuga de pollo cruda, en cubitos",
@@ -870,10 +994,17 @@
    "1 cucharadita de sal",
    "1⁄2 cucharaditas de pimienta negra",
    "2 tazas de copos de maíz triturados Por pepita 94 calorías 14g de proteína 5g de carbohidratos 2g de grasa"
+  ],
+  "steps_es": [
+   "Mezcle el pollo, el huevo, el ajo y los condimentos en una licuadora o procesador de alimentos.",
+   "Formar unas 12 nuggets.",
+   "Sumérgete en los copos de maíz triturados para cubrirte.",
+   "Rocíe con spray para cocinar y cocine en la freidora de aire a 390°F durante 8-10 minutos."
   ]
  },
  "SL-052": {
   "es_reviewed": true,
+  "src_title": "Chocolate Banana Ice Cream",
   "title_es": "Helado de banano y chocolate",
   "ingredients_es": [
    "Rinde 1 serve",
@@ -890,6 +1021,7 @@
  },
  "SL-053": {
   "es_reviewed": true,
+  "src_title": "Big Protein Cookies",
   "title_es": "Galletas grandes altas en proteína",
   "ingredients_es": [
    "3 galletas de arroz",
@@ -901,6 +1033,7 @@
  },
  "SL-054": {
   "es_reviewed": true,
+  "src_title": "SMASH Double Cheeseburger",
   "title_es": "Smash burger doble con queso",
   "ingredients_es": [
    "A una licuadora a excepción de los encurtidos cortados. Mezcle hasta que esté suave. Doble tus encurtidos en cubitos.",
@@ -927,7 +1060,8 @@
  },
  "SL-055": {
   "es_reviewed": true,
-  "title_es": "Avena estilo Snickers alta en proteína",
+  "src_title": "High-Protein Snickers Baked Oats",
+  "title_es": "Avena al horno estilo Snickers, alta en proteína",
   "ingredients_es": [
    "Para la Base",
    "Plátano maduro, 100 a 120 g",
@@ -955,15 +1089,26 @@
  },
  "SL-056": {
   "es_reviewed": true,
+  "src_title": "No-Bake Carrot Cake Protein Bars",
   "title_es": "Barras proteicas de ponqué de zanahoria sin hornear",
   "ingredients_es": [
    "Galletas de arroz",
    "Avena",
    "Yoghurt griego"
+  ],
+  "steps_es": [
+   "Línea de un molde de 7x5 pulgadas con pergamino.",
+   "Pulsar la avena en un procesador de alimentos hasta que parezcan harina gruesa.",
+   "Añada la zanahoria, polvo de proteínas, mantequilla de nuez, jarabe de arce, especias, vainilla y sal y procesar en una masa ligeramente pegajosa (añadir de 1 a 2 cucharaditas de leche si es necesario).",
+   "Presione en la sartén.",
+   "Mezcle los ingredientes de glaseado hasta que estén suaves y se esparzan sobre la base.",
+   "Enfríe de 1 a 2 horas hasta que esté firme, luego rebana en 8 a 10 barras.",
+   "(Para coincidir con la versión de Ben, presione una capa de galletas de arroz triturado en la sartén primero como base crujiente.)"
   ]
  },
  "SL-057": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Donuts",
   "title_es": "Donas de batata",
   "ingredients_es": [
    "¿Por qué comprar donuts procesados cuando se puede hacer estos golosinas base esponjosa, 3-ingrediente en casa? La receta:",
@@ -980,7 +1125,8 @@
  },
  "SL-058": {
   "es_reviewed": true,
-  "title_es": "Cereal de batata",
+  "src_title": "Crunchy Sweet Potato Oat Cereal Clusters",
+  "title_es": "Cereal crocante de batata y avena",
   "ingredients_es": [
    "Y ridículamente fácil. Usted necesitará:",
    "260g de batata cocida",
@@ -988,10 +1134,18 @@
    "20g de mantequilla derretida",
    "60g de miel",
    "1 cucharada de vainilla Pizca de sal Aquí está cómo: Machacar la batata hasta que esté suave. Mezcle con avena, mantequilla, miel de 40 g, vainilla + sal. Presione firmemente en una bandeja forrada y hornee a 180°C durante 20-25 minutos. Sepáralo en racimos gruesos, rocíe sobre la miel restante y vuelva a colocarla durante 15-25 minutos hasta que esté dorada + crujiente. Un poco importante: dejar que se enfríe por completo. Eso es cuando se pone correctamente CRUNCHY. Añada leche. Añada yogur. Agregue fruta. O simplemente cómelo por el puñado directamente de la bandeja. • Guarda esto para más tarde •"
+  ],
+  "steps_es": [
+   "Machacar la batata hasta que esté suave.",
+   "Mezcle con la avena, mantequilla, 40 g de miel, vainilla y sal.",
+   "Presione firmemente en una bandeja forrada y hornee a 180°C durante 20-25 minutos.",
+   "Romper en racimos gruesos, rociar con la miel restante y hornee otros 15–25 minutos hasta que estén dorados y crujientes.",
+   "Deje enfriar completamente (es cuando se pone crujiente). Sirva con leche, yogur o fruta."
   ]
  },
  "SL-059": {
   "es_reviewed": true,
+  "src_title": "2-Ingredient Healthy Spinach Wrap",
   "title_es": "Wrap saludable de espinaca de 2 ingredientes",
   "ingredients_es": [
    "Envolver espinaca saludable #GoodFoodsPartner Recipe",
@@ -1009,7 +1163,8 @@
  },
  "SL-060": {
   "es_reviewed": true,
-  "title_es": "Súper crujiente",
+  "src_title": "Crispy Rice Paper Breakfast Dippers",
+  "title_es": "Palitos crujientes de papel de arroz para el desayuno",
   "ingredients_es": [
    "(hace 12): 12 Envoltorios de papel de arroz (1 envase)",
    "400g Total batidores de huevos (300g de relleno + 100g de inmersión)",
@@ -1033,6 +1188,7 @@
  },
  "SL-061": {
   "es_reviewed": true,
+  "src_title": "10-Minute Air Fryer Steak",
   "title_es": "Filete en freidora de aire en 10 minutos",
   "ingredients_es": [
    "1 libra de filete, en cubitos 1 batata, de piel y en cubitos",
@@ -1051,6 +1207,7 @@
  },
  "SL-062": {
   "es_reviewed": true,
+  "src_title": "Parmesan Smashed Carrot Chips",
   "title_es": "Chips de zanahoria aplastada con parmesano",
   "ingredients_es": [
    "16 onzas de zanahorias bebé",
@@ -1073,6 +1230,7 @@
  },
  "SL-063": {
   "es_reviewed": true,
+  "src_title": "10-Minute Protein Pizzadilla",
   "title_es": "Pizzadilla proteica en 10 minutos",
   "ingredients_es": [
    "50g de bajo contenido de grasa mozz",
@@ -1088,16 +1246,24 @@
  },
  "SL-064": {
   "es_reviewed": true,
-  "title_es": "Ponqué",
+  "src_title": "Mini Egg-White Pancake Puffs Bowl",
+  "title_es": "Bowl de mini panqueques inflados de claras",
   "ingredients_es": [
    "Claras de huevo de 270 ml",
    "Dash de extracto de vainilla",
    "Canela",
    "Jarabe de arce sin azúcar"
+  ],
+  "steps_es": [
+   "Agregue las claras de huevo y una pizca de vainilla (o gotas de sabor a torta) a un tazón.",
+   "Bata hasta que esté rígido y esponjoso.",
+   "Cuchara en bocadillos y hornea unos 15 minutos.",
+   "Cubra con canela, jarabe de arce sin azúcar y frambuesas congeladas."
   ]
  },
  "SL-065": {
   "es_reviewed": true,
+  "src_title": "Salted Caramel Cheesecake Protein Shake",
   "title_es": "Batido proteico de cheesecake de caramelo salado",
   "ingredients_es": [
    "Rinde 1 MASSIVE shake",
@@ -1127,6 +1293,7 @@
  },
  "SL-066": {
   "es_reviewed": true,
+  "src_title": "High Protein Breakfast Sweet Potatoes",
   "title_es": "Batatas de desayuno altas en proteína",
   "ingredients_es": [
    "¡150 libras!"
@@ -1148,7 +1315,11 @@
  },
  "SL-067": {
   "es_reviewed": true,
-  "title_es": "Truco viral coreano de Kalejunkie",
+  "src_title": "Korean-Style Jammy Baked Sweet Potatoes (Ice-Bath Method)",
+  "title_es": "Batatas al horno estilo coreano (método del baño de hielo)",
+  "ingredients_es": [
+   "Batatas (cacatatas japonesas tradicionalmente; otras trabajan)"
+  ],
   "steps_es": [
    "A ir y déjame decirte - este es el mejor método que he utilizado todavía, y cero aceite necesario! ** Típicamente he visto este método demostrado utilizando batatas japonesas, pero como no pude encontrar la variedad exacta, puedo confirmar que funciona para otros también!",
    "Asegúrese de"
@@ -1156,6 +1327,7 @@
  },
  "SL-068": {
   "es_reviewed": true,
+  "src_title": "Crispy Roasted Sweet Potato Cubes",
   "title_es": "Cubitos de batata asados y crujientes",
   "ingredients_es": [
    "2 libras de batatas (pulido y cortado en cubos de 3⁄4 pulgadas)",
@@ -1177,6 +1349,7 @@
  },
  "SL-069": {
   "es_reviewed": true,
+  "src_title": "Easy Air Fryer Recipes (compilation)",
   "title_es": "Recetas fáciles para freidora de aire (compilación)",
   "ingredients_es": [
    "8 oz bloque extra afilado blanco cheddar... Ver más",
@@ -1186,16 +1359,23 @@
  },
  "SL-070": {
   "es_reviewed": true,
-  "title_es": "Postre alto en proteína",
+  "src_title": "Chocolate Peanut Butter Paneer (or Cottage Cheese) Protein Pudding",
+  "title_es": "Pudín proteico de chocolate y mantequilla de maní con paneer (o queso cottage)",
   "ingredients_es": [
    "1 taza de paneador o queso cottage",
    "2 cucharadas de mantequilla de maní Miel/dulce al gusto Extracto de vainilla",
    "1⁄4 taza de leche Chocolate oscuro + maní tostados Mezclar, enfriar y disfruter! • #HighProteinDessert #viralreels #highprotein #healdydessert"
+  ],
+  "steps_es": [
+   "Mezcle el pan/queso de algodón, mantequilla de maní, edulcorante, vainilla y leche hasta que esté suave.",
+   "Transfiera a un plato, cúbralo con chocolate oscuro y maní asados.",
+   "Refrigerar en la nevera hasta que se establezca, luego disfrutar."
   ]
  },
  "SL-071": {
   "es_reviewed": true,
-  "title_es": "Ahora sí puedes comer pizza",
+  "src_title": "Cottage Cheese Protein Pizza Crust",
+  "title_es": "Masa de pizza proteica de queso cottage",
   "ingredients_es": [
    "Con un tenedor. Esparce en un círculo sobre una bandeja para hornear forrada con pergaminos. ¡El bateador se verá delgado!",
    "3. Hornee durante 10 minutos, luego pelar cuidadosamente la corteza del pergamino y devolverlo a la bandeja para hornear.",
@@ -1214,15 +1394,21 @@
  },
  "SL-072": {
   "es_reviewed": true,
-  "title_es": "Mousse o postre de chocolate",
+  "src_title": "Cottage Cheese Chocolate Mousse with Pecans",
+  "title_es": "Mousse de chocolate de queso cottage con nueces pecanas",
   "ingredients_es": [
    "300g de queso cottage",
    "1 cucharada de cacao en polvo",
    "1 cucharadita de miel - salpicadura de canela - pacanas trituradas"
+  ],
+  "steps_es": [
+   "Mezcle el queso cottage, cacao en polvo, miel y canela hasta que esté muy suave.",
+   "Doble las pacanas trituradas."
   ]
  },
  "SL-073": {
   "es_reviewed": true,
+  "src_title": "High-Protein Cottage Cheese Crust Pizza",
   "title_es": "Pizza con masa de queso cottage, alta en proteína",
   "ingredients_es": [
    "Lo que necesitas:",
@@ -1244,6 +1430,7 @@
  },
  "SL-074": {
   "es_reviewed": true,
+  "src_title": "Cottage Cheese Chocolate Chip Biscuits",
   "title_es": "Biscuits de queso cottage con chispas de chocolate",
   "ingredients_es": [
    "Galletas:",
@@ -1272,6 +1459,7 @@
  },
  "SL-075": {
   "es_reviewed": true,
+  "src_title": "Crispy Zero Carb Chicken Tenders",
   "title_es": "Tenders de pollo crujientes, cero carbohidratos",
   "ingredients_es": [
    "4-6 licitaciones de pollo",
@@ -1287,6 +1475,7 @@
  },
  "SL-076": {
   "es_reviewed": true,
+  "src_title": "Fudgy Cheesecake",
   "title_es": "Cheesecake húmedo",
   "ingredients_es": [
    "1 puré de banano",
@@ -1302,17 +1491,9 @@
   ]
  },
  "SL-077": {
-  "title_en": "Rice paper pizza",
-  "title_es": "Pizza de papel de arroz",
-  "ingredients_en": [
-   "2 sheets rice paper",
-   "1 egg",
-   "30 g light spreadable cheese",
-   "5–6 cherry tomatoes",
-   "30 g light mozzarella",
-   "Fresh basil and oregano, to taste",
-   "Sesame seeds (for the crust)"
-  ],
+  "es_reviewed": true,
+  "src_title": "Rice Paper Pizza (Crispy Sesame Crust)",
+  "title_es": "Pizza de papel de arroz (borde crujiente de sésamo)",
   "ingredients_es": [
    "2 hojas de papel de arroz",
    "1 huevo",
@@ -1322,24 +1503,17 @@
    "Albahaca fresca y orégano, al gusto",
    "Semillas de sésamo (para el borde)"
   ],
-  "steps_en": [
-   "Beat the egg in a plate and wet both sides of the 2 rice paper sheets.",
-   "Stack them directly on a baking sheet lined with parchment paper.",
-   "Spread the light cheese, add the sliced cherry tomatoes, and roll the edges to form a crust.",
-   "Add oregano and sesame on the edges, and bake in a convection oven at 190 °C for 15 minutes.",
-   "Out of the oven, add the mozzarella and fresh basil."
-  ],
   "steps_es": [
    "Bata el huevo en un plato e hidrate los 2 papeles de arroz por ambos lados.",
    "Superpóngalos directamente sobre una bandeja forrada con papel de horno.",
    "Unte el queso light, agregue los tomates cherry en rodajas y enrolle los bordes para formar el borde.",
    "Agregue orégano y sésamo en los bordes y hornee en horno con ventilador a 190 °C por 15 minutos.",
    "Al salir del horno, agregue la mozzarella y la albahaca fresca."
-  ],
-  "es_reviewed": true
+  ]
  },
  "SL-078": {
   "es_reviewed": true,
+  "src_title": "Single-Serve High-Protein Chocolate Brownie (26g Protein)",
   "title_es": "Brownie de chocolate alto en proteína, porción individual (26 g de proteína)",
   "ingredients_es": [
    "1⁄4 taza de queso cottage",
@@ -1364,6 +1538,7 @@
  },
  "SL-079": {
   "es_reviewed": true,
+  "src_title": "Healthy High Protein Cottage Cheese Bagels",
   "title_es": "Bagels de queso cottage saludables y altos en proteína",
   "ingredients_es": [
    "1 taza de harina de almendra (o harina de la elección)",
@@ -1380,7 +1555,8 @@
  },
  "SL-080": {
   "es_reviewed": true,
-  "title_es": "Feliz otoño",
+  "src_title": "Low-Calorie Rice Paper Apple Pie",
+  "title_es": "Pie de manzana de papel de arroz, bajo en calorías",
   "ingredients_es": [
    "8 hojas de papel de arroz",
    "2 huevos + 1 clara de huevo",
@@ -1401,6 +1577,7 @@
  },
  "SL-081": {
   "es_reviewed": true,
+  "src_title": "Rice Paper Cheeseburger Rolls",
   "title_es": "Rollos de hamburguesa con queso en papel de arroz",
   "ingredients_es": [
    "1 cucharada de aceite de oliva",
@@ -1429,7 +1606,8 @@
  },
  "SL-082": {
   "es_reviewed": true,
-  "title_es": "Wrap de pepperoni",
+  "src_title": "Crispy Pepperoni Cheese Wrap/Taco",
+  "title_es": "Wrap o taco crujiente de pepperoni y queso",
   "ingredients_es": [
    "Rebanadas de pepperoni - 40-45 g / 1,4-1,6 oz",
    "Queso mozzarella ligero - 40 g / 1,4 oz",
@@ -1456,6 +1634,7 @@
  },
  "SL-083": {
   "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Kangaroo Burgers",
   "title_es": "Hamburguesas de canguro en papel de arroz crujiente",
   "ingredients_es": [
    "Papas de canguro apiladas",
@@ -1473,6 +1652,7 @@
  },
  "SL-084": {
   "es_reviewed": true,
+  "src_title": "Tiramisu Overnight Oats",
   "title_es": "Avena overnight de tiramisú",
   "ingredients_es": [
    "Rinde 2 serves Oat Layer",
@@ -1504,7 +1684,8 @@
  },
  "SL-085": {
   "es_reviewed": true,
-  "title_es": "Pan de pepperoni alto en proteína",
+  "src_title": "High-Protein Pepperoni Bread Chopped Salad Wrap",
+  "title_es": "Wrap de ensalada picada en pan de pepperoni, alto en proteína",
   "ingredients_es": [
    "150g de mozzarella",
    "14 pavo pepperoni SALAD",
@@ -1520,20 +1701,35 @@
    "11g / Grasa:",
    "24g / Fibra:",
    "2.5g enviar esto a su amigo que pide que la ensalada picada cada vez"
+  ],
+  "steps_es": [
+   "Hacer el pan de pepperoni: untar la mozzarella en una capa uniforme sobre una sábana forrada de pergamino, tapar con el pepperoni de pavo y hornee a 350°F unos 4-5 minutos hasta que se derrita y se ponga; enfriar, luego voltear.",
+   "Bata los ingredientes del aderezo.",
+   "Meta la ensalada en el aderezo.",
+   "Pile la ensalada en el pan, enrolle y rebane por la mitad."
   ]
  },
  "SL-086": {
   "es_reviewed": true,
+  "src_title": "Rice Paper Breakfast Burger",
   "title_es": "Hamburguesa de desayuno en papel de arroz",
   "ingredients_es": [
    "1 1/4 hojas de papel de arroz (una hoja grande cortada en un cuarto, más una hoja completa)",
    "2 huevos",
    "(Otros ingredientes están detrás de Recetas por el paywall pagado por Victoria Substack. La vista previa pública también incluyó 238 calorías y 23g de proteína.)"
+  ],
+  "steps_es": [
+   "Mojar una hoja de papel de arroz y ponga una capa de espinaca en el centro.",
+   "Añada la mitad de los huevos revueltos, luego el queso rallado.",
+   "Añada el jamón y el resto de los huevos.",
+   "Añada otra capa de espinaca y doblar los lados de papel de arroz para sellar en forma de hamburguesa.",
+   "Corte por la mitad y Sirve con salsa de chile dulce."
   ]
  },
  "SL-087": {
   "es_reviewed": true,
-  "title_es": "Pollo picante en papel de arroz",
+  "src_title": "Rice Paper Chicken Hot Pockets",
+  "title_es": "Hot Pockets de pollo en papel de arroz",
   "ingredients_es": [
    "Rinde 3 hot pockets",
    "Pechuga de pollo cocida, 450g /",
@@ -1560,30 +1756,22 @@
   ]
  },
  "SL-088": {
-  "title_en": "Crispy rice paper cheese bites",
-  "title_es": "Bocaditos crujientes de queso en papel de arroz",
-  "ingredients_en": [
-   "Rice paper, 4 sheets (for 2 servings)",
-   "Pizza cheese, as needed"
-  ],
+  "title_es": "Bocaditos crujientes de papel de arroz con queso",
   "ingredients_es": [
-   "Papel de arroz, 4 hojas (para 2 porciones)",
-   "Queso para pizza, la cantidad necesaria"
-  ],
-  "steps_en": [
-   "Wet the rice paper with water.",
-   "Scatter pizza cheese over it, top with another wetted sheet, and roll. Repeat to make a second roll.",
-   "Cut into bite-size pieces, arrange on microwave-safe parchment, and microwave at 600 W for 2 minutes until crisp."
+   "4 hojas de papel de arroz (para 2 porciones)",
+   "Queso para pizza, al gusto"
   ],
   "steps_es": [
-   "Humedezca el papel de arroz con agua.",
-   "Esparza el queso para pizza, cubra con otra hoja humedecida y enrolle. Repita para hacer un segundo rollo.",
-   "Corte en bocaditos, acomódelos sobre papel de horno apto para microondas y caliente a 600 W por 2 minutos, hasta que queden crujientes."
+   "Moje el papel de arroz con agua.",
+   "Esparza queso para pizza, cubra con otra hoja mojada y enrolle; repita para hacer un segundo rollo.",
+   "Corte en bocados, colóquelos sobre papel apto para microondas y caliente a 600 W durante 2 minutos hasta que estén crujientes."
   ],
-  "es_reviewed": true
+  "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Cheese Bites"
  },
  "SL-089": {
   "es_reviewed": true,
+  "src_title": "High Protein Cheesy Garlic Bread",
   "title_es": "Pan de ajo con queso, alto en proteína",
   "ingredients_es": [
    "1 taza de mozzarella triturada",
@@ -1598,6 +1786,7 @@
  },
  "SL-090": {
   "es_reviewed": true,
+  "src_title": "Sweet Chilli Chicken",
   "title_es": "Pollo agridulce con chili",
   "ingredients_es": [
    "1 servicio",
@@ -1620,6 +1809,7 @@
  },
  "SL-091": {
   "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Burger",
   "title_es": "Hamburguesa crujiente de papel de arroz",
   "ingredients_es": [
    "2 hojas de papel de arroz 1 huevo, batido",
@@ -1639,6 +1829,7 @@
  },
  "SL-092": {
   "es_reviewed": true,
+  "src_title": "Tortilla Japonesa (fluffy Japanese-style omelette)",
   "title_es": "Tortilla japonesa (omelet esponjoso al estilo japonés)",
   "ingredients_es": [
    "4 huevos medianos o grandes",
@@ -1659,6 +1850,7 @@
  },
  "SL-093": {
   "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Croque Madame Pockets with Jammy Egg",
   "title_es": "Bolsillos Croque Madame de papel de arroz crujiente, con huevo cremoso",
   "ingredients_es": [
    "4 hojas de papel de arroz",
@@ -1688,10 +1880,12 @@
  },
  "SL-094": {
   "es_reviewed": true,
+  "src_title": "My Top 10 Rice Paper Recipes (compilation)",
   "title_es": "Mis 10 mejores recetas de papel de arroz (compilación)"
  },
  "SL-095": {
   "es_reviewed": true,
+  "src_title": "Cottage Cheese Pizza",
   "title_es": "Pizza de queso cottage",
   "ingredients_es": [
    "3 cucharadas amontonadas (60g) de harina auto-levantante (o simple/todo propósito + 1/2 cucharadita de polvo para hornear)",
@@ -1707,7 +1901,8 @@
  },
  "SL-096": {
   "es_reviewed": true,
-  "title_es": "Frosty de chocolate alto en proteína y bajo en carbohidratos (1 porción)",
+  "src_title": "High-Protein Low-Carb Chocolate Frosty",
+  "title_es": "Frosty de chocolate alto en proteína y bajo en carbohidratos",
   "ingredients_es": [
    "1 taza (240 ml) de leche de almendra sin azúcar",
    "3⁄4 taza (170 g) yogur griego sin grasa o queso cottage bajo en grasa",
@@ -1731,6 +1926,7 @@
  },
  "SL-097": {
   "es_reviewed": true,
+  "src_title": "Pickle-Juice Parmesan Ranch Air-Fryer Chicken",
   "title_es": "Pollo ranch con parmesano y jugo de pepinillo, en freidora de aire",
   "ingredients_es": [
    "2 grandes pechugas de pollo deshuesadas, cortadas en trozos de 3/4–1 pulgadas",
@@ -1754,6 +1950,7 @@
  },
  "SL-098": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Waffle Breakfast Sandwich",
   "title_es": "Sándwich de desayuno con waffle de batata",
   "ingredients_es": [
    "1 batata pequeña",
@@ -1777,6 +1974,7 @@
  },
  "SL-099": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Brownie",
   "title_es": "Brownie de batata",
   "ingredients_es": [
    "1 batata",
@@ -1794,6 +1992,7 @@
  },
  "SL-100": {
   "es_reviewed": true,
+  "src_title": "Air Fryer Steak",
   "title_es": "Filete en freidora de aire",
   "ingredients_es": [
    "1 bistec, cortado en trozos de tamaño mordisco (Usé tira)",
@@ -1810,13 +2009,20 @@
  },
  "SL-101": {
   "es_reviewed": true,
-  "title_es": "Truco de papel de arroz: al microondas, para chips crujientes sin gluten",
+  "src_title": "Microwave Rice Paper Crisps",
+  "title_es": "Chips de papel de arroz al microondas",
+  "ingredients_es": [
+   "1 papel de arroz seco (6 pulgadas)",
+   "Dips de elección: salsa de soja, chile crujiente, guacamole, rancho",
+   "Opcional: Parmigiano-Reggiano rallado en la parte superior antes de microwaving"
+  ],
   "steps_es": [
    "Por paso de la receta de fotos tutoriales https://whiteonricepar.com/microwave-rice-paper-crisps/"
   ]
  },
  "SL-102": {
   "es_reviewed": true,
+  "src_title": "Healthy High Protein Sweet Potato Brownies",
   "title_es": "Brownies de batata saludables y altos en proteína",
   "ingredients_es": [
    "1 batata, al vapor o al horno (de piel) 3 huevos",
@@ -1834,6 +2040,7 @@
  },
  "SL-103": {
   "es_reviewed": true,
+  "src_title": "High Protein Chicken Pizza Wrap",
   "title_es": "Wrap de pizza de pollo alto en proteína",
   "ingredients_es": [
    "Rinde 1 serve",
@@ -1861,6 +2068,7 @@
  },
  "SL-104": {
   "es_reviewed": true,
+  "src_title": "Healthy High Protein Apple Pie à la Mode",
   "title_es": "Pie de manzana alto en proteína, estilo à la mode",
   "ingredients_es": [
    "1 manzana grande",
@@ -1875,7 +2083,8 @@
  },
  "SL-105": {
   "es_reviewed": true,
-  "title_es": "83 g de proteína en 2 minutos",
+  "src_title": "83g Protein Chocolate PB Greek Yogurt Bowl",
+  "title_es": "Bowl de yogur griego con chocolate y maní, 83 g de proteína",
   "ingredients_es": [
    "1/2 envase (1,88 taza) yogur griego no graso",
    "1 cucharada de proteína en polvo de chocolate oscuro (Marca: Laboratorios transparentes)",
@@ -1890,13 +2099,26 @@
  },
  "SL-106": {
   "es_reviewed": true,
-  "title_es": "Comenta “YES” o “RECIPE” y te lo envío por mensaje",
+  "src_title": "Rice Paper Breakfast Bagels (Bacon, Egg & Cheese)",
+  "title_es": "Bagels de desayuno en papel de arroz (tocineta, huevo y queso)",
+  "ingredients_es": [
+   "3 huevos grandes (llenado)",
+   "Sal al gusto",
+   "2 huevos grandes, batidos (lavado de huevos)",
+   "Pizca de sal",
+   "3 hojas de papel de arroz (22 cm o más)",
+   "4 tiras de tocineta, cocido crujiente y picado",
+   "3/4 taza de mozzarella triturada",
+   "Todo condimento de bagel (genero)",
+   "Aceite ligero para cepillar"
+  ],
   "steps_es": [
    "Siga las instrucciones completas de la receta en mi blog, puede hacer clic en el enlace en mi bio, o visitar (o"
   ]
  },
  "SL-107": {
   "es_reviewed": true,
+  "src_title": "High-Protein Tuna Bread",
   "title_es": "Pan de atún alto en proteína",
   "ingredients_es": [
    "Rinde 1 serve",
@@ -1917,6 +2139,7 @@
  },
  "SL-108": {
   "es_reviewed": true,
+  "src_title": "High-Protein Chocolate Fudge Squares",
   "title_es": "Cuadritos de fudge de chocolate altos en proteína",
   "ingredients_es": [
    "9 servicios",
@@ -1943,6 +2166,7 @@
  },
  "SL-109": {
   "es_reviewed": true,
+  "src_title": "High Protein Pizza",
   "title_es": "Pizza alta en proteína",
   "ingredients_es": [
    "1 servicio",
@@ -1962,6 +2186,7 @@
  },
  "SL-110": {
   "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Avocado Toast",
   "title_es": "Tostada de aguacate en papel de arroz crujiente",
   "ingredients_es": [
    "Rinde 1 serve",
@@ -1989,6 +2214,7 @@
  },
  "SL-111": {
   "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Burger",
   "title_es": "Hamburguesa crujiente de papel de arroz",
   "ingredients_es": [
    "2 hojas de papel de arroz 1 huevo, batido",
@@ -2008,6 +2234,7 @@
  },
  "SL-112": {
   "es_reviewed": true,
+  "src_title": "Single-Serve Cottage Cheese Protein Brownie (26g protein)",
   "title_es": "Brownie proteico de queso cottage, porción individual (26 g de proteína)",
   "ingredients_es": [
    "1/4 taza de queso cottage, mezclado",
@@ -2032,6 +2259,7 @@
  },
  "SL-113": {
   "es_reviewed": true,
+  "src_title": "Egg White Wrap",
   "title_es": "Wrap de claras de huevo",
   "ingredients_es": [
    "1 servicio",
@@ -2051,6 +2279,7 @@
  },
  "SL-114": {
   "es_reviewed": true,
+  "src_title": "Daily High-Protein Greek Yogurt Bowl",
   "title_es": "Bowl diario de yogur griego alto en proteína",
   "ingredients_es": [
    "Arándanos arándanos congelados (microondas; cantidad no indicada)",
@@ -2074,6 +2303,7 @@
  },
  "SL-115": {
   "es_reviewed": true,
+  "src_title": "Raspberry and Almond Greek Yogurt Bread",
   "title_es": "Pan de yogur griego con frambuesa y almendra",
   "ingredients_es": [
    "3 cucharadas amontonadas (60g) de harina auto-levantante (o simple/todo propósito + 1 cucharadita de polvo para hornear)",
@@ -2088,7 +2318,8 @@
  },
  "SL-116": {
   "es_reviewed": true,
-  "title_es": "Huevo grande",
+  "src_title": "Healthy Baked Apple Fritters",
+  "title_es": "Buñuelos de manzana al horno, saludables",
   "ingredients_es": [
    "Manzana, 70g, 2,5oz, finamente cortada",
    "Huevo grande, 1",
@@ -2112,6 +2343,7 @@
  },
  "SL-117": {
   "es_reviewed": true,
+  "src_title": "High Protein Chocolate Crunch Cake",
   "title_es": "Ponqué crujiente de chocolate alto en proteína",
   "ingredients_es": [
    "Rinde 2 serves",
@@ -2134,6 +2366,7 @@
  },
  "SL-118": {
   "es_reviewed": true,
+  "src_title": "Snickerdoodle Protein Ice Cream",
   "title_es": "Helado proteico de snickerdoodle",
   "ingredients_es": [
    "1 taza de avena, almendra o leche sin endulzar",
@@ -2157,6 +2390,7 @@
  },
  "SL-119": {
   "es_reviewed": true,
+  "src_title": "Healthy High-Protein Chocolate Chip Banana Bread",
   "title_es": "Pan de banano saludable con chispas de chocolate, alto en proteína",
   "ingredients_es": [
    "1 banano",
@@ -2174,7 +2408,8 @@
  },
  "SL-120": {
   "es_reviewed": true,
-  "title_es": "Postre",
+  "src_title": "Dessert-Every-Day High-Protein Recipes (Chocolate Mousse, Mug Cake & more)",
+  "title_es": "Postres altos en proteína para todos los días (mousse de chocolate, ponqué en taza y más)",
   "ingredients_es": [
    "Bata hasta que sea suave y cremoso. Relájese durante 30 minutos. Calorías: 100 Proteínas: 16g de carbohidratos: 9g de grasa:",
    "0g",
@@ -2215,6 +2450,7 @@
  },
  "SL-121": {
   "es_reviewed": true,
+  "src_title": "3-Ingredient Peanut Butter Fudge (PB2)",
   "title_es": "Fudge de mantequilla de maní de 3 ingredientes (PB2)",
   "ingredients_es": [
    "300 g de yogur griego de alta proteína (desde el comienzo del comentario del autor en Facebook)",
@@ -2229,6 +2465,7 @@
  },
  "SL-122": {
   "es_reviewed": true,
+  "src_title": "Cinnamon Egg-White Cloud Bites with Whipped Cream",
   "title_es": "Bocaditos de pan nube de claras con canela y crema batida",
   "ingredients_es": [
    "1 pinta de clara de huevo pasteurizada",
@@ -2245,17 +2482,27 @@
  },
  "SL-123": {
   "es_reviewed": true,
-  "title_es": "Nuggets de pollo crujientes y bajos en calorías",
+  "src_title": "Rice Paper Chicken Nuggets (Air Fryer, Low Calorie)",
+  "title_es": "Nuggets de pollo en papel de arroz (freidora de aire, bajos en calorías)",
   "ingredients_es": [
    "5 hojas de papel de arroz - spray de cocina Dip fácil de ajo - 100g 0% yogur griego",
    "30g de mayonesa ligera",
    "1/2 cucharadita de pasta de ajo - Sal al gusto - Agua para la consistencia cocine en la freidora de aire 15-20 minutos",
    "200C Agitar a mitad de camino Comentario “Enviar” y te enviaré un enlace a mi mejor venta 300+ Receta eBooks & Fat Loss Planes de Comida con seguimiento de calorías hecho para usted!"
+  ],
+  "steps_es": [
+   "Mezcle bien el pollo molido, el huevo, los condimentos y la mozzarella.",
+   "Sumergir una hoja de papel de arroz en agua y ponerla plana.",
+   "Añada una cucharada de la mezcla de pollo y enrollarla firmemente en una salchicha; repetir para hacer 5.",
+   "Corte cada rollo en nuggets (alrededor de 30 en total) y rociar con spray para cocinar.",
+   "Cocine en la freidora de aire a 200°C durante 15-20 minutos, agitando a medio camino, hasta que esté dorada y crujiente.",
+   "Mezcle los ingredientes de dip de ajo y servir."
   ]
  },
  "SL-124": {
   "es_reviewed": true,
-  "title_es": "Pan de banano con queso cottage",
+  "src_title": "Single-Serve Cottage Cheese Banana Bread",
+  "title_es": "Pan de banano con queso cottage, porción individual",
   "ingredients_es": [
    "4 cucharadas amontonadas (80g) de harina auto-levantante (o simple/todo propósito + 1/2 cucharadita de polvo para hornear)",
    "2 cucharadas (50g) de queso cottage",
@@ -2272,6 +2519,7 @@
  },
  "SL-125": {
   "es_reviewed": true,
+  "src_title": "Beef Tallow Oven Fries (3 ingredients)",
   "title_es": "Papas fritas al horno con sebo de res (3 ingredientes)",
   "ingredients_es": [
    "Papas ecológicas",
@@ -2286,6 +2534,7 @@
  },
  "SL-126": {
   "es_reviewed": true,
+  "src_title": "Healthy Zero Carb Chicken McNuggets",
   "title_es": "Chicken McNuggets saludables, cero carbohidratos",
   "ingredients_es": [
    "1 pechuga de pollo",
@@ -2301,7 +2550,8 @@
  },
  "SL-127": {
   "es_reviewed": true,
-  "title_es": "Copia del Frosty de Wendy’s, alta en proteína (365 calorías, 50 g de proteína)",
+  "src_title": "High-Protein Wendy's Frosty Dupe",
+  "title_es": "Copia del Frosty de Wendy’s, alta en proteína",
   "ingredients_es": [
    "1 taza de hielo",
    "1 taza de yogur griego",
@@ -2314,20 +2564,35 @@
    "Agregue la proteína en polvo, el cacao en polvo y el edulcorante.",
    "Mezcle hasta que esté espeso y suave, añadiendo un poco de leche o agua sólo si es necesario.",
    "Vierta en un vaso y disfrute inmediatamente con una cuchara. ¡La receta completa para imprimir está en mi sitio web! Siga Lean al horno para obtener más recetas de alta proteína. #wendysfrosty #proteinshake #highprotein #healthydessert #chocolatelover"
+  ],
+  "steps_es": [
+   "Agregue el hielo, el yogur griego y el banano congelado a una licuadora.",
+   "Añada la proteína en polvo, cacao en polvo y edulcorante.",
+   "Mezcle hasta que esté espeso y suave, añadiendo un poco de leche o agua sólo si es necesario.",
+   "Vierta en un vaso y coma inmediatamente con una cuchara."
   ]
  },
  "SL-128": {
   "es_reviewed": true,
-  "title_es": "Desayuno de tiramisú con 50 g de proteína",
+  "src_title": "50g Protein Tiramisu Breakfast Oats",
+  "title_es": "Avena de desayuno estilo tiramisú con 50 g de proteína",
   "ingredients_es": [
    "40g de avena Splash de leche de avena",
    "1 chupito de espresso/café",
    "200g 0% yogur griego"
+  ],
+  "steps_es": [
+   "Agregue la avena a un tazón con un chorrito de leche de avena y un fuerte trago de café.",
+   "Mezcle el yogur griego y el suero en una crema de pastel de queso.",
+   "Avena de capa, crema, avena, crema.",
+   "Terminar con chocolate negro rallado y jarabe de chocolate.",
+   "Refrigerar 2 horas para el mejor sabor."
   ]
  },
  "SL-129": {
   "es_reviewed": true,
-  "title_es": "Esta receta la quería hacer desde hace rato",
+  "src_title": "PB&J Protein Yogurt Bowl",
+  "title_es": "Bowl proteico de yogur con mantequilla de maní y mermelada",
   "ingredients_es": [
    "170g fage 0% yogur griego",
    "35g de mermelada de uva sin azúcar",
@@ -2349,7 +2614,8 @@
  },
  "SL-130": {
   "es_reviewed": true,
-  "title_es": "Cheesecake de vasitos de mantequilla de maní, proteico y sin hornear",
+  "src_title": "No-Bake Peanut Butter Cup Protein Cheesecake",
+  "title_es": "Cheesecake proteico de vasitos de mantequilla de maní, sin hornear",
   "ingredients_es": [
    "1 taza de yogur griego sin grasa (220g)",
    "1/4 taza de queso crema batida (40g)",
@@ -2359,10 +2625,16 @@
    "1 cucharada de edulcorante de cero calorías en polvo",
    "1 cucharada de mezcla de pudín de tarta de queso (8g) Pizca de sal",
    "1 taza triturada de mantequilla de maní de mini protea (8g)"
+  ],
+  "steps_es": [
+   "Agregue el yogur griego, queso crema batida, suero de vainilla, mantequilla de maní en polvo, cacao en polvo, edulcorante, mezcla de pudín de tarta de queso y sal a un tazón.",
+   "Mezcle hasta que esté espeso.",
+   "Transfiera a un tazón de servir y cúbralo con la taza de mantequilla de maní triturada."
   ]
  },
  "SL-131": {
   "es_reviewed": true,
+  "src_title": "Healthy High Protein Chocolate Peanut Butter Cup",
   "title_es": "Vasito de chocolate y mantequilla de maní, saludable y alto en proteína",
   "ingredients_es": [
    "16 oz Daisy Cottage Cheese",
@@ -2378,6 +2650,7 @@
  },
  "SL-132": {
   "es_reviewed": true,
+  "src_title": "Crispy Parmesan Carrot Fries",
   "title_es": "Palitos crujientes de zanahoria con parmesano",
   "ingredients_es": [
    "8 servicios",
@@ -2406,7 +2679,8 @@
  },
  "SL-133": {
   "es_reviewed": true,
-  "title_es": "Galleta de arroz",
+  "src_title": "Chocolate Peanut Butter Rice Cakes",
+  "title_es": "Galletas de arroz con chocolate y mantequilla de maní",
   "ingredients_es": [
    "1 servicio",
    "Tortas de arroz, 2",
@@ -2430,6 +2704,7 @@
  },
  "SL-134": {
   "es_reviewed": true,
+  "src_title": "High Protein Stuffed Crust Pepperoni Pizza",
   "title_es": "Pizza de pepperoni con borde relleno, alta en proteína",
   "ingredients_es": [
    "110g Harina Self Raising (Vetta Smart Harina Self Raising - se puede sustituir por la harina de todo propósito, si lo hace añadir 1,5 cucharaditas de polvo para hornear)",
@@ -2442,11 +2717,20 @@
    "80g Salsa de pizza/Marinara",
    "75g Cheddar rallado de baja grasa + 45g Mozzarella ligera (Bega 50% menos queso rallado de grasa)",
    "30g Mini Pepperoni (Sultans Beef Pepperoni - pepperoni regular o pepperoni de pavo se puede utilizar) NOTAS IMPORTANTES: Si tiene problemas para formar la masa debido a que es pegajosa, comience por agregar inicialmente la harina primero seguido de agregar lentamente el yogur, mezcle lentamente y agregue más harina si es necesario hasta que alcance una consistencia con la que pueda trabajar. Dependiendo de la marca, algunos yogures tienen más o menos humedad que puede hacer que sea pegatina. Una vez que haya formado la bola de masa o bien colocarlo en una superficie ligeramente enharinada o papel pergamino / papel de cocción antes de enrollarlo hacia fuera para evitar que se pegue. (harina ligeramente su rodillo también) Enrolle la masa tan grande y delgada como pueda, pero asegúrese de hacerlo suavemente y lentamente para evitar que se rompa. #pizza #fastfood #pepperoni #fakeaway #foodie mealprep highprotein lowcalorie easyrecipes gimlyfood fatloss weightloss saludablerecipes"
+  ],
+  "steps_es": [
+   "Mezcle la harina y el yogur griego con el condimento de la hierba italiana, el polvo de ajo y la sal hasta que estén rallados (agregar primero la harina, luego el yogur lentamente; añadir más harina si pegajosa).",
+   "Añada la levadura nutricional y amasar a mano en una bola de masa.",
+   "En una superficie ligeramente enharinada o pergamino, enrollar la masa suavemente y lentamente tan grande y delgada como puedas.",
+   "Coloque los palos de mozzarella en rodajas alrededor del borde y doblar / sellar los bordes sobre ellos con los dedos para formar una corteza rellena.",
+   "Espolvorear con más hierbas italianas, untar la salsa de pizza, añadir el cheddar y mozzarella, a continuación, los pepperoni.",
+   "Hornee hasta que estén doradas y crujientes; rebana y sirve."
   ]
  },
  "SL-135": {
   "es_reviewed": true,
-  "title_es": "Saludo a @ajfoodie",
+  "src_title": "Microwave Cinnamon Protein Custard",
+  "title_es": "Natilla proteica de canela al microondas",
   "ingredients_es": [
    "350g 0% de yogur griego fage",
    "10g de crema en polvo (Usé almidón de maíz, proporción 1:1, todavía resultó bien!) 1 huevo",
@@ -2460,16 +2744,25 @@
  },
  "SL-136": {
   "es_reviewed": true,
-  "title_es": "Sígueme para ver más",
+  "src_title": "Fluffy High-Protein Baked Cheesecake (Egg-White Soufflé Style)",
+  "title_es": "Cheesecake horneado esponjoso, alto en proteína (estilo soufflé de claras)",
   "ingredients_es": [
    "1 yema de huevo",
    "200g 0% yogur griego 20g proteína en polvo",
    "15g de avena mezclada Teaspoon de extracto de vainilla 0 cal edulcorante",
    "200ml clara de huevo Horno: 150°C durante 45-55 minutos Puede tapar con miel, jarabe de arce o lo que quieras"
+  ],
+  "steps_es": [
+   "Mezcle la yema de huevo, yogur griego, polvo de proteínas, avena mezclada, vainilla y edulcorante juntos.",
+   "En un tazón separado, batir las claras de huevo hasta picos rígidos.",
+   "Doble suavemente la mezcla de yogur en las claras de huevo.",
+   "Vierta en una sartén y hornee a 150°C durante 45–55 minutos.",
+   "Cubra con miel, jarabe de arce o lo que quieras."
   ]
  },
  "SL-137": {
   "es_reviewed": true,
+  "src_title": "Healthy Sweet Potato Bun In-N-Out",
   "title_es": "Pan de batata estilo In-N-Out, saludable",
   "ingredients_es": [
    "1/2 batata",
@@ -2488,7 +2781,8 @@
  },
  "SL-138": {
   "es_reviewed": true,
-  "title_es": "Tenders de pollo (calorías)",
+  "src_title": "518-Calorie Chicken Tenders & Fries Meal",
+  "title_es": "Combo de tenders de pollo y papas de 518 calorías",
   "ingredients_es": [
    "En el caso de las papas fritas:",
    "300g Russet Papas Sal del Mar Ajo Polvo No Stick Aceite de Oliva Spray (agregado 2g de grasa a la"
@@ -2505,6 +2799,7 @@
  },
  "SL-139": {
   "es_reviewed": true,
+  "src_title": "High-Protein Chocolate Cheesecake",
   "title_es": "Cheesecake de chocolate alto en proteína",
   "ingredients_es": [
    "1 plátano maduro",
@@ -2520,6 +2815,7 @@
  },
  "SL-140": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Cheese Taco Shells",
   "title_es": "Cáscaras de taco de batata y queso",
   "ingredients_es": [
    "1 batata grande, pelada y rallada",
@@ -2536,6 +2832,7 @@
  },
  "SL-141": {
   "es_reviewed": true,
+  "src_title": "Chicken Parmesan",
   "title_es": "Pollo parmesano",
   "ingredients_es": [
    "Waffle “buns”:",
@@ -2558,7 +2855,8 @@
  },
  "SL-142": {
   "es_reviewed": true,
-  "title_es": "Cheesecake para el desayuno",
+  "src_title": "Cookie Dough Breakfast Cheesecake",
+  "title_es": "Cheesecake de desayuno sabor masa de galleta",
   "ingredients_es": [
    "200g de yogur griego sencillo",
    "1 huevo",
@@ -2578,6 +2876,7 @@
  },
  "SL-143": {
   "es_reviewed": true,
+  "src_title": "Crispy Rice Paper Technique (don't soak)",
   "title_es": "Técnica de papel de arroz crujiente (sin remojar)",
   "ingredients_es": [
    "Papel de arroz",
@@ -2591,7 +2890,8 @@
  },
  "SL-144": {
   "es_reviewed": true,
-  "title_es": "Palitos crujientes de zanahoria",
+  "src_title": "Crispy Smoky Carrot Fries",
+  "title_es": "Palitos crujientes de zanahoria ahumada",
   "ingredients_es": [
    "150lbs"
   ],
@@ -2610,7 +2910,8 @@
  },
  "SL-145": {
   "es_reviewed": true,
-  "title_es": "Guarda esta receta",
+  "src_title": "Low-Calorie Pumpkin Protein Peanut Butter",
+  "title_es": "Mantequilla de maní proteica de ahuyama, baja en calorías",
   "ingredients_es": [
    "120G yogur griego",
    "Calabaza 120G",
@@ -2627,7 +2928,8 @@
  },
  "SL-146": {
   "es_reviewed": true,
-  "title_es": "Chips de proteína con claras de huevo (crujientes, simples y saciantes)",
+  "src_title": "Egg White Parmesan Protein Chips",
+  "title_es": "Chips proteicos de claras con parmesano",
   "ingredients_es": [
    "1. Precaliente el horno y prepara la bandeja.",
    "2. Batir las claras de huevo hasta que se formen picos esponjosos.",
@@ -2667,6 +2969,7 @@
  },
  "SL-147": {
   "es_reviewed": true,
+  "src_title": "No Bake Greek Yogurt Bites",
   "title_es": "Bocaditos de yogur griego sin hornear",
   "ingredients_es": [
    "1 taza de yogur griego",
@@ -2685,6 +2988,7 @@
  },
  "SL-148": {
   "es_reviewed": true,
+  "src_title": "High protein marshmallow cloud bread",
   "title_es": "Pan nube de malvavisco alto en proteína",
   "ingredients_es": [
    "300g de claras de huevo",
@@ -2697,6 +3001,7 @@
  },
  "SL-149": {
   "es_reviewed": true,
+  "src_title": "Air-Fryer Chicken Cheddar Nuggets",
   "title_es": "Nuggets de pollo y cheddar en freidora de aire",
   "ingredients_es": [
    "1 lata de pollo",
@@ -2712,16 +3017,24 @@
  },
  "SL-150": {
   "es_reviewed": true,
-  "title_es": "Un postre anabólico enorme",
+  "src_title": "Giant Protein Reese's Cup (Yogurt + PB Powder)",
+  "title_es": "Reese’s gigante proteico (yogur y maní en polvo)",
   "ingredients_es": [
    "1/3 taza (60g) yogur griego",
    "1 cucharada de proteína en polvo de vainilla (Transparent LabsTM - código HOLLAND ahorra 10%)",
    "1/4 taza (32g) de mantequilla de maní en polvo (PBFit)",
    "1 cucharada (14g) Papas de chocolate con leche de Lily DIRECCIONES: - En un plato, mezclar yogur, proteína en polvo y mantequilla de maní en polvo hasta que estén suaves. - Derretir las chispas de chocolate en incrementos de 30 segundos hasta que estén completamente derretidas. - Extender el chocolate por encima y congelar durante 20 minutos. - Agrietar en ella y disfruter."
+  ],
+  "steps_es": [
+   "En un plato, mezcle el yogur, el polvo de proteínas y el polvo de mantequilla de maní hasta que estén suaves.",
+   "Derretir las chispas de chocolate en 30 segundos hasta que se derrita completamente.",
+   "Esparza el chocolate por encima y congela 20 minutos.",
+   "Acércate y disfrute."
   ]
  },
  "SL-151": {
   "es_reviewed": true,
+  "src_title": "Protein Snickers Baked Oats",
   "title_es": "Avena al horno proteica estilo Snickers",
   "ingredients_es": [
    "(1 porción enorme) Base: 1 plátano maduro (100-120g)",
@@ -2751,6 +3064,7 @@
  },
  "SL-152": {
   "es_reviewed": true,
+  "src_title": "Spicy Chicken Crust Pizza",
   "title_es": "Pizza picante con masa de pollo",
   "ingredients_es": [
    "8 oz de pollo molido magro",
@@ -2769,6 +3083,7 @@
  },
  "CK-001": {
   "es_reviewed": true,
+  "src_title": "Blueberry Marshmallow Fluff",
   "title_es": "Fluff de malvavisco y arándanos",
   "ingredients_es": [
    "1 1/2 oz bolsas de arándanos liofilizados (* encontré 1 1/2 bolsas da más sabor a arándano! tenga cuidado de conseguir liofilizados, no se secan!)",
@@ -2790,6 +3105,7 @@
  },
  "CK-002": {
   "es_reviewed": true,
+  "src_title": "Easy Chicken Gyro Zucchini Roll",
   "title_es": "Rollo fácil de zucchini estilo gyro de pollo",
   "ingredients_es": [
    "1,5 libras deshuesadas muslos de pollo sin piel (corte en trozos de tamaño mordedura)",
@@ -2814,15 +3130,25 @@
  },
  "CK-003": {
   "es_reviewed": true,
+  "src_title": "High-Protein Vegetable Wrap (no flour)",
   "title_es": "Wrap de verduras alto en proteína (sin harina)",
   "ingredients_es": [
    "Para el envoltorio de verduras:... Ver más",
    "Envoltura de verduras de alta proteina",
    "Envuelto vegetal de alta proteína sin salsa. Te mantiene lleno durante mucho tiempo... Ver más"
+  ],
+  "steps_es": [
+   "Precaliente el horno a 180°C (fan).",
+   "Ralle la papa, el calabacín y la zanahoria y exprime todo el líquido posible.",
+   "Mezcle los huevos, el queso, la sal y la pimienta.",
+   "Esparza delgadamente e incluso en una bandeja forrada de pergaminos con un tenedor.",
+   "Hornee de 20 a 25 minutos, observando los bordes.",
+   "Enfriar 5 minutos, pelar el papel, untar con yogur, añadir pollo y verduras y rodar firmemente."
   ]
  },
  "CK-004": {
   "es_reviewed": true,
+  "src_title": "Air Fryer Frozen Steak",
   "title_es": "Filete congelado en freidora de aire",
   "ingredients_es": [
    "1 ribete deshuesado, congelado (o cortado de su elección)",
@@ -2836,14 +3162,22 @@
  },
  "CK-005": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Tortilla Tacos",
   "title_es": "Tacos de tortilla de batata",
   "ingredients_es": [
    "1 batata pequeña, triturar usando pelador - colocar en el tazón y añadir:",
    "Se pueden utilizar 1,5 tazas de queso rallado, parmesano, mozzarella o queso cheddar."
+  ],
+  "steps_es": [
+   "Triturar la batata con un pelador en un tazón.",
+   "Agregue el queso, los huevos, la sal de ajo y el condimento italiano y mezcla.",
+   "Formar tortillas y hornee a 380 °F durante 20–30 minutos, hasta que estén cocidos y dorados.",
+   "Cubra con sus ingredientes favoritos (pollo, yogur griego, cebolla roja, aguacate, lechuga, limón, salsa picante)."
   ]
  },
  "CK-006": {
   "es_reviewed": true,
+  "src_title": "High-Protein Hash Brown Pizza",
   "title_es": "Pizza de hash brown alta en proteína",
   "ingredients_es": [
    "500 g de marrones de hachís de Ore-Ida desmenuzados congelados",
@@ -2866,7 +3200,8 @@
  },
  "CK-007": {
   "es_reviewed": true,
-  "title_es": "Para el rollo",
+  "src_title": "Fat-Loss Cinnamon Buns",
+  "title_es": "Rollos de canela para bajar de peso",
   "ingredients_es": [
    "Rinde 1 porción. Para el rollo:",
    "Claras de huevo, 225g",
@@ -2893,6 +3228,7 @@
  },
  "CK-008": {
   "es_reviewed": true,
+  "src_title": "High-Protein Pepperoni Pizza with Cottage Cheese Crust",
   "title_es": "Pizza de pepperoni alta en proteína, con masa de queso cottage",
   "ingredients_es": [
    "Crust:",
@@ -2918,16 +3254,9 @@
   ]
  },
  "CK-009": {
-  "title_en": "Rice-paper cheese triangle",
-  "title_es": "Triángulo de papel de arroz y queso",
-  "ingredients_en": [
-   "For 1 person:",
-   "2 rice paper sheets",
-   "1 egg",
-   "Sesame seeds (optional)",
-   "Emmental cheese, cut into rectangles",
-   "Plus, as used in the base: a slice of tomato, cooked ham, a little more grated cheese, and extra-virgin olive oil"
-  ],
+  "es_reviewed": true,
+  "src_title": "Rice Paper Cheese-Crust Triangle Pizza (Air Fryer)",
+  "title_es": "Pizza triangular de papel de arroz con borde de queso (freidora de aire)",
   "ingredients_es": [
    "Para 1 persona:",
    "2 hojas de papel de arroz",
@@ -2936,22 +3265,16 @@
    "Queso emmental, cortado en rectángulos",
    "En la base, como en la receta: una tajada de tomate, jamón cocido, un poco más de queso rallado y aceite de oliva extra virgen"
   ],
-  "steps_en": [
-   "Dip two rice papers in beaten egg and stack them.",
-   "Arrange rectangles of Emmental in a triangle on the papers; fold the edges in so you get a triangle with cheese-filled borders.",
-   "On the base, add a slice of tomato, cooked ham, and a little more grated cheese. Sprinkle with sesame and drizzle with extra-virgin olive oil.",
-   "Air-fry 12 minutes at 180 °C."
-  ],
   "steps_es": [
    "Pase dos papeles de arroz por huevo batido y superpóngalos.",
    "Acomode rectángulos de emmental en triángulo sobre los papeles; pliegue los bordes hacia adentro para formar un triángulo con el queso en los bordes.",
    "En la base, agregue una tajada de tomate, jamón cocido y un poco más de queso rallado. Espolvoree sésamo y rocíe con aceite de oliva extra virgen.",
    "Cocine en la freidora de aire 12 minutos a 180 °C."
-  ],
-  "es_reviewed": true
+  ]
  },
  "CK-010": {
   "es_reviewed": true,
+  "src_title": "High Protein Raspberry Bread",
   "title_es": "Pan de frambuesa alto en proteína",
   "ingredients_es": [
    "1 taza de polvo de clara de huevo",
@@ -2969,6 +3292,7 @@
  },
  "CK-011": {
   "es_reviewed": true,
+  "src_title": "Crispy High Protein Broccoli Fries",
   "title_es": "Palitos crujientes de brócoli altos en proteína",
   "ingredients_es": [
    "1 taza de brócoli rallado",
@@ -2984,7 +3308,8 @@
  },
  "CK-012": {
   "es_reviewed": true,
-  "title_es": "Arvejas crujientes en freidora de aire",
+  "src_title": "Crispy Air Fryer Spiced Peas",
+  "title_es": "Arvejas crujientes y especiadas en freidora de aire",
   "ingredients_es": [
    "1",
    "1/4 tazas de guisantes congelados",
@@ -3002,6 +3327,7 @@
  },
  "CK-013": {
   "es_reviewed": true,
+  "src_title": "High Protein Japanese Potato Salad",
   "title_es": "Ensalada de papa japonesa alta en proteína",
   "ingredients_es": [
    "Rinde 2 serves Sauce",
@@ -3029,6 +3355,7 @@
  },
  "CK-014": {
   "es_reviewed": true,
+  "src_title": "High-Protein Air Fryer Chicken Nuggets",
   "title_es": "Nuggets de pollo altos en proteína, en freidora de aire",
   "ingredients_es": [
    "1 lb deshuesado, lomos de pollo sin piel",
@@ -3051,29 +3378,11 @@
   ]
  },
  "CK-015": {
-  "title_en": "Low-GI pancakes",
-  "title_es": "Panqueques de bajo índice glucémico",
-  "ingredients_en": [
-   "2 large eggs",
-   "2 tablespoons natural almond butter",
-   "Avocado oil spray for the pan",
-   "NuNaturals Sugar-Free Stevia Sweetened Maple Syrup"
-  ],
   "ingredients_es": [
    "2 huevos grandes",
    "2 cucharadas de mantequilla de almendra natural",
    "Aceite de aguacate en spray, para la sartén",
    "Jarabe de maple NuNaturals endulzado con estevia, sin azúcar"
-  ],
-  "steps_en": [
-   "Add the eggs and almond butter to a bullet blender.",
-   "Blend until the mixture is completely smooth and creamy.",
-   "Heat a nonstick or stainless steel skillet over medium heat.",
-   "Lightly coat the pan with avocado oil spray.",
-   "Pour the batter into 3- to 4-inch circles to make small pancakes.",
-   "Cook until the bottom is golden brown and the edges begin to set.",
-   "Carefully flip each pancake and cook until the second side is golden brown.",
-   "Serve warm with NuNaturals Sugar-Free Stevia Sweetened Maple Syrup."
   ],
   "steps_es": [
    "Ponga los huevos y la mantequilla de almendra en una licuadora personal.",
@@ -3085,11 +3394,14 @@
    "Voltee con cuidado cada panqueque y cocine hasta que el otro lado también esté dorado.",
    "Sirva caliente con jarabe de maple NuNaturals endulzado con estevia, sin azúcar."
   ],
-  "es_reviewed": true
+  "es_reviewed": true,
+  "src_title": "Two-Ingredient Low-GI Pancakes",
+  "title_es": "Panqueques de bajo índice glucémico con dos ingredientes"
  },
  "CK-016": {
   "es_reviewed": true,
-  "title_es": "Tenders de pollo crujientes con chipotle y miel, en freidora de aire",
+  "src_title": "Air-Fryer Chipotle Honey Chicken Tenders with High-Protein Ranch",
+  "title_es": "Tenders de pollo con chipotle y miel en freidora de aire, con ranch alto en proteína",
   "ingredients_es": [
    "Pollo",
    "1,5 libras deshuesadas lomos de pollo sin piel",
@@ -3113,15 +3425,32 @@
    "1 cucharada de eneldo fresco, picado",
    "Splash de jugo de pepinillo",
    "Splash de agua a fin de"
+  ],
+  "steps_es": [
+   "Sazonar los lomos con sal, pimienta y ajo en polvo.",
+   "Rastrear en harina, luego huevo, luego machacar los copos de maíz hasta que estén completamente recubiertos.",
+   "Coloque en la freidora de aire, rocíe ligeramente y cocine a 390°F durante 12-15 minutos, girando a mitad de camino.",
+   "Ranch: mezclar el yogur griego, mayonesa ligera, jugo de pepinillos, condimentos de rancho, eneldo y un poco de agua hasta que esté suave.",
+   "Vidrio: en una sartén caliente, combina el chipotle, el ajo, el vinagre, la miel, la salsa picante (opcional) y el caldo; revuelve hasta que esté espeso.",
+   "Mezcle las tiritas crujientes en el esmalte hasta que estén brillantes y sirva con el rancho."
   ]
  },
  "CK-017": {
   "es_reviewed": true,
+  "src_title": "Blended Cottage Cheese Protein Desserts (article, not one recipe)",
   "title_es": "Postres proteicos de queso cottage licuado (artículo, no es una sola receta)"
  },
  "CK-018": {
   "es_reviewed": true,
-  "title_es": "Cómo caramelizar la batata (Kalejunkie)",
+  "src_title": "Caramelized Roasted Sweet Potato Halves",
+  "title_es": "Mitades de batata asadas y caramelizadas",
+  "ingredients_es": [
+   "Batatas a la mitad",
+   "Aceite de oliva",
+   "Paprika",
+   "Polvo de ajo",
+   "Sal y pimienta"
+  ],
   "steps_es": [
    "PERFECTOS CARAMELIZADOS POTÁTODOS DULCES cada una de las veces.",
    "Estoy compartiendo un pequeño tutorial para usted bc macetas dulces son mi fuente de carbohidratos más fav y los como varias veces a la semana.",
@@ -3131,14 +3460,24 @@
  },
  "CK-019": {
   "es_reviewed": true,
+  "src_title": "Garlic Onion Cheese Protein Bagels",
   "title_es": "Bagels proteicos de ajo, cebolla y queso",
   "ingredients_es": [
    "10 nuevas recetas macro-friendly enviadas a su cada semana para ayudarle a mantenerse en el camino, golpear su proteína, y dejar de pensar demasiado qué comer."
+  ],
+  "steps_es": [
+   "Bata la harina, el polvo para hornear y la sal; añadir el queso cottage colado y mezcle en desmenuzamientos.",
+   "Amasar en el tazón unos 2 minutos hasta que esté suave y pegajoso.",
+   "Dividir en 4, rodar en cuerdas de 3/4 de pulgada y unir los extremos en bagels.",
+   "Pincele con huevo y espolvoree con ajo y copos de cebolla (y queso).",
+   "Cocine en la freidora de aire a 280°F durante 15-16 minutos, o hornear a 375°F durante 25 minutos en pergamino.",
+   "Enfríe al menos 15 minutos antes de cortar."
   ]
  },
  "CK-020": {
   "es_reviewed": true,
-  "title_es": "Helado",
+  "src_title": "Low-Calorie Vanilla Protein Ice Cream Base",
+  "title_es": "Base de helado proteico de vainilla, bajo en calorías",
   "ingredients_es": [
    "",
    "♥",
@@ -3163,7 +3502,8 @@
  },
  "CK-021": {
   "es_reviewed": true,
-  "title_es": "Crujiente por fuera",
+  "src_title": "High-Protein Parmesan Bites",
+  "title_es": "Bocaditos de parmesano altos en proteína",
   "ingredients_es": [
    "21⁄2 tazas de parmesano triturado",
    "1 taza de clara de huevo"
@@ -3177,6 +3517,7 @@
  },
  "CK-022": {
   "es_reviewed": true,
+  "src_title": "SMASH Double Cheeseburger",
   "title_es": "Smash burger doble con queso",
   "ingredients_es": [
    "(Dough): - Harina autocreciente (500g) - Yogur griego (0% de grasa) (520g)",
@@ -3205,7 +3546,8 @@
  },
  "CK-023": {
   "es_reviewed": true,
-  "title_es": "Cubierta de chocolate (receta de hace 5 años)",
+  "src_title": "Choc-Top Yogurt Bites (with optional date caramel)",
+  "title_es": "Bocaditos de yogur con cubierta de chocolate (con caramelo de dátiles opcional)",
   "ingredients_es": [
    "Olla de yogur de 160g de elección",
    "1 cucharada Natvia untar caramelo salado",
@@ -3231,6 +3573,7 @@
  },
  "CK-024": {
   "es_reviewed": true,
+  "src_title": "5 Ingredient Peanut Butter Protein Brownies",
   "title_es": "Brownies de mantequilla de maní de 5 ingredientes, altos en proteína",
   "ingredients_es": [
    "Mantequilla de maní Proteína Brownies Ingredientes, hace 9 brownies",
@@ -3253,7 +3596,8 @@
  },
  "CK-025": {
   "es_reviewed": true,
-  "title_es": "Pollo parmesano",
+  "src_title": "One-Pan High-Protein Chicken Parm",
+  "title_es": "Pollo parmesano alto en proteína, en un solo sartén",
   "ingredients_es": [
    "260g de proteína y sólo utiliza una cacerola para preparar SAVE ESTE Y SEGUIR PARA MÁS Ingredientes, Receta, Macros®",
    "32oz de pollo molido - 80g de harina AP (se utiliza 50g)",
@@ -3277,7 +3621,8 @@
  },
  "CK-026": {
   "es_reviewed": true,
-  "title_es": "Pan de queso cottage con pasas",
+  "src_title": "Raisin Cottage Cheese Bread",
+  "title_es": "Pan de queso cottage con uvas pasas",
   "ingredients_es": [
    "3 cucharadas amontonadas (60g) de harina auto-levantante (o simple/todo propósito + 1/2 cucharadita de polvo para hornear)",
    "2 cucharadas (50g) de queso cottage 1 gran puñado de pasas o sultanas"
@@ -3290,6 +3635,7 @@
  },
  "CK-027": {
   "es_reviewed": true,
+  "src_title": "High Protein Chocolate Mug Cake",
   "title_es": "Ponqué de chocolate en taza, alto en proteína",
   "ingredients_es": [
    "25g de Recetas de Alta Proteína5 calorías."
@@ -3300,6 +3646,7 @@
  },
  "CK-028": {
   "es_reviewed": true,
+  "src_title": "High-Protein Bacon Pizza",
   "title_es": "Pizza de tocineta alta en proteína",
   "ingredients_es": [
    "2 Tortillas de Harina Super Soft Carb (Misión)",
@@ -3317,7 +3664,8 @@
  },
  "CK-029": {
   "es_reviewed": true,
-  "title_es": "Pan sin gluten",
+  "src_title": "Gluten-Free Protein Sandwich Thins",
+  "title_es": "Panes delgados proteicos sin gluten, para sándwich",
   "ingredients_es": [
    "2 tazas de queso cottage (450g) 2 huevos",
    "2 tazas de harina de almendras, medidas sueltamente (4,8 dl)",
@@ -3339,7 +3687,8 @@
  },
  "CK-030": {
   "es_reviewed": true,
-  "title_es": "Huevo líquido",
+  "src_title": "Protein Pancakes in a Breakfast Sandwich Maker",
+  "title_es": "Panqueques proteicos en sanduchera de desayuno",
   "ingredients_es": [
    "120g claras de huevo líquidas",
    "100g de fage 0% de yogur griego",
@@ -3362,6 +3711,7 @@
  },
  "CK-031": {
   "es_reviewed": true,
+  "src_title": "Crispy High-Protein Chicken Rice Paper Dumplings",
   "title_es": "Dumplings crujientes de pollo en papel de arroz, altos en proteína",
   "ingredients_es": [
    "Pollo molido magro de 1 lb (93% magro)",
@@ -3371,10 +3721,18 @@
    "1 cucharada de jengibre rallado fresco",
    "2 cucharadas de salsa de soja baja en sodio",
    "1 cucharadita de aceite de sésamo Pimienta negra, al gusto 16 hojas de papel de arroz Pulverizador de aceite de aguacate #recipe #recipeoftheday #easyrecipe #healdyreciperecipe #healdyrecipe #recipeideas"
+  ],
+  "steps_es": [
+   "Cocer el pollo molido en una sartén grande, rompiendo.",
+   "Agregue el repollo, la zanahoria, la cebolla verde, el ajo y el jengibre y cocine hasta que se ablanden.",
+   "Agregue la salsa de soja, aceite de sésamo y pimienta negra.",
+   "Sumergir una hoja de papel de arroz en agua hasta que sea flexible, rellenar la cuchara en el centro y doblar en un paquete rectangular apretado.",
+   "Rocíe una sartén con aceite de aguacate y fríe las albóndigas hacia abajo, luego gira, hasta que estén doradas y crujientes por todos los lados."
   ]
  },
  "CK-032": {
   "es_reviewed": true,
+  "src_title": "High Protein Huge Chocolate Bread",
   "title_es": "Pan de chocolate enorme, alto en proteína",
   "ingredients_es": [
    "(1 porción) 300 ml de claras de huevo (1 1/4 tazas)",
@@ -3386,7 +3744,8 @@
  },
  "CK-033": {
   "es_reviewed": true,
-  "title_es": "Nunca lo vas a hacer solo una vez",
+  "src_title": "Greek Yogurt Ham & Mushroom Pizza Bake for One",
+  "title_es": "Pizza horneada individual de yogur griego, jamón y champiñones",
   "ingredients_es": [
    "150g de alto contenido proteico yogur griego",
    "Harina 60g (Usé sin gluten)",
@@ -3396,10 +3755,17 @@
    "40g de champiñones",
    "Polvo de ajo al gusto",
    "Sal al gusto Hornear a 180°C durante 30-40 minutos (dependiendo de lo crujiente que quieras la parte superior) Esta es una de esas comidas que echas juntos, y luego terminan haciendo de nuevo al día siguiente Absolutamente amor @nickigeorgiou Seguir para comidas más simples de alta proteína como esta"
+  ],
+  "steps_es": [
+   "En un plato de preparación de la comida de vidrio, revuelva el yogur griego, la harina, el polvo de ajo y la sal en una masa.",
+   "Esparza la salsa de pizza encima.",
+   "Añada champiñones, mozzarella y jamón (pepperoni también funciona).",
+   "Hornee a 180°C durante 30–40 minutos, dependiendo de lo crujiente que quieras la parte superior."
   ]
  },
  "CK-034": {
   "es_reviewed": true,
+  "src_title": "Feta and Tomato Cottage Cheese Bread",
   "title_es": "Pan de queso cottage con feta y tomate",
   "ingredients_es": [
    "3 cucharadas amontonadas (60g) de harina auto-levantante (o simple/todo propósito + 1/2 cucharadita de polvo para hornear)",
@@ -3414,6 +3780,7 @@
  },
  "CK-035": {
   "es_reviewed": true,
+  "src_title": "Healthy High Protein Snickers Bites",
   "title_es": "Bocaditos estilo Snickers, saludables y altos en proteína",
   "ingredients_es": [
    "1 banano",
@@ -3430,6 +3797,7 @@
  },
  "CK-036": {
   "es_reviewed": true,
+  "src_title": "Air Fryer Cottage Cheese Pizza",
   "title_es": "Pizza de queso cottage en freidora de aire",
   "ingredients_es": [
    "Crust:",
@@ -3454,6 +3822,7 @@
  },
  "CK-037": {
   "es_reviewed": true,
+  "src_title": "Baked Egg, Yogurt, and Chocolate Protein Cheesecake",
   "title_es": "Cheesecake al horno de huevo, yogur y proteína de chocolate",
   "ingredients_es": [
    "1 huevo grande",
@@ -3470,6 +3839,7 @@
  },
  "CK-038": {
   "es_reviewed": true,
+  "src_title": "Chocolate Whipped Greek Yogurt",
   "title_es": "Yogur griego batido con chocolate",
   "ingredients_es": [
    "300 g yogur griego",
@@ -3483,6 +3853,7 @@
  },
  "CK-039": {
   "es_reviewed": true,
+  "src_title": "Peanut Butter Cheesecake",
   "title_es": "Cheesecake de mantequilla de maní",
   "ingredients_es": [
    "Rinde 9 brownies Brownie Layer",
@@ -3512,6 +3883,7 @@
  },
  "CK-040": {
   "es_reviewed": true,
+  "src_title": "Weight Loss Apple Fritters",
   "title_es": "Buñuelos de manzana",
   "ingredients_es": [
    "1 cucharada de Proteína Milkshake (enlace en bio) 2 cucharadas de mezcla de panqueques (cualquier marca) 2 cucharadas de yogur griego 1 cucharada de salsa de manzana",
@@ -3527,7 +3899,8 @@
  },
  "CK-041": {
   "es_reviewed": true,
-  "title_es": "Wrap mediano",
+  "src_title": "High-Protein Tortilla Quiche",
+  "title_es": "Quiche de tortilla alto en proteína",
   "ingredients_es": [
    "Que te mantienen lleno y cajas de tictac. Ingredientes, 1 lote, 4 sirve",
    "Envoltura mediana, 1, ~60g, 2,1 oz",
@@ -3548,7 +3921,8 @@
  },
  "CK-042": {
   "es_reviewed": true,
-  "title_es": "Ponga la mezcla en el dip",
+  "src_title": "Peanut Butter Protein Cookie Dough Dip",
+  "title_es": "Dip proteico de masa de galleta con mantequilla de maní",
   "ingredients_es": [
    "60g de mantequilla de maní en polvo 40-60g de agua",
    "32g suero de vainilla de nutrición óptima",
@@ -3562,6 +3936,7 @@
  },
  "CK-043": {
   "es_reviewed": true,
+  "src_title": "Healthy Protein Brownies (Egg Whites + Chocolate Chips)",
   "title_es": "Brownies proteicos saludables (claras de huevo y chispas de chocolate)",
   "ingredients_es": [
    "2 tazas (342 g) de chocolate con leche",
@@ -3578,7 +3953,8 @@
  },
  "CK-044": {
   "es_reviewed": true,
-  "title_es": "¿Te gusta o no?",
+  "src_title": "Black Bean Protein Brownies",
+  "title_es": "Brownies proteicos de fríjol negro",
   "ingredients_es": [
    "Rinde 9 brownies",
    "Judías negras, 1 lata (aprox. 240g drenados), 8.5oz",
@@ -3603,6 +3979,7 @@
  },
  "CK-045": {
   "es_reviewed": true,
+  "src_title": "Protein Coffee Cake",
   "title_es": "Ponqué de café proteico",
   "ingredients_es": [
    "1 lote",
@@ -3622,6 +3999,7 @@
  },
  "CK-046": {
   "es_reviewed": true,
+  "src_title": "Extra Thick Chocolate Chia Pudding",
   "title_es": "Pudín de chía y chocolate extra espeso",
   "ingredients_es": [
    "3 tazas de yogur griego (utiliza la FAGE 0%)",
@@ -3638,6 +4016,7 @@
  },
  "CK-047": {
   "es_reviewed": true,
+  "src_title": "Low Calorie Peanut Butter (High-Protein Recipe)",
   "title_es": "Mantequilla de maní baja en calorías (receta alta en proteína)",
   "ingredients_es": [
    "3⁄4 taza de queso cottage bajo en grasa (aprox. 180g)",
@@ -3652,6 +4031,7 @@
  },
  "CK-048": {
   "es_reviewed": true,
+  "src_title": "Waffle-Maker Crispy Chicken Big Mac",
   "title_es": "Big Mac de pollo crujiente en wafflera",
   "ingredients_es": [
    "Chaffle / waffle \"buns\" (del equivalente):",
@@ -3675,16 +4055,23 @@
  },
  "CK-049": {
   "es_reviewed": true,
-  "title_es": "Solo 182",
+  "src_title": "High-Protein Chocolate Protein Fluff",
+  "title_es": "Fluff proteico de chocolate",
   "ingredients_es": [
    "50 ml de leche desnatada",
    "1/2 banano congelado",
    "30g de proteína de suero de chocolate nirvana (Utilizo @proteinworks código PANACEAPALM para un descuento) - 2-3 cucharaditas de cacao en polvo - 20ml de jarabe de arce sin azúcar",
    "1 taza de hielo Mezclar en un procesador de alimentos en alto hacer 5 minutos hasta que no queden grumos y se triplica en volumen! - Servir inmediatamente y opcionalmente superior con su cereal machacado favorito! - Esta es una gran opción de postre cuando usted está en un déficit y te mantendrá lleno durante horas! Comentario “Cookbook” y te enviaré un enlace de tienda a mi High Protein Cookbook con más de 300 recetas al igual que este con códigos de barras de rastreo de calorías!"
+  ],
+  "steps_es": [
+   "Añada todo a un procesador de alimentos.",
+   "Mezcle en alto unos 5 minutos, hasta que no queden grumos y se ha triplicado en volumen.",
+   "Sirva inmediatamente, opcionalmente rematado con cereales triturados."
   ]
  },
  "CK-050": {
   "es_reviewed": true,
+  "src_title": "Rice Cake Smash Burgers",
   "title_es": "Smash burgers de galleta de arroz",
   "ingredients_es": [
    "2 servidos",
@@ -3710,6 +4097,7 @@
  },
  "CK-051": {
   "es_reviewed": true,
+  "src_title": "Low-Calorie Nutella (High-Protein)",
   "title_es": "Nutella baja en calorías (alta en proteína)",
   "ingredients_es": [
    "1/2 taza de mantequilla de maní en polvo",
@@ -3726,6 +4114,7 @@
  },
  "CK-052": {
   "es_reviewed": true,
+  "src_title": "Fried Egg with Mustard-Olive Oil Mayonnaise",
   "title_es": "Huevo frito con mayonesa de mostaza y aceite de oliva",
   "ingredients_es": [
    "Huevos fritos",
@@ -3739,6 +4128,7 @@
  },
  "CK-053": {
   "es_reviewed": true,
+  "src_title": "Crispy Zero Carb Chicken Fries",
   "title_es": "Palitos de pollo crujientes, cero carbohidratos",
   "ingredients_es": [
    "1 lata de pollo",
@@ -3753,6 +4143,7 @@
  },
  "CK-054": {
   "es_reviewed": true,
+  "src_title": "2-Ingredient Cauliflower Fudge",
   "title_es": "Fudge de coliflor de 2 ingredientes",
   "ingredients_es": [
    "1 1/2 tazas de floretes de coliflor al vapor (medida después del vapor)",
@@ -3766,6 +4157,7 @@
  },
  "CK-055": {
   "es_reviewed": true,
+  "src_title": "Birthday Cake Protein Fluff (High Protein)",
   "title_es": "Fluff proteico de ponqué de cumpleaños (alto en proteína)",
   "ingredients_es": [
    "1 taza de yogur griego sin grasa (aproximadamente 240g)",
@@ -3782,28 +4174,24 @@
  },
  "CK-056": {
   "es_reviewed": true,
-  "title_es": "Demasiado suave para ser un brittle",
+  "src_title": "3-Ingredient Brownie Egg White Brittle (40g Protein)",
+  "title_es": "Brittle de brownie con claras, 3 ingredientes (40 g de proteína)",
   "ingredients_es": [
    "240 Grasa",
    "Azúcar 24g",
    "40g de cocción saludable, postre saludable, sin cereales, sin gluten, sin azúcar, alta proteína"
+  ],
+  "steps_es": [
+   "Precaliente el horno a 350°F.",
+   "Bata el polvo de clara de huevo y agua con una batidora hasta que esté esponjosa con picos rígidos.",
+   "Añada el cacao en polvo (y edulcorante, si se utiliza) y mezcle suavemente hasta que se incorpore.",
+   "Esparza en un rectángulo sobre pergamino ligeramente engrasado y hornea 20 minutos."
   ]
  },
  "CK-057": {
-  "title_en": "Chicken chicharrón",
-  "title_es": "Chicharrón de pollo",
-  "ingredients_en": [
-   "2 chicken breasts",
-   "Garlic powder, paprika, chili powder, salt and pepper",
-   "A drizzle of olive oil",
-   "2 teaspoons baking soda",
-   "For the guacamole:",
-   "2 avocados",
-   "1 pear tomato",
-   "1 red onion",
-   "1 lemon or lime",
-   "Cilantro"
-  ],
+  "es_reviewed": true,
+  "src_title": "Crispy Baked Chicken \"Chicharrón\" with Guacamole",
+  "title_es": "Chicharrón de pollo crujiente al horno con guacamole",
   "ingredients_es": [
    "2 pechugas de pollo",
    "Ajo en polvo, pimentón, ají molido, sal y pimienta",
@@ -3816,25 +4204,17 @@
    "1 limón",
    "Cilantro"
   ],
-  "steps_en": [
-   "Pound or stretch the chicken very thin on a baking sheet.",
-   "Season with garlic powder, paprika, chili powder, salt and pepper.",
-   "Add a drizzle of olive oil and the baking soda.",
-   "Cook slowly in a medium oven, or in the air fryer.",
-   "Serve with guacamole."
-  ],
   "steps_es": [
    "Estire el pollo bien delgado sobre una bandeja.",
    "Sazone con ajo en polvo, pimentón, ají molido, sal y pimienta.",
    "Agregue un chorrito de aceite de oliva y el bicarbonato.",
    "Cocine despacio en horno medio, o en la freidora de aire.",
    "Sirva con guacamole."
-  ],
-  "es_reviewed": true
+  ]
  },
  "CK-058": {
   "es_reviewed": true,
-  "title_en": "Chicken Caesar",
+  "src_title": "Chicken Caesar",
   "title_es": "Pollo César",
   "ingredients_es": [
    "(Salad) 765g mezcla de ensalada de romaína",
@@ -3858,6 +4238,7 @@
  },
  "CK-059": {
   "es_reviewed": true,
+  "src_title": "Sweet Potato Cookies",
   "title_es": "Galletas de batata",
   "ingredients_es": [
    "Aprox. 6 galletas",
@@ -3877,6 +4258,7 @@
  },
  "CK-060": {
   "es_reviewed": true,
+  "src_title": "10-Minute Shrimp Fajita Dinner",
   "title_es": "Cena de fajitas de camarones en 10 minutos",
   "ingredients_es": [
    "1 lb de camarón congelado, pelado, desvenado, rabo 1 pimiento rojo, rebanado 1 pimiento verde, rebanado 1/2 cebolla blanca, rebanado",
@@ -3891,26 +4273,39 @@
  },
  "CK-061": {
   "es_reviewed": true,
-  "title_en": "10-Minute cacao protein bars",
-  "title_es": "Barras de proteína y cacao en 10 minutos",
+  "src_title": "10-Minute Chocolate Cacao Protein Bars",
+  "title_es": "Barras proteicas de chocolate y cacao en 10 minutos",
   "ingredients_es": [
    "1/2 taza de cacao en polvo (o cacao en polvo)",
    "2 cucharadas de proteína (chocolate o vainilla)",
    "(Después de esto, el texto todavía estaba truncado; el resto de la lista de ingredientes no se recuperó. El video no tiene voz ni lista de ingredientes en pantalla.)"
+  ],
+  "steps_es": [
+   "Revuelva todo excepto 2 cucharadas de las chispas de chocolate y el aceite de coco, agregando leche hasta que esté masaida.",
+   "Presione en un molde de 8x4.",
+   "Derretir las 2 cucharadas restantes de chocolate con el aceite de coco y untar por encima; espolvorear sal marina si lo desea.",
+   "Congele 10 minutos o refrigera 1 hora, luego rebana en 5 barras. Conservar en la nevera."
   ]
  },
  "CK-062": {
   "es_reviewed": true,
-  "title_es": "El huevo",
+  "src_title": "Giant Egg-White Ham & Cheese McMuffin",
+  "title_es": "McMuffin gigante de claras con jamón y queso",
   "ingredients_es": [
    "/Desglose de precios: 1 thomas light multigrain english muffins: $0.58 por muffins",
    "1 rebanada de queso sin grasa kraft sencillo: $0.24 por rebanada",
    "Carne de jamón deshuesada de 34g sam: $1.59 por porción, 0,42 porciones = $0.66",
    "225g claras de huevo: 0,24 dólares por porción, 5 porciones = 1,22 dólares"
+  ],
+  "steps_es": [
+   "En lugar de poner la parte inferior del panecillo en el anillo de desayuno-sandwich-maker, llenar todo el anillo con las claras de huevo y la temporada.",
+   "Cierre y cocine hasta que el disco blanco de huevo esté listo.",
+   "Reúna el panecillo inglés con el disco blanco de huevo, jamón y queso."
   ]
  },
  "CK-063": {
   "es_reviewed": true,
+  "src_title": "Lemon Blueberry Cottage Cheese Donut Holes (Air Fryer)",
   "title_es": "Huequitos de dona de queso cottage, limón y arándanos (freidora de aire)",
   "ingredients_es": [
    "150 g de queso cottage (unos 1 recipiente)",

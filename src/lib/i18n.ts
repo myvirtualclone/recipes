@@ -143,6 +143,10 @@ const dict = {
   reason_missing_steps: { en: 'Missing steps', es: 'Faltan pasos' },
   reason_non_en_es: { en: 'Not English or Spanish', es: 'Idioma distinto al inglés o al español' },
   reason_substitute: { en: 'Substitute recipe', es: 'Receta sustituta' },
+  reason_not_a_recipe: { en: 'Not a recipe', es: 'No es una receta' },
+  source_substitute: { en: 'Substitute', es: 'Sustituta' },
+  source_post_description: { en: 'Post description', es: 'Descripción del post' },
+  source_video: { en: 'Video', es: 'Video' },
   reason_weak_title: { en: 'Weak title', es: 'Título poco claro' },
   favorites: { en: 'Favorites ★', es: 'Favoritos ★' },
   addFavorite: { en: 'Add to favorites', es: 'Agregar a favoritos' },
@@ -274,7 +278,7 @@ export function fmtDateTime(iso: string | null, lang: Lang): string {
 }
 
 const SOURCE_KEYS = new Set([
-  'caption', 'comment', 'linked_page', 'video_text', 'audio', 'creator_page', 'equivalent_recipe',
+  'caption', 'comment', 'linked_page', 'substitute', 'post_description', 'video', 'video_text', 'audio', 'creator_page', 'equivalent_recipe',
 ]);
 
 export function sourceTypeLabel(raw: string | null, lang: Lang): string {
