@@ -58,4 +58,4 @@ for (let i = 0; i < rows.length; i += 50) {
   }
   done += data.length;
 }
-console.log(`Upserted ${done} recipes (ingredient_tags + equipment_tags included).`);
+console.log(`Upserted ${done} recipes (tags, variants, source, review_reasons included).`);

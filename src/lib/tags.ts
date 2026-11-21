@@ -1,4 +1,5 @@
 import defs from './tagdefs.json';
+import variantDefs from './variantdefs.json';
 import type { Lang } from './i18n';
 
 export type TagKind = 'ingredient' | 'equipment';
@@ -78,4 +79,36 @@ const DISH_EMOJI: [string, string][] = [
 export function dishEmoji(ingredientTags: string[]): string {
   for (const [k, e] of DISH_EMOJI) if (ingredientTags.includes(k)) return e;
   return '🍽️';
+}
+
+type VariantDefs = Record<string, Record<string, [string, string]>>;
+const V = variantDefs as unknown as VariantDefs;
+
+export function isVariantKey(key: string): boolean {
+  return key.includes(':');
+}
+
+export function variantParent(key: string): string {
+  return key.split(':')[0] ?? key;
+}
+
+/** Short label for just the variant (e.g. "Chocolate"). */
+export function variantShort(key: string, lang: Lang): string {
+  const [parent, child] = key.split(':');
+  if (!child) return tagText('ingredient', key, lang);
+  const d = V[parent]?.[child];
+  if (d) return lang === 'es' ? d[1] : d[0];
+  const s = child.replace(/_/g, ' ');
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+/** Full chip label: "Protein powder · Chocolate". */
+export function variantText(key: string, lang: Lang): string {
+  if (!isVariantKey(key)) return tagText('ingredient', key, lang);
+  const parent = variantParent(key);
+  return `${tagText('ingredient', parent, lang)} · ${variantShort(key, lang)}`;
+}
+
+export function ingredientChipLabel(key: string, lang: Lang): string {
+  return isVariantKey(key) ? variantText(key, lang) : tagText('ingredient', key, lang);
 }

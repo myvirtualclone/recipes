@@ -62,9 +62,13 @@ python3 scripts/translate_seed.py   # needs the MT venv; caches to ../meta/es_ca
 python3 scripts/build_seed.py       # merges scripts/seed_base.json + ../capture/rows.json, tags, thumbs → public/seed/
 ```
 
-### Tags
+### Tags and the ingredient index
 
-Every recipe has `ingredient_tags` (dish-defining ingredients only, not salt/pepper/oil/water) and `equipment_tags` (air_fryer, oven, blender, microwave, stovetop, freezer, no_cook, …). Tags are canonical English keys; labels in both languages come from `src/lib/tagdefs.json` (which also holds the matching rules used by `build_seed.py`). The library shows chip rows for both (most common first, with counts, "Show all"); selected chips combine with AND alongside the other filters and search. Tapping a tag on a recipe filters the library; the edit form edits both lists. The SQL adds both `text[]` columns idempotently (`ADD COLUMN IF NOT EXISTS`) with GIN indexes.
+Every recipe has `ingredient_tags` (dish-defining ingredients only, not salt/pepper/oil/water), `equipment_tags` (air_fryer, oven, blender, microwave, stovetop, freezer, no_cook, …) and `ingredient_variants` (parent:variant keys such as `protein_powder:chocolate` or `pudding_jello:sugar_free`, only when that variant appears in the recipe text). Labels in both languages come from `src/lib/tagdefs.json` and `src/lib/variantdefs.json`. The library shows chip rows with a small heading above each full-width chip row; selected chips combine with AND. The Ingredients tab is an A–Z index of parent ingredients with counts; open a row to see variants, then tap a parent or variant to filter the library. Detail chips show variants as “Protein powder · Chocolate”. The SQL adds these `text[]` columns idempotently with GIN indexes.
+
+Spanish titles, ingredients and steps are reviewed Colombian Spanish (`es_reviewed = true`), kept in `scripts/es_overrides.json` so they survive a seed rebuild.
+
+The **To review** tab lists anything that still needs a look (missing title/ingredients/steps, a substitute recipe, a language that is not English or Spanish, or a possible duplicate). Those recipes stay visible in the library with a small flag until you approve them.
 
 ## 3. Deploy
 

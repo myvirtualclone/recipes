@@ -1,7 +1,8 @@
 import type { Lang } from '../lib/i18n';
-import { fmtDate, t, tagLabel } from '../lib/i18n';
-import { localize } from '../lib/recipe';
+import { fmtDate, sourceTypeLabel, t, tagLabel } from '../lib/i18n';
+import { displayIngredientKeys, localize } from '../lib/recipe';
 import type { Recipe } from '../types';
+import { needsReview } from '../types';
 import { MacroTiles } from './Macros';
 import { Thumb } from './Thumb';
 import { TagLinks } from './TagChips';
@@ -60,6 +61,8 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
               <span className={`coll-badge ${r.collection === 'Cooking - SL' ? 'sl' : ''}`}>{r.collection}</span>
             )}
             {r.status !== 'approved' && <span className={`status-pill ${r.status}`}>{t(`status_${r.status}`, lang)}</span>}
+            {r.is_substitute && <span className="sub-badge">{t('substituteBadge', lang)}</span>}
+            {needsReview(r) && <span className="reason-chip">{t('needsReview', lang)}</span>}
             {r.code && <span className="muted small">{r.code}</span>}
           </div>
           <h2 className="detail-title">
@@ -74,6 +77,11 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
             {r.post_date && ` · ${t('posted', lang)} ${fmtDate(r.post_date, lang)}`}
             {r.captured_at && ` · ${t('saved', lang)} ${fmtDate(r.captured_at, lang)}`}
           </p>
+          {r.source_type && (
+            <p className="muted small source-line">
+              {t('sourceLabel', lang)}: {sourceTypeLabel(r.source_type, lang)}
+            </p>
+          )}
           {showAuto && <p className="auto-hint">{t('autoTranslated', lang)}</p>}
 
           <MacroTiles r={r} lang={lang} />
@@ -127,19 +135,19 @@ export function RecipeDetail({ r, lang, onBack, onEdit, onTag, onKindTag, onSetS
         <section className="category detail-section tag-section">
           {r.ingredient_tags.length > 0 && (
             <>
-              <h3>{t('keyIngredients', lang)}</h3>
-              <TagLinks lang={lang} kind="ingredient" keys={r.ingredient_tags} onTap={(k) => onKindTag('ingredient', k)} />
+              <h3 className="tag-heading">{t('keyIngredients', lang)}</h3>
+              <TagLinks lang={lang} kind="ingredient" keys={displayIngredientKeys(r)} onTap={(k) => onKindTag('ingredient', k)} />
             </>
           )}
           {r.equipment_tags.length > 0 && (
             <>
-              <h3>{t('equipmentMethod', lang)}</h3>
+              <h3 className="tag-heading">{t('equipmentMethod', lang)}</h3>
               <TagLinks lang={lang} kind="equipment" keys={r.equipment_tags} onTap={(k) => onKindTag('equipment', k)} />
             </>
           )}
           {r.tags.length > 0 && (
             <>
-              <h3>{t('generalTags', lang)}</h3>
+              <h3 className="tag-heading">{t('generalTags', lang)}</h3>
               <div className="tag-row">
                 {r.tags.map((tg) => (
                   <button type="button" key={tg} className="tag-chip" onClick={() => onTag(tg)}>

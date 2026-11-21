@@ -4,18 +4,18 @@ import type { Lang } from './lib/i18n';
 import { t } from './lib/i18n';
 import { loadLang, loadUnlocked, saveLang, saveUnlocked } from './lib/storage';
 import type { DataMode } from './lib/api';
-import { detectMode, listCaptureLog, listRecipes, saveRecipe } from './lib/api';
+import { deleteRecipe, detectMode, listCaptureLog, listRecipes, saveRecipe } from './lib/api';
 import type { Filters } from './lib/recipe';
-import { EMPTY_FILTERS, findDuplicates } from './lib/recipe';
+import { EMPTY_FILTERS } from './lib/recipe';
 import { extractFbPostId } from './lib/fb';
 import type { CaptureLogEntry, Recipe } from './types';
 import { emptyRecipe } from './types';
 import { PinGate } from './components/PinGate';
 import { Library } from './components/Library';
 import { RecipeDetail } from './components/RecipeDetail';
-import { ReviewQueue } from './components/ReviewQueue';
+import { collectReview, ReviewQueue } from './components/ReviewQueue';
 import { EditForm } from './components/EditForm';
-import { Duplicates } from './components/Duplicates';
+import { IngredientIndex } from './components/IngredientIndex';
 import { CaptureLog } from './components/CaptureLog';
 import './App.css';
 
@@ -25,7 +25,7 @@ type Route =
   | { name: 'edit'; id: string }
   | { name: 'new' }
   | { name: 'review' }
-  | { name: 'dupes' }
+  | { name: 'ingredients' }
   | { name: 'log' };
 
 function parseHash(hash: string): Route {
@@ -33,8 +33,8 @@ function parseHash(hash: string): Route {
   if (p[0] === 'r' && p[1] && p[2] === 'edit') return { name: 'edit', id: decodeURIComponent(p[1]) };
   if (p[0] === 'r' && p[1]) return { name: 'detail', id: decodeURIComponent(p[1]) };
   if (p[0] === 'new') return { name: 'new' };
-  if (p[0] === 'review') return { name: 'review' };
-  if (p[0] === 'dupes') return { name: 'dupes' };
+  if (p[0] === 'review' || p[0] === 'dupes') return { name: 'review' };
+  if (p[0] === 'ingredients') return { name: 'ingredients' };
   if (p[0] === 'log') return { name: 'log' };
   return { name: 'library' };
 }
@@ -133,11 +133,38 @@ export default function App() {
     }
   };
 
-  const drafts = useMemo(
-    () => recipes.filter((r) => r.status === 'draft').sort((a, b) => (b.captured_at ?? '').localeCompare(a.captured_at ?? '')),
-    [recipes],
-  );
-  const dupes = useMemo(() => findDuplicates(recipes), [recipes]);
+  const reviewItems = useMemo(() => collectReview(recipes), [recipes]);
+
+  const approveRecipe = async (r: Recipe) => {
+    try {
+      await persist({ ...r, status: 'approved', review_reasons: [] });
+      showToast(t('saved_ok', lang));
+    } catch (e) {
+      showToast(`${t('saveFailed', lang)}: ${e instanceof Error ? e.message : ''}`);
+    }
+  };
+
+  const removeRecipe = async (r: Recipe) => {
+    if (!mode) return;
+    try {
+      await deleteRecipe(mode, r.id);
+      setRecipes((all) => all.filter((x) => x.id !== r.id));
+      showToast(t('saved_ok', lang));
+    } catch (e) {
+      showToast(`${t('saveFailed', lang)}: ${e instanceof Error ? e.message : ''}`);
+    }
+  };
+
+  const mergeRecipes = async (keep: Recipe, other: Recipe) => {
+    try {
+      const keptReasons = (keep.review_reasons ?? []).filter((x) => x !== 'duplicate_fb' && x !== 'duplicate_title');
+      await persist({ ...keep, status: 'approved', review_reasons: keptReasons });
+      await persist({ ...other, status: 'archived' });
+      showToast(t('saved_ok', lang));
+    } catch (e) {
+      showToast(`${t('saveFailed', lang)}: ${e instanceof Error ? e.message : ''}`);
+    }
+  };
 
   if (!unlocked) {
     return (
@@ -153,7 +180,13 @@ export default function App() {
   }
 
   const tab =
-    route.name === 'review' ? 'review' : route.name === 'dupes' ? 'dupes' : route.name === 'log' ? 'log' : 'library';
+    route.name === 'review'
+      ? 'review'
+      : route.name === 'ingredients'
+        ? 'ingredients'
+        : route.name === 'log'
+          ? 'log'
+          : 'library';
   const byId = (id: string) => recipes.find((r) => r.id === id || r.code === id);
 
   let body: React.ReactNode;
@@ -183,11 +216,15 @@ export default function App() {
           go('/');
         }}
         onKindTag={(kind, key) => {
-          setFilters({
-            ...EMPTY_FILTERS,
-            sort: filters.sort,
-            ...(kind === 'ingredient' ? { ingTags: [key] } : { eqTags: [key] }),
-          });
+          if (kind === 'ingredient' && key.includes(':')) {
+            setFilters({ ...EMPTY_FILTERS, sort: filters.sort, variantTags: [key] });
+          } else {
+            setFilters({
+              ...EMPTY_FILTERS,
+              sort: filters.sort,
+              ...(kind === 'ingredient' ? { ingTags: [key] } : { eqTags: [key] }),
+            });
+          }
           go('/');
         }}
         onSetStatus={(s) => void setStatus(r, s)}
@@ -221,29 +258,33 @@ export default function App() {
     body = (
       <ReviewQueue
         lang={lang}
-        drafts={drafts}
+        items={reviewItems}
         onOpen={(id) => go(`/r/${id}`)}
         onEdit={(id) => go(`/r/${id}/edit`)}
-        onSetStatus={(r, s) => void setStatus(r, s)}
+        onApprove={(r) => void approveRecipe(r)}
         onApproveMany={(rs) => {
           void (async () => {
-            for (const r of rs) await persist({ ...r, status: 'approved' });
+            for (const r of rs) await persist({ ...r, status: 'approved', review_reasons: [] });
             showToast(t('saved_ok', lang));
           })();
         }}
+        onArchive={(r) => void setStatus(r, 'archived')}
+        onDelete={(r) => void removeRecipe(r)}
+        onMerge={(keep, other) => void mergeRecipes(keep, other)}
       />
     );
-  } else if (route.name === 'dupes') {
+  } else if (route.name === 'ingredients') {
     body = (
-      <Duplicates
+      <IngredientIndex
         lang={lang}
-        groups={dupes}
-        onOpen={(id) => go(`/r/${id}`)}
-        onKeep={(_keep, others) => {
-          void (async () => {
-            for (const r of others) await persist({ ...r, status: 'archived' });
-            showToast(t('saved_ok', lang));
-          })();
+        recipes={recipes}
+        onOpenParent={(key) => {
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, ingTags: [key] });
+          go('/');
+        }}
+        onOpenVariant={(key) => {
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, variantTags: [key] });
+          go('/');
         }}
       />
     );
@@ -301,13 +342,12 @@ export default function App() {
           <button type="button" className={tab === 'library' ? 'active' : ''} onClick={() => go('/')}>
             ▦ {t('tabLibrary', lang)}
           </button>
+          <button type="button" className={tab === 'ingredients' ? 'active' : ''} onClick={() => go('/ingredients')}>
+            ❋ {t('tabIngredients', lang)}
+          </button>
           <button type="button" className={tab === 'review' ? 'active' : ''} onClick={() => go('/review')}>
             ⇩ {t('tabReview', lang)}
-            {drafts.length > 0 && <i className="badge">{drafts.length}</i>}
-          </button>
-          <button type="button" className={tab === 'dupes' ? 'active' : ''} onClick={() => go('/dupes')}>
-            ⇄ {t('tabDupes', lang)}
-            {dupes.length > 0 && <i className="badge">{dupes.length}</i>}
+            {reviewItems.length > 0 && <i className="badge">{reviewItems.length}</i>}
           </button>
           <button type="button" className={tab === 'log' ? 'active' : ''} onClick={() => go('/log')}>
             ⟳ {t('tabLog', lang)}

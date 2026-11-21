@@ -23,6 +23,11 @@ export interface Recipe {
   tags: string[];
   ingredient_tags: string[];
   equipment_tags: string[];
+  ingredient_variants: string[]; // parent:variant, e.g. protein_powder:chocolate
+  is_favorite: boolean;
+  source_type: string | null;
+  is_substitute: boolean;
+  review_reasons: string[];
   fb_url: string | null;
   fb_post_id: string | null;
   thumbnail_url: string | null;
@@ -76,6 +81,11 @@ export function emptyRecipe(): Recipe {
     tags: [],
     ingredient_tags: [],
     equipment_tags: [],
+    ingredient_variants: [],
+    is_favorite: false,
+    source_type: null,
+    is_substitute: false,
+    review_reasons: [],
     fb_url: null,
     fb_post_id: null,
     thumbnail_url: null,
@@ -101,4 +111,19 @@ export function emptyRecipe(): Recipe {
 
 export function hasMacros(r: Recipe): boolean {
   return r.calories != null || r.protein_g != null || r.carbs_g != null || r.fat_g != null;
+}
+
+export const REVIEW_REASONS = [
+  'duplicate_fb',
+  'duplicate_title',
+  'missing_title',
+  'missing_ingredients',
+  'missing_steps',
+  'non_en_es',
+  'substitute',
+] as const;
+export type ReviewReason = (typeof REVIEW_REASONS)[number];
+
+export function needsReview(r: Recipe): boolean {
+  return r.status === 'draft' || (r.review_reasons && r.review_reasons.length > 0);
 }

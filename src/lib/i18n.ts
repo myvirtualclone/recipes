@@ -9,7 +9,8 @@ const dict = {
   language: { en: 'Español', es: 'English' },
 
   tabLibrary: { en: 'Library', es: 'Recetas' },
-  tabReview: { en: 'Review', es: 'Revisar' },
+  tabIngredients: { en: 'Ingredients', es: 'Ingredientes' },
+  tabReview: { en: 'To review', es: 'Por revisar' },
   tabDupes: { en: 'Duplicates', es: 'Duplicados' },
   tabLog: { en: 'Capture', es: 'Captura' },
 
@@ -112,13 +113,47 @@ const dict = {
   status_approved: { en: 'Approved', es: 'Aprobada' },
   status_archived: { en: 'Archived', es: 'Archivada' },
 
-  reviewTitle: { en: 'Review queue', es: 'Por revisar' },
+  reviewTitle: { en: 'To review', es: 'Por revisar' },
   reviewSub: {
-    en: 'New captures land here as drafts. Check them before they join the library.',
-    es: 'Las capturas nuevas llegan aquí como borradores. Revísalas antes de pasarlas a tus recetas.',
+    en: 'Everything that needs a look: missing pieces, substitute recipes, a language that is not English or Spanish, or a possible duplicate. Recipes stay in the library with a small flag until you approve them.',
+    es: 'Todo lo que necesita una revisión: datos incompletos, recetas sustitutas, un idioma que no sea inglés o español, o un posible duplicado. Las recetas siguen en la biblioteca con una marca hasta que las apruebes.',
   },
   reviewEmpty: { en: 'Nothing to review. All caught up!', es: 'Nada por revisar. ¡Todo al día!' },
-  approveAllClean: { en: 'Approve all clean ({n})', es: 'Aprobar las completas ({n})' },
+  approveAllClean: { en: 'Approve all ({n})', es: 'Aprobar todas ({n})' },
+  approveKeep: { en: 'Approve / keep', es: 'Aprobar / conservar' },
+  mergeInto: { en: 'Merge into…', es: 'Combinar con…' },
+  mergePick: { en: 'Keep this one, archive the other', es: 'Conservar esta y archivar la otra' },
+  mergeConfirm: { en: 'Archive “{t}” and keep “{k}”?', es: '¿Archivar “{t}” y conservar “{k}”?' },
+  deleteRecipe: { en: 'Delete', es: 'Eliminar' },
+  deleteConfirm: { en: 'Delete “{t}”? This cannot be undone on this device.', es: '¿Eliminar “{t}”? Esta acción no se puede deshacer en este dispositivo.' },
+  needsReview: { en: 'Needs review', es: 'Por revisar' },
+  substituteBadge: { en: 'Substitute recipe', es: 'Receta sustituta' },
+  sourceLabel: { en: 'Source', es: 'Origen' },
+  source_caption: { en: 'Caption', es: 'Texto del post' },
+  source_comment: { en: 'Comment', es: 'Comentario' },
+  source_linked_page: { en: 'Linked page', es: 'Página vinculada' },
+  source_video_text: { en: 'On-screen text', es: 'Texto del video' },
+  source_audio: { en: 'Audio', es: 'Audio' },
+  source_creator_page: { en: 'Creator’s page', es: 'Página del creador' },
+  source_equivalent_recipe: { en: 'Equivalent recipe', es: 'Receta equivalente' },
+  reason_duplicate_fb: { en: 'Same Facebook post', es: 'Mismo post de Facebook' },
+  reason_duplicate_title: { en: 'Similar title', es: 'Título parecido' },
+  reason_missing_title: { en: 'Missing title', es: 'Sin título' },
+  reason_missing_ingredients: { en: 'Missing ingredients', es: 'Faltan ingredientes' },
+  reason_missing_steps: { en: 'Missing steps', es: 'Faltan pasos' },
+  reason_non_en_es: { en: 'Not English or Spanish', es: 'Idioma distinto al inglés o al español' },
+  reason_substitute: { en: 'Substitute recipe', es: 'Receta sustituta' },
+  indexTitle: { en: 'Ingredients', es: 'Ingredientes' },
+  indexSub: {
+    en: 'Browse by main ingredient. Open a row to see variants like chocolate or zero-sugar, then tap to filter the library.',
+    es: 'Explora por ingrediente principal. Abre una fila para ver variantes como chocolate o sin azúcar, y tócala para filtrar la biblioteca.',
+  },
+  indexEmpty: { en: 'No ingredient tags yet.', es: 'Aún no hay ingredientes etiquetados.' },
+  indexSearch: { en: 'Find an ingredient…', es: 'Buscar un ingrediente…' },
+  variantRow: { en: 'Variants', es: 'Variantes' },
+  recipesWith: { en: '{n} recipes', es: '{n} recetas' },
+  recipesWith1: { en: '1 recipe', es: '1 receta' },
+  noVariants: { en: 'No variants in the current recipes.', es: 'No hay variantes en estas recetas.' },
   chkRecipe: { en: 'ingredients + steps', es: 'ingredientes + pasos' },
   chkNoRecipe: { en: 'missing ingredients or steps', es: 'faltan ingredientes o pasos' },
   chkMacrosPost: { en: 'macros from post', es: 'macros del post' },
@@ -230,4 +265,24 @@ export function fmtDateTime(iso: string | null, lang: Lang): string {
     hour: 'numeric',
     minute: '2-digit',
   });
+}
+
+const SOURCE_KEYS = new Set([
+  'caption', 'comment', 'linked_page', 'video_text', 'audio', 'creator_page', 'equivalent_recipe',
+]);
+
+export function sourceTypeLabel(raw: string | null, lang: Lang): string {
+  if (!raw) return '';
+  const parts = raw.split(/[,;]/).map((s) => s.trim()).filter(Boolean);
+  return parts
+    .map((p) => {
+      const key = p.replace(/\s+/g, '_');
+      return SOURCE_KEYS.has(key) ? t(`source_${key}` as Key, lang) : p;
+    })
+    .join(' · ');
+}
+
+export function reasonLabel(reason: string, lang: Lang): string {
+  const k = `reason_${reason}` as Key;
+  return k in dict ? t(k, lang) : reason;
 }

@@ -42,6 +42,11 @@ create table if not exists public.rec_recipes (
   macro_basis text,                             -- per_serving | per_item | total | null (not stated)
   macro_source text,                            -- post | estimated | null (no macros)
   es_reviewed boolean not null default false,
+  ingredient_variants text[] not null default '{}', -- parent:variant keys, e.g. protein_powder:chocolate
+  is_favorite boolean not null default false,
+  source_type text,                                 -- caption, audio, linked_page, creator_page, equivalent_recipe, …
+  is_substitute boolean not null default false,
+  review_reasons text[] not null default '{}',      -- duplicate_fb, duplicate_title, missing_title, missing_ingredients, missing_steps, non_en_es, substitute
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -53,6 +58,11 @@ alter table public.rec_recipes add column if not exists cuisine text;
 alter table public.rec_recipes add column if not exists meal_type text;
 alter table public.rec_recipes add column if not exists ingredient_tags text[] not null default '{}';
 alter table public.rec_recipes add column if not exists equipment_tags text[] not null default '{}';
+alter table public.rec_recipes add column if not exists ingredient_variants text[] not null default '{}';
+alter table public.rec_recipes add column if not exists is_favorite boolean not null default false;
+alter table public.rec_recipes add column if not exists source_type text;
+alter table public.rec_recipes add column if not exists is_substitute boolean not null default false;
+alter table public.rec_recipes add column if not exists review_reasons text[] not null default '{}';
 
 do $$
 begin
@@ -78,6 +88,8 @@ create index if not exists rec_recipes_collection_idx on public.rec_recipes (col
 create index if not exists rec_recipes_code_idx on public.rec_recipes (code);
 create index if not exists rec_recipes_ingredient_tags_idx on public.rec_recipes using gin (ingredient_tags);
 create index if not exists rec_recipes_equipment_tags_idx on public.rec_recipes using gin (equipment_tags);
+create index if not exists rec_recipes_ingredient_variants_idx on public.rec_recipes using gin (ingredient_variants);
+create index if not exists rec_recipes_review_reasons_idx on public.rec_recipes using gin (review_reasons);
 
 create table if not exists public.rec_capture_log (
   id uuid primary key default gen_random_uuid(),

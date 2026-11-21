@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Lang } from '../lib/i18n';
 import { t, tagLabel } from '../lib/i18n';
 import type { Filters, SortKey } from '../lib/recipe';
-import { activeFilterCount, allTags, applyFilters, EMPTY_FILTERS, tagCounts } from '../lib/recipe';
+import { activeFilterCount, allTags, applyFilters, EMPTY_FILTERS, tagCounts, variantCounts } from '../lib/recipe';
 import { TagFilterRow } from './TagChips';
 import type { Recipe } from '../types';
 import { COLLECTIONS } from '../types';
@@ -27,6 +27,14 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: P
   const set = (patch: Partial<Filters>) => setFilters({ ...filters, ...patch });
   const ingCounts = useMemo(() => tagCounts(results, 'ingredient'), [results]);
   const eqCounts = useMemo(() => tagCounts(results, 'equipment'), [results]);
+  const varParents = useMemo(
+    () => (filters.ingTags.length ? filters.ingTags : filters.variantTags.map((k) => k.split(':')[0])),
+    [filters.ingTags, filters.variantTags],
+  );
+  const varCounts = useMemo(
+    () => (varParents.length ? variantCounts(results, varParents) : []),
+    [results, varParents],
+  );
   const toggle = (list: string[], k: string) => (list.includes(k) ? list.filter((x) => x !== k) : [...list, k]);
 
   return (
@@ -81,6 +89,17 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd }: P
           onClear={() => set({ eqTags: [] })}
           initial={6}
         />
+        {varCounts.length > 0 && (
+          <TagFilterRow
+            lang={lang}
+            kind="variant"
+            counts={varCounts}
+            selected={filters.variantTags}
+            onToggle={(k) => set({ variantTags: toggle(filters.variantTags, k) })}
+            onClear={() => set({ variantTags: [] })}
+            initial={8}
+          />
+        )}
       </div>
       <div className="lib-toolbar">
         <span className="muted">

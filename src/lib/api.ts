@@ -1,5 +1,5 @@
 import { supabase } from './supabase';
-import { loadDemoEdits, saveDemoEdit } from './storage';
+import { deleteDemoRecipe, loadDemoDeleted, loadDemoEdits, saveDemoEdit } from './storage';
 import type { CaptureLogEntry, Recipe } from '../types';
 
 export type DataMode = 'db' | 'demo';
@@ -33,6 +33,11 @@ function normalize(r: Partial<Recipe>): Recipe {
     tags: arr(r.tags),
     ingredient_tags: arr(r.ingredient_tags),
     equipment_tags: arr(r.equipment_tags),
+    ingredient_variants: arr(r.ingredient_variants),
+    review_reasons: arr(r.review_reasons),
+    is_favorite: Boolean(r.is_favorite),
+    is_substitute: Boolean(r.is_substitute),
+    source_type: r.source_type ?? null,
     calories: num(r.calories),
     protein_g: num(r.protein_g),
     carbs_g: num(r.carbs_g),
@@ -63,9 +68,10 @@ export async function listRecipes(mode: DataMode): Promise<Recipe[]> {
     return (data ?? []).map(normalize);
   }
   const edits = loadDemoEdits();
+  const deleted = new Set(loadDemoDeleted());
   const byId = new Map<string, Recipe>();
-  for (const r of await loadSeed()) byId.set(r.id, normalize(r));
-  for (const r of Object.values(edits)) byId.set(r.id, normalize(r));
+  for (const r of await loadSeed()) if (!deleted.has(r.id)) byId.set(r.id, normalize(r));
+  for (const r of Object.values(edits)) if (!deleted.has(r.id)) byId.set(r.id, normalize(r));
   return [...byId.values()];
 }
 
@@ -91,4 +97,13 @@ export async function listCaptureLog(mode: DataMode): Promise<CaptureLogEntry[]>
     return (data ?? []) as CaptureLogEntry[];
   }
   return [];
+}
+
+export async function deleteRecipe(mode: DataMode, id: string): Promise<void> {
+  if (mode === 'db' && supabase) {
+    const { error } = await supabase.from(TABLE).delete().eq('id', id);
+    if (error) throw error;
+    return;
+  }
+  deleteDemoRecipe(id);
 }

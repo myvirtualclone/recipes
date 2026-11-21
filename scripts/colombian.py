@@ -1,0 +1,202 @@
+"""Colombian Spanish styler for Recipe Box text (usted imperative, local vocab)."""
+from __future__ import annotations
+import re
+
+# Word/phrase replacements. Order matters (longer / more specific first).
+REPLACEMENTS = [
+    (r"\bdulce de leche\b", "arequipe"),
+    (r"\bDulce de leche\b", "Arequipe"),
+    (r"\bcajeta\b", "arequipe"),
+    (r"\bjudías blancas\b", "fríjoles blancos"),
+    (r"\bjudías\b", "fríjoles"),
+    (r"\bjudía\b", "fríjol"),
+    (r"\bmelocotones\b", "duraznos"),
+    (r"\bmelocotón\b", "durazno"),
+    (r"\bpaltas\b", "aguacates"),
+    (r"\bPaltas\b", "Aguacates"),
+    (r"\bpalta\b", "aguacate"),
+    (r"\bPalta\b", "Aguacate"),
+    (r"\bpatatas\b", "papas"),
+    (r"\bPatatas\b", "Papas"),
+    (r"\bpatata\b", "papa"),
+    (r"\bPatata\b", "Papa"),
+    (r"\bnata montada\b", "crema de leche batida"),
+    (r"\bnata\b", "crema de leche"),
+    (r"\bzumo\b", "jugo"),
+    (r"\bZumos\b", "Jugos"),
+    (r"\bcacahuetes\b", "maníes"),
+    (r"\bcacahuete\b", "maní"),
+    (r"\bcacahuates\b", "maníes"),
+    (r"\bcacahuate\b", "maní"),
+    (r"\bfrigorífico\b", "nevera"),
+    (r"\bcebollino\b", "cebollín"),
+    (r"\brequesón\b", "queso cottage"),
+    (r"\bRequesón\b", "Queso cottage"),
+    (r"\byogurt\b", "yogur"),
+    (r"\bYogurt\b", "Yogur"),
+    (r"\byoghurt\b", "yogur"),
+    (r"\bpasta de col\b", "pasta de repollo"),
+    (r"\bde col\b", "de repollo"),
+    (r"(?<!li)(?<!ri)(?<!co)\bcol cremosa\b", "repollo cremoso"),
+    (r"\bplátanos\b(?! macho)(?! verde)(?! maduro)", "bananos"),
+    (r"\bPlátanos\b(?! macho)(?! verde)(?! maduro)", "Bananos"),
+    (r"\bplátano\b(?! macho)(?! verde)(?! maduro)(?!s)", "banano"),
+    (r"\bPlátano\b(?! macho)(?! verde)(?! maduro)", "Banano"),
+    (r"\bfreidora de aire de aire\b", "freidora de aire"),
+    (r"\bfreidor(?:a|es)? de aire de aire\b", "freidora de aire"),
+    (r"\bfriedor de aire\b", "freidora de aire"),
+    (r"\bfriador de aire\b", "freidora de aire"),
+    (r"\bfreidor de aire\b", "freidora de aire"),
+    (r"\bAir-?Fryers?\b", "freidora de aire"),
+    (r"\bAir-?Fyer\b", "freidora de aire"),
+    (r"\bfreidora\b(?! de aire)", "freidora de aire"),
+    (r"\bmicroondas seguro\b", "apto para microondas"),
+    (r"\btenés\b", "tiene"),
+    (r"\bpodés\b", "puede"),
+    (r"\bquerés\b", "quiere"),
+    (r"\bprobás\b", "prueba"),
+    (r"\blo querés\b", "lo quiere"),
+    (r"\bsin bake\b", "sin hornear"),
+    (r"\bsin Bake\b", "sin hornear"),
+    (r"\bno hornee\b", "sin hornear"),  # only in titles like "No hornee bocados"
+    (r"\bcapción\b", "caption"),
+    (r"\bcepillar la parte superior\b", "barnizar encima"),
+    (r"\bmás más\b", "y un poco más"),
+    (r"\bqueso cheddar afilado\b", "queso cheddar fuerte"),
+    (r"\bcheddar afilado\b", "cheddar fuerte"),
+    (r"cocinar en la freidora\b", "cocine en la freidora de aire"),
+    (r"\ben la freidora\b(?! de aire)", "en la freidora de aire"),
+    (r"\bclaras de huevo blancas\b", "claras de huevo"),
+    (r"\bBlancos de huevo\b", "Claras de huevo"),
+    (r"\bblancos de huevo\b", "claras de huevo"),
+    (r"papas fritas de chocolate", "chispas de chocolate"),
+    (r"Papas fritas de chocolate", "Chispas de chocolate"),
+    (r"fichas de chocolate", "chispas de chocolate"),
+    (r"Fichas de chocolate", "Chispas de chocolate"),
+    (r"\bchip de chocolate\b", "chispas de chocolate"),
+    (r"\bchips de chocolate\b", "chispas de chocolate"),
+    (r"\bMordeduras\b", "Bocaditos"),
+    (r"\bmordeduras\b", "bocaditos"),
+    (r"\bPicaduras\b", "Bocaditos"),
+    (r"\bpicaduras\b", "bocaditos"),
+    (r"\bdurante la noche avena\b", "avena overnight"),
+    (r"\bavena durante la noche\b", "avena overnight"),
+    (r"\b1 bañera\b", "1 envase"),
+    (r"\bbañera de\b", "envase de"),
+    (r"\bbudín de gelatina\b", "pudín Jell-O"),
+    (r"\bpolvo proteico\b", "proteína en polvo"),
+    (r"todos tus ingredientes", "todos los ingredientes"),
+    (r"\btus ingredientes\b", "los ingredientes"),
+    (r"\bsus ingredientes secos\b", "los ingredientes secos"),
+    (r"\bsus ingredientes húmedos\b", "los ingredientes húmedos"),
+    (r"^Top con\b", "Cubra con"),
+    (r"\bTop con\b", "Cubra con"),
+    (r"\bla col\b", "el repollo"),
+    (r"\bcol asada\b", "repollo asado"),
+    (r"\bcon la col\b", "con el repollo"),
+    (r"\bcon el col\b", "con el repollo"),
+    (r"Añada la repollo", "Añada el repollo"),
+    (r"\bla repollo\b", "el repollo"),
+    (r" y forra ", " y forre "),
+    (r" y mezclar ", " y mezcle "),
+    (r" y utilizar ", " y use "),
+    (r" y hornear\b", " y hornee"),
+    (r" y colocar ", " y coloque "),
+    (r" y sazonar ", " y sazone "),
+    (r" y asar ", " y ase "),
+    (r"^Servir ", "Sirva "),
+    (r"^Dejar ", "Deje "),
+    (r"^Aplanar ", "Aplane "),
+    (r"^Rodar ", "Enrolle "),
+    (r"^Cepille ", "Pincele "),
+    (r"Sácalo", "Sáquelo"),
+    (r"déjalo", "déjelo"),
+    (r"deja enfriar", "deje enfriar"),
+    (r"Deja enfriar", "Deje enfriar"),
+    (r" y disfruta", " y disfrute"),
+    (r"¡Sáquelo, deje enfriar y disfrute!", "Sáquelo, deje enfriar y disfrute."),
+    (r"No te preocupes", "No se preocupe"),
+    (r"\b1/2 cucharaditas\b", "1/2 cucharadita"),
+    (r"\b1 cucharadas\b", "1 cucharada"),
+    (r"mientras tanto, batir ", "Mientras tanto, bata "),
+    (r"Mientras tanto, batir ", "Mientras tanto, bata "),
+    (r"Rinde (\d+) serves?\s*For the Cake", r"Rinde \1 porciones. Para el ponqué:"),
+    (r"Rinde (\d+) serve\s*For the Roll", r"Rinde \1 porción. Para el rollo:"),
+    (r"si se desea y use el modo", "si quiere y use el modo"),
+    (r"si se desea y utilizar el modo", "si quiere y use el modo"),
+    (r"^Zest ", "Ralle "),
+    (r"Zest el ", "Ralle el "),
+    (r"\bHuevos blancos\b", "Claras de huevo"),
+    (r"^Esparce ", "Esparza "),
+    (r"^Batir ", "Bata "),
+    (r"^Congelar ", "Congele "),
+    (r", sazonar ", ", sazone "),
+    (r" y poner ", " y ponga "),
+    (r"la pita blanca", "la parte blanca"),
+]
+
+# Usted imperatives (tú form -> usted). Applied at sentence start and after connectors.
+TUTEO = {
+    "Agrega": "Agregue", "Añade": "Añada", "Mezcla": "Mezcle", "Hornea": "Hornee",
+    "Corta": "Corte", "Vierte": "Vierta", "Coloca": "Coloque", "Pon": "Ponga",
+    "Calienta": "Caliente", "Cocina": "Cocine", "Revuelve": "Revuelva",
+    "Bate": "Bata", "Tapa": "Tape", "Deja": "Deje", "Reserva": "Reserve",
+    "Sirve": "Sirva", "Espolvorea": "Espolvoree", "Unta": "Unte", "Dora": "Dore",
+    "Fríe": "Fría", "Sofríe": "Sofría", "Licua": "Licúe", "Licúa": "Licúe",
+    "Tritura": "Triture", "Aplasta": "Aplaste", "Dobla": "Doble",
+    "Enrolla": "Enrolle", "Congela": "Congele", "Refrigera": "Refrigere",
+    "Enfría": "Enfríe", "Retira": "Retire", "Saca": "Saque", "Lleva": "Lleve",
+    "Cubre": "Cubra", "Rocía": "Rocíe", "Forma": "Forme", "Amasa": "Amase",
+    "Estira": "Estire", "Parte": "Parta", "Pica": "Pique", "Ralla": "Ralle",
+    "Exprime": "Exprima", "Precalienta": "Precaliente", "Remueve": "Remueva",
+    "Incorpora": "Incorpore", "Extiende": "Extienda", "Presiona": "Presione",
+    "Sumerge": "Sumerja", "Apila": "Apile", "Organiza": "Organice",
+    "Acomoda": "Acomode", "Rellena": "Rellene", "Sazona": "Sazone",
+    "Empana": "Empane", "Divide": "Divida", "Aplana": "Aplane",
+    "Usa": "Use", "Utiliza": "Utilice", "Toma": "Tome", "Coge": "Tome",
+    "Mete": "Meta", "Disfruta": "Disfrute", "Prueba": "Pruebe", "Repite": "Repita",
+    "Combina": "Combine", "Integra": "Integre", "Reparte": "Reparta",
+    "Echa": "Eche", "Desmolda": "Desmolde", "Pela": "Pele", "Lava": "Lave",
+    "Seca": "Seque", "Engrasa": "Engrase", "Forra": "Forre", "Cierra": "Cierre",
+    "Sella": "Selle", "Voltea": "Voltee", "Gira": "Gire", "Alisa": "Alise",
+    "Nivela": "Nivele", "Pincela": "Pincele", "Cepilla": "Pincele",
+    "Aplasta": "Aplaste", "Hornee": "Hornee", "Agregue": "Agregue",
+    "Añada": "Añada", "Mezcle": "Mezcle", "Hierve": "Hierva",
+    "Reboza": "Reboce", "Empaniza": "Empanice", "Hornear": "Hornee",
+    "Cocinar": "Cocine", "Añadir": "Añada", "Agregar": "Agregue",
+    "Mezclar": "Mezcle", "Colocar": "Coloque", "Poner": "Ponga",
+    "Verter": "Vierta", "Cortar": "Corte",
+    "Ponlo": "Póngalo", "Ponla": "Póngala", "Ponlos": "Póngalos",
+    "Mézelos": "Mézclelos", "Mézclalo": "Mézclelo", "Mézalos": "Mézclelos",
+    "Córtalo": "Córtelo", "Córtalos": "Córtelos", "Sácalo": "Sáquelo",
+    "Déjalo": "Déjelo", "Déjala": "Déjela", "Añádelo": "Añádalo",
+    "Llévalo": "Llévelo", "Cocínalo": "Cocínelo", "Sírvelo": "Sírvalo",
+    "Ábrelo": "Ábralo", "Cúbrelo": "Cúbralo",
+}
+
+_TUTEO_RX = re.compile(
+    r"(^|[.!?¿¡]\s+|; \s*|, y\s+| y luego\s+| luego\s+| después\s+| entonces\s+|,\s+)("
+    + "|".join(sorted(map(re.escape, TUTEO), key=len, reverse=True))
+    + r")\b"
+)
+
+
+def _usted(m: re.Match) -> str:
+    return m.group(1) + TUTEO[m.group(2)]
+
+
+def style(text: str) -> str:
+    if not text:
+        return text
+    s = text
+    for a, b in REPLACEMENTS:
+        s = re.sub(a, b, s)
+    s = _TUTEO_RX.sub(_usted, s)
+    # leftover doubled words / spacing
+    s = re.sub(r"\s{2,}", " ", s)
+    s = re.sub(r"\s+([,.;:!?])", r"\1", s)
+    return s.strip()
+
+
+def style_list(items: list[str]) -> list[str]:
+    return [style(x) for x in items]

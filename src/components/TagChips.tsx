@@ -2,20 +2,21 @@ import { useState } from 'react';
 import type { Lang } from '../lib/i18n';
 import { t } from '../lib/i18n';
 import type { TagKind } from '../lib/tags';
-import { EQUIP_ICON, tagText } from '../lib/tags';
+import { EQUIP_ICON, ingredientChipLabel, isVariantKey, tagText } from '../lib/tags';
 
 interface RowProps {
   lang: Lang;
-  kind: TagKind;
+  kind: TagKind | 'variant';
   counts: [string, number][];
   selected: string[];
   onToggle: (key: string) => void;
   onClear: () => void;
   initial?: number;
+  label?: string;
 }
 
-/** Library filter row: most common tags first, with counts; selected first; "show all" expands. */
-export function TagFilterRow({ lang, kind, counts, selected, onToggle, onClear, initial = 8 }: RowProps) {
+/** Library filter row: heading above a full-width chip row. */
+export function TagFilterRow({ lang, kind, counts, selected, onToggle, onClear, initial = 8, label }: RowProps) {
   const [open, setOpen] = useState(false);
   const byKey = new Map(counts);
   const ordered: [string, number][] = [
@@ -25,22 +26,27 @@ export function TagFilterRow({ lang, kind, counts, selected, onToggle, onClear, 
   const visible = open ? ordered : ordered.slice(0, Math.max(initial, selected.length));
   const hidden = ordered.length - visible.length;
   if (!ordered.length) return null;
+  const heading =
+    label ??
+    (kind === 'variant' ? t('variantRow', lang) : t(kind === 'ingredient' ? 'ingTags' : 'eqTags', lang));
+  const rowKind = kind === 'variant' ? 'ingredient' : kind;
   return (
-    <div className={`tagrow ${open ? 'open' : ''}`} role="group" aria-label={t(kind === 'ingredient' ? 'ingTags' : 'eqTags', lang)}>
-      <span className="tagrow-label">{t(kind === 'ingredient' ? 'ingTags' : 'eqTags', lang)}</span>
+    <div className={`tagrow ${open ? 'open' : ''}`} role="group" aria-label={heading}>
+      <div className="tagrow-label">{heading}</div>
       <div className="tagrow-chips">
         {visible.map(([k, n]) => {
           const on = selected.includes(k);
+          const text = kind === 'variant' || isVariantKey(k) ? ingredientChipLabel(k, lang) : tagText(rowKind, k, lang);
           return (
             <button
               type="button"
               key={k}
-              className={`ftag ${kind} ${on ? 'on' : ''}`}
+              className={`ftag ${rowKind} ${kind === 'variant' ? 'variant' : ''} ${on ? 'on' : ''}`}
               aria-pressed={on}
               onClick={() => onToggle(k)}
             >
-              {kind === 'equipment' && EQUIP_ICON[k] ? <span aria-hidden>{EQUIP_ICON[k]} </span> : null}
-              {tagText(kind, k, lang)}
+              {rowKind === 'equipment' && EQUIP_ICON[k] ? <span aria-hidden>{EQUIP_ICON[k]} </span> : null}
+              {text}
               <i>{n}</i>
             </button>
           );
@@ -81,9 +87,9 @@ export function TagLinks({
   return (
     <div className="tag-row">
       {keys.map((k) => (
-        <button type="button" key={k} className={`ftag ${kind}`} onClick={() => onTap(k)}>
+        <button type="button" key={k} className={`ftag ${kind}${isVariantKey(k) ? ' variant' : ''}`} onClick={() => onTap(k)}>
           {kind === 'equipment' && EQUIP_ICON[k] ? <span aria-hidden>{EQUIP_ICON[k]} </span> : null}
-          {tagText(kind, k, lang)}
+          {kind === 'ingredient' ? ingredientChipLabel(k, lang) : tagText(kind, k, lang)}
         </button>
       ))}
     </div>

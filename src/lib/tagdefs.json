@@ -310,7 +310,7 @@
   "oven": [
    "Oven",
    "Horno",
-   "\\boven\\b|\\bbake[ds]?\\b(?! (powder|soda))|\\bbaking\\b(?! (powder|soda|sheet in the air))|roast(ed|ing)?\\b|broil|preheat|sheet pan|\\bhorno\\b|hornea|hornear|gratinar"
+   "\\boven\\b|\\bbake[ds]?\\b(?! (powder|soda))|\\bbaking\\b(?! (powder|soda|sheet in the air)|\\s*/)|roast(ed|ing)?\\b|broil|preheat|sheet pan|\\bhorno\\b|hornea|hornear|gratinar"
   ],
   "blender": [
    "Blender",

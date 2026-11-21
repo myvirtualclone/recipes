@@ -1,0 +1,57 @@
+{
+  "protein_powder": {
+    "chocolate": ["Chocolate", "Chocolate"],
+    "vanilla": ["Vanilla", "Vainilla"],
+    "caramel": ["Caramel", "Caramelo"],
+    "cookies_and_cream": ["Cookies and cream", "Cookies and cream"],
+    "cinnamon_toast": ["Cinnamon toast", "Canela"],
+    "speculoos": ["Speculoos", "Speculoos"],
+    "peanut_butter": ["Peanut butter", "Mantequilla de maní"],
+    "unflavored": ["Unflavored", "Sin sabor"],
+    "whey": ["Whey", "Whey"],
+    "casein": ["Casein", "Caseína"],
+    "whey_casein": ["Whey + casein", "Whey y caseína"]
+  },
+  "pudding_jello": {
+    "sugar_free": ["Zero sugar", "Sin azúcar"],
+    "cheesecake": ["Cheesecake", "Cheesecake"],
+    "vanilla": ["Vanilla", "Vainilla"],
+    "chocolate": ["Chocolate", "Chocolate"],
+    "white_chocolate": ["White chocolate", "Chocolate blanco"],
+    "pistachio": ["Pistachio", "Pistacho"]
+  },
+  "greek_yogurt": {
+    "nonfat": ["Nonfat", "Sin grasa"],
+    "low_fat": ["Low fat", "Bajo en grasa"],
+    "five_percent": ["5%", "5%"],
+    "vanilla": ["Vanilla", "Vainilla"],
+    "plain": ["Plain", "Natural"],
+    "skyr": ["Skyr", "Skyr"]
+  },
+  "cottage_cheese": {
+    "fat_free": ["Fat-free", "Sin grasa"],
+    "low_fat": ["Low fat", "Bajo en grasa"],
+    "whole_milk": ["Whole milk", "Entero"]
+  },
+  "chocolate": {
+    "cocoa": ["Cocoa powder", "Cacao en polvo"],
+    "chips": ["Chocolate chips", "Chispas de chocolate"],
+    "dark": ["Dark", "Oscuro"],
+    "milk": ["Milk chocolate", "Chocolate con leche"],
+    "white": ["White chocolate", "Chocolate blanco"],
+    "sugar_free": ["Sugar-free", "Sin azúcar"]
+  },
+  "peanut_butter": {
+    "powdered": ["Powdered", "En polvo"],
+    "creamy": ["Creamy", "Cremosa"]
+  },
+  "chicken": {
+    "breast": ["Breast", "Pechuga"],
+    "thigh": ["Thigh", "Muslo"],
+    "ground": ["Ground", "Molido"]
+  },
+  "cream_cheese": {
+    "light": ["Light", "Light"],
+    "whipped": ["Whipped", "Batido"]
+  }
+}

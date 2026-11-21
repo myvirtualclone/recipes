@@ -200,10 +200,10 @@ export function EditForm({ lang, recipe, isNew, all, onCancel, onSave, onOpen }:
           </select>
         </label>
       </div>
-      <Field label={t('keyIngredients', lang)}>
+      <Field label={t('keyIngredients', lang)} heading>
         <TagEditor lang={lang} kind="ingredient" value={ingTags} onChange={setIngTags} known={knownIng} />
       </Field>
-      <Field label={t('equipmentMethod', lang)}>
+      <Field label={t('equipmentMethod', lang)} heading>
         <TagEditor lang={lang} kind="equipment" value={eqTags} onChange={setEqTags} known={knownEq} />
       </Field>
       <label className="mini-field">
@@ -269,10 +269,10 @@ export function EditForm({ lang, recipe, isNew, all, onCancel, onSave, onOpen }:
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, children, heading }: { label: string; children: React.ReactNode; heading?: boolean }) {
   return (
-    <fieldset className="field">
-      <legend>{label}</legend>
+    <fieldset className={`field${heading ? ' tag-field' : ''}`}>
+      <legend className={heading ? 'tag-heading' : undefined}>{label}</legend>
       {children}
     </fieldset>
   );

@@ -1,7 +1,7 @@
 import type { Lang } from './i18n';
 import type { Recipe } from '../types';
 import type { TagKind } from './tags';
-import { tagText } from './tags';
+import { tagText, variantText } from './tags';
 
 export interface Localized {
   title: string;
@@ -66,6 +66,8 @@ export function searchHaystack(r: Recipe): string {
       ...r.tags,
       ...r.ingredient_tags.flatMap((k) => [tagText('ingredient', k, 'en'), tagText('ingredient', k, 'es')]),
       ...r.equipment_tags.flatMap((k) => [tagText('equipment', k, 'en'), tagText('equipment', k, 'es')]),
+      ...(r.ingredient_variants ?? []).flatMap((k) => [variantText(k, 'en'), variantText(k, 'es')]),
+      r.source_type,
     ]
       .filter(Boolean)
       .join(' \n '),
@@ -80,6 +82,7 @@ export interface Filters {
   tags: string[];
   ingTags: string[];
   eqTags: string[];
+  variantTags: string[];
   proteinMin: string;
   proteinMax: string;
   calMin: string;
@@ -95,6 +98,7 @@ export const EMPTY_FILTERS: Filters = {
   tags: [],
   ingTags: [],
   eqTags: [],
+  variantTags: [],
   proteinMin: '',
   proteinMax: '',
   calMin: '',
@@ -107,7 +111,7 @@ export const EMPTY_FILTERS: Filters = {
 export function activeFilterCount(f: Filters): number {
   let n = 0;
   if (f.collection) n++;
-  n += f.tags.length + f.ingTags.length + f.eqTags.length;
+  n += f.tags.length + f.ingTags.length + f.eqTags.length + f.variantTags.length;
   if (f.proteinMin || f.proteinMax) n++;
   if (f.calMin || f.calMax) n++;
   if (f.postedOnly) n++;
@@ -126,12 +130,12 @@ function inRange(v: number | null, min: string, max: string): boolean {
 export function applyFilters(all: Recipe[], f: Filters, lang: Lang): Recipe[] {
   const terms = fold(f.q).split(/\s+/).filter(Boolean);
   const out = all.filter((r) => {
-    if (r.status === 'draft') return false;
     if (r.status === 'archived' && !f.showArchived) return false;
     if (f.collection && r.collection !== f.collection) return false;
     if (f.tags.length && !f.tags.every((tg) => r.tags.includes(tg))) return false;
     if (f.ingTags.length && !f.ingTags.every((tg) => r.ingredient_tags.includes(tg))) return false;
     if (f.eqTags.length && !f.eqTags.every((tg) => r.equipment_tags.includes(tg))) return false;
+    if (f.variantTags.length && !f.variantTags.every((tg) => (r.ingredient_variants ?? []).includes(tg))) return false;
     if (!inRange(r.protein_g, f.proteinMin, f.proteinMax)) return false;
     if (!inRange(r.calories, f.calMin, f.calMax)) return false;
     if (f.postedOnly && r.macro_source !== 'post') return false;
@@ -223,4 +227,30 @@ export function findDuplicates(all: Recipe[]): DupeGroup[] {
     }
   }
   return groups;
+}
+
+/** Variant counts, optionally limited to selected parent ingredients. */
+export function variantCounts(rs: Recipe[], parents?: string[]): [string, number][] {
+  const allow = parents && parents.length ? new Set(parents) : null;
+  const counts = new Map<string, number>();
+  for (const r of rs) {
+    for (const tg of r.ingredient_variants ?? []) {
+      const parent = tg.split(':')[0];
+      if (allow && !allow.has(parent)) continue;
+      counts.set(tg, (counts.get(tg) ?? 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+/** Parent chips become "Parent · Variant" when the recipe has variants of that parent. */
+export function displayIngredientKeys(r: Recipe): string[] {
+  const variants = r.ingredient_variants ?? [];
+  const out: string[] = [];
+  for (const p of r.ingredient_tags) {
+    const kids = variants.filter((v) => v === p || v.startsWith(`${p}:`));
+    if (kids.length) out.push(...kids);
+    else out.push(p);
+  }
+  return out;
 }
