@@ -316,4 +316,30 @@ TITLES_V6 = {
 TITLES.update(TITLES_V6)
 TITLES["CK-043"] = "Brownies de 2 ingredientes con claras de huevo y chocolate"
 TITLES["SL-088"] = "Bocaditos crujientes de papel de arroz con queso"
+
+TITLES_V7 = {
+    "SL-069a": "Focaccia en freidora de aire, con rollos de cena congelados",
+    "SL-069b": "Macarrones con queso en freidora de aire, sin hervir",
+    "SL-069c": "Frittata de claras en freidora de aire (espinaca, tomate, mozzarella y albahaca)",
+    "SL-069d": "S'mores en freidora de aire",
+    "SL-069e": "Galletas de s'mores con chispas de chocolate, en freidora de aire",
+    "SL-069f": "Ensalada de crutones de pizza",
+    "SL-069g": "Brie horneado con miel en freidora de aire (nueces y hojuelas de ají)",
+    "SL-069h": "Dip de s'mores en freidora de aire",
+    "SL-094a": "Pescado con papas crujiente en papel de arroz (freidora de aire)",
+    "SL-094b": "Galette de tomate en papel de arroz con queso cottage",
+    "SL-094c": "Donuts de dumpling en papel de arroz",
+    "SL-094d": "Pretzel de pollo búfalo en papel de arroz",
+    "SL-094e": "Croissant de papel de arroz, saludable (freidora de aire)",
+    "SL-094f": "Espiral crujiente de camarón en papel de arroz",
+    "SL-094g": "Spanakopita de papel de arroz (con queso cottage)",
+    "SL-094h": "Rollito de verano gigante de camarón, con salsa de maní",
+    "SL-094i": "Danish de arándanos y ricotta en papel de arroz",
+    "CK-017a": "Masa de galleta comestible de queso cottage",
+    "CK-017b": "Barras saludables de queso cottage y lima Key",
+    "CK-017c": "Cheesecake de trufa de chocolate, más liviano",
+    "CK-022": "Hot Pockets de hamburguesa con tocineta y queso",
+}
+TITLES.update(TITLES_V7)
+
 TITLE_EN.clear()

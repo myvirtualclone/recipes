@@ -34,6 +34,17 @@ const dict = {
   sort_protein: { en: 'Most protein', es: 'Más proteína' },
   sort_calories: { en: 'Fewest calories', es: 'Menos calorías' },
   sort_title: { en: 'Title A–Z', es: 'Título A–Z' },
+  sort_carbs: { en: 'Most carbs', es: 'Más carbohidratos' },
+  sort_fat: { en: 'Most fat', es: 'Más grasa' },
+  viewGrid: { en: 'Grid', es: 'Cuadrícula' },
+  viewList: { en: 'List', es: 'Lista' },
+  colTitle: { en: 'Title', es: 'Título' },
+  colCal: { en: 'Cal', es: 'Cal' },
+  colP: { en: 'P', es: 'P' },
+  colC: { en: 'C', es: 'C' },
+  colF: { en: 'F', es: 'G' },
+  subShort: { en: 'SUB', es: 'SUS' },
+
   all: { en: 'All', es: 'Todas' },
   collection: { en: 'Collection', es: 'Colección' },
   tags: { en: 'Tags', es: 'Etiquetas' },
@@ -146,6 +157,7 @@ const dict = {
   reason_substitute: { en: 'Substitute recipe', es: 'Receta sustituta' },
   reason_not_a_recipe: { en: 'Not a recipe', es: 'No es una receta' },
   source_substitute: { en: 'Substitute', es: 'Sustituta' },
+  source_original: { en: 'Original', es: 'Original' },
   source_post_description: { en: 'Post description', es: 'Descripción del post' },
   source_video: { en: 'Video', es: 'Video' },
   reason_weak_title: { en: 'Weak title', es: 'Título poco claro' },
@@ -290,7 +302,7 @@ export function fmtDateTime(iso: string | null, lang: Lang): string {
 }
 
 const SOURCE_KEYS = new Set([
-  'caption', 'comment', 'linked_page', 'substitute', 'post_description', 'video', 'video_text', 'audio', 'creator_page', 'equivalent_recipe',
+  'caption', 'comment', 'linked_page', 'substitute', 'original', 'post_description', 'video', 'video_text', 'audio', 'creator_page', 'equivalent_recipe',
 ]);
 
 export function sourceTypeLabel(raw: string | null, lang: Lang): string {

@@ -31,7 +31,7 @@ def author_key(raw: str | None) -> str:
     return fold_author(raw).lower()
 
 
-SMALL = {"with", "and", "of", "by", "the", "de", "del", "da", "on"}
+SMALL = {"with", "and", "of", "by", "the", "for", "de", "del", "da", "on"}
 
 
 def _title_word(w: str, first: bool) -> str:

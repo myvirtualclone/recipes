@@ -60,3 +60,14 @@ export function deleteDemoRecipe(id: string) {
   const deleted = loadDemoDeleted();
   if (!deleted.includes(id)) writeJson(DEMO_DELETED_KEY, [...deleted, id]);
 }
+
+const VIEW_KEY = 'recipes.view.v1';
+export type LibraryView = 'grid' | 'list';
+
+export function loadLibraryView(): LibraryView {
+  const v = readJson<string>(VIEW_KEY, 'grid');
+  return v === 'list' ? 'list' : 'grid';
+}
+export function saveLibraryView(view: LibraryView) {
+  writeJson(VIEW_KEY, view);
+}

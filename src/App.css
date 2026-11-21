@@ -1912,3 +1912,189 @@ textarea {
   border-color: var(--accent);
   color: #fff;
 }
+
+
+/* Library Grid / List toggle and compact macro table */
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.view-toggle button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 6px 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.view-toggle button.on {
+  background: var(--accent);
+  color: #fff;
+}
+.lib-toolbar {
+  flex-wrap: wrap;
+}
+
+.recipe-list-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 10px -4px 8px;
+  width: calc(100% + 8px);
+  max-width: none;
+}
+table.recipe-list {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.recipe-list th,
+.recipe-list td {
+  padding: 6px 3px;
+  font-size: 0.72rem;
+  vertical-align: middle;
+}
+.recipe-list th {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  white-space: nowrap;
+}
+.recipe-list th button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  padding: 0;
+  width: 100%;
+  text-align: inherit;
+  cursor: pointer;
+}
+.recipe-list th.sorted,
+.recipe-list th.sorted button {
+  color: var(--accent);
+}
+.recipe-list .sort-arrow {
+  font-size: 0.85em;
+  font-weight: 700;
+}
+.recipe-list .col-star {
+  width: 26px;
+  padding-left: 4px;
+  padding-right: 0;
+  text-align: center;
+}
+.recipe-list .col-title {
+  width: auto;
+  text-align: left;
+  overflow: hidden;
+}
+.recipe-list th.col-title button { text-align: left; }
+.recipe-list .col-cal { width: 42px; }
+.recipe-list .col-p,
+.recipe-list .col-c,
+.recipe-list .col-f { width: 32px; }
+.recipe-list td.col-cal,
+.recipe-list td.col-p,
+.recipe-list td.col-c,
+.recipe-list td.col-f,
+.recipe-list th.col-cal,
+.recipe-list th.col-p,
+.recipe-list th.col-c,
+.recipe-list th.col-f {
+  text-align: right;
+  padding-right: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.recipe-list td.num { font-weight: 800; color: var(--ink); }
+.recipe-list td.num.cal { color: #b4472c; }
+.recipe-list td.num.pro { color: var(--accent); }
+.recipe-list td.miss { color: #b7c2b7; font-weight: 600; }
+.recipe-list .list-num { font-variant-numeric: tabular-nums; }
+.recipe-list .est-mark {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #b4472c;
+  opacity: 0.75;
+  line-height: 1;
+  text-decoration: none;
+  font-style: normal;
+}
+.recipe-list tbody tr {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.recipe-list tbody tr:nth-child(even) { background: #fafcf9; }
+.recipe-list tbody tr:last-child { border-bottom: none; }
+.recipe-list tbody tr:hover { background: var(--accent-soft); }
+.recipe-list .title-inner {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+.recipe-list .list-title {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--ink);
+}
+.recipe-list .needs-dot {
+  position: static;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px #fff;
+}
+.recipe-list .sub-badge {
+  margin-left: 0;
+  flex: 0 0 auto;
+  padding: 1px 5px;
+  font-size: 0.58rem;
+}
+.star-btn.list-star {
+  width: 22px;
+  height: 22px;
+  font-size: 1rem;
+  box-shadow: none;
+  background: transparent;
+  color: #c5d0c5;
+}
+.star-btn.list-star.on { color: #e0a800; }
+
+@media (max-width: 400px) {
+  .lib-toolbar .chip { padding: 6px 8px; }
+  .recipe-list .col-cal { width: 40px; }
+  .recipe-list .col-p,
+  .recipe-list .col-c,
+  .recipe-list .col-f { width: 30px; }
+  .recipe-list td.col-cal,
+  .recipe-list td.col-p,
+  .recipe-list td.col-c,
+  .recipe-list td.col-f,
+  .recipe-list th.col-cal,
+  .recipe-list th.col-p,
+  .recipe-list th.col-c,
+  .recipe-list th.col-f { padding-right: 4px; }
+}

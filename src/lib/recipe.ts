@@ -74,7 +74,8 @@ export function searchHaystack(r: Recipe): string {
   );
 }
 
-export type SortKey = 'newest' | 'oldest' | 'protein' | 'calories' | 'title';
+export type SortKey = 'newest' | 'oldest' | 'protein' | 'calories' | 'carbs' | 'fat' | 'title';
+export type SortDir = 'asc' | 'desc';
 
 export interface Filters {
   q: string;
@@ -92,6 +93,7 @@ export interface Filters {
   postedOnly: boolean;
   showArchived: boolean;
   sort: SortKey;
+  sortDir: SortDir;
 }
 
 export const EMPTY_FILTERS: Filters = {
@@ -110,6 +112,7 @@ export const EMPTY_FILTERS: Filters = {
   postedOnly: false,
   showArchived: false,
   sort: 'newest',
+  sortDir: 'desc',
 };
 
 export function activeFilterCount(f: Filters): number {
@@ -154,14 +157,30 @@ export function applyFilters(all: Recipe[], f: Filters, lang: Lang): Recipe[] {
     return true;
   });
   const savedAt = (r: Recipe) => r.captured_at || r.created_at || '';
+  const dir = f.sortDir === 'asc' ? 1 : -1;
+  const byTitle = (a: Recipe, b: Recipe) =>
+    localize(a, lang).title.localeCompare(localize(b, lang).title, lang) || (a.code ?? '').localeCompare(b.code ?? '');
+  const byMacro = (field: 'calories' | 'protein_g' | 'carbs_g' | 'fat_g') => (a: Recipe, b: Recipe) => {
+    const av = a[field];
+    const bv = b[field];
+    const aMiss = av == null;
+    const bMiss = bv == null;
+    if (aMiss && bMiss) return byTitle(a, b);
+    if (aMiss) return 1; // missing macros always last
+    if (bMiss) return -1;
+    const d = (av as number) - (bv as number);
+    return d === 0 ? byTitle(a, b) : d * dir;
+  };
   const cmp: Record<SortKey, (a: Recipe, b: Recipe) => number> = {
     newest: (a, b) => savedAt(b).localeCompare(savedAt(a)) || (b.code ?? '').localeCompare(a.code ?? ''),
     oldest: (a, b) => savedAt(a).localeCompare(savedAt(b)) || (a.code ?? '').localeCompare(b.code ?? ''),
-    protein: (a, b) => (b.protein_g ?? -1) - (a.protein_g ?? -1),
-    calories: (a, b) => (a.calories ?? Infinity) - (b.calories ?? Infinity),
-    title: (a, b) => localize(a, lang).title.localeCompare(localize(b, lang).title, lang),
+    protein: byMacro('protein_g'),
+    calories: byMacro('calories'),
+    carbs: byMacro('carbs_g'),
+    fat: byMacro('fat_g'),
+    title: (a, b) => byTitle(a, b) * dir,
   };
-  return out.sort(cmp[f.sort]);
+  return out.sort(cmp[f.sort] ?? cmp.newest);
 }
 
 export function allTags(all: Recipe[]): string[] {

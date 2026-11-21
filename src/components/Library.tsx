@@ -1,13 +1,15 @@
 import { useMemo, useState } from 'react';
 import type { Lang } from '../lib/i18n';
 import { t, tagLabel } from '../lib/i18n';
-import type { Filters, SortKey } from '../lib/recipe';
+import type { Filters, SortDir, SortKey } from '../lib/recipe';
 import { activeFilterCount, allTags, applyFilters, authorKey, creatorCounts, EMPTY_FILTERS, tagCounts, variantCounts } from '../lib/recipe';
 import { TagFilterRow } from './TagChips';
 import type { Recipe } from '../types';
 import { COLLECTIONS } from '../types';
 import { RecipeCard } from './RecipeCard';
+import { RecipeList } from './RecipeList';
 import { CreatorChip } from './CreatorChip';
+import { loadLibraryView, saveLibraryView, type LibraryView } from '../lib/storage';
 
 interface Props {
   lang: Lang;
@@ -24,6 +26,12 @@ const SORTS: SortKey[] = ['newest', 'oldest', 'protein', 'calories', 'title'];
 
 export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onFav, onCreator }: Props) {
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [view, setView] = useState<LibraryView>(() => loadLibraryView());
+  const setLibraryView = (v: LibraryView) => {
+    setView(v);
+    saveLibraryView(v);
+  };
+
   const results = useMemo(() => applyFilters(recipes, filters, lang), [recipes, filters, lang]);
   const tags = useMemo(() => allTags(recipes), [recipes]);
   const nActive = activeFilterCount(filters);
@@ -105,16 +113,34 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onF
         <span className="muted">
           {results.length === 1 ? t('recipesCount1', lang) : t('recipesCount', lang, { n: results.length })}
         </span>
-        <label className="sort-select">
-          <span className="sr-only">{t('sort', lang)}</span>
-          <select value={filters.sort} onChange={(e) => set({ sort: e.target.value as SortKey })}>
-            {SORTS.map((s) => (
-              <option key={s} value={s}>
-                {t(`sort_${s}`, lang)}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className="view-toggle" role="group" aria-label={t('viewList', lang)}>
+          <button type="button" className={view === 'grid' ? 'on' : ''} aria-pressed={view === 'grid'} onClick={() => setLibraryView('grid')}>
+            ▦ {t('viewGrid', lang)}
+          </button>
+          <button type="button" className={view === 'list' ? 'on' : ''} aria-pressed={view === 'list'} onClick={() => setLibraryView('list')}>
+            ☰ {t('viewList', lang)}
+          </button>
+        </div>
+        {view === 'grid' && (
+          <label className="sort-select">
+            <span className="sr-only">{t('sort', lang)}</span>
+            <select
+              value={filters.sort}
+              onChange={(e) => {
+                const sort = e.target.value as SortKey;
+                const sortDir: SortDir =
+                  sort === 'calories' || sort === 'title' || sort === 'oldest' ? 'asc' : 'desc';
+                set({ sort, sortDir });
+              }}
+            >
+              {SORTS.map((s) => (
+                <option key={s} value={s}>
+                  {t(`sort_${s}`, lang)}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <button type="button" className="chip" onClick={onAdd}>
           {t('addRecipe', lang)}
         </button>
@@ -125,16 +151,28 @@ export function Library({ lang, recipes, filters, setFilters, onOpen, onAdd, onF
       ) : results.length === 0 ? (
         <div className="center empty">
           <p className="muted">{t('noResults', lang)}</p>
-          <button type="button" className="btn sm" onClick={() => setFilters({ ...EMPTY_FILTERS, sort: filters.sort })}>
+          <button type="button" className="btn sm" onClick={() => setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir })}>
             {t('clearFilters', lang)}
           </button>
         </div>
       ) : (
-        <div className="recipe-grid">
-          {results.map((r) => (
-            <RecipeCard key={r.id} r={r} lang={lang} onOpen={() => onOpen(r.id)} onFav={() => onFav(r)} onCreator={onCreator} />
-          ))}
-        </div>
+        view === 'list' ? (
+          <RecipeList
+            lang={lang}
+            recipes={results}
+            sort={filters.sort}
+            sortDir={filters.sortDir ?? 'desc'}
+            onSort={(sort, sortDir) => set({ sort, sortDir })}
+            onOpen={onOpen}
+            onFav={onFav}
+          />
+        ) : (
+          <div className="recipe-grid">
+            {results.map((r) => (
+              <RecipeCard key={r.id} r={r} lang={lang} onOpen={() => onOpen(r.id)} onFav={() => onFav(r)} onCreator={onCreator} />
+            ))}
+          </div>
+        )
       )}
 
       {sheetOpen && (

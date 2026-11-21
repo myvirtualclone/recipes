@@ -1,7 +1,7 @@
 """Build public/seed/recipes.json (all captured recipes) for the Recipe Box.
 
 Inputs:
-  /workspace/recipes/capture/rows_v5.json  Rosa's v5 capture sheet (fallback: rows.json)
+  /workspace/recipes/capture/rows_v7.json  Rosa's v7 capture sheet (fallback: v6/v5/rows.json)
   scripts/es_overrides.json                reviewed Colombian Spanish (keyed by code)
   /workspace/recipes/meta/es_cache.json    offline MT cache from translate_seed.py
   src/lib/tagdefs.json                     ingredient/equipment tag dictionary (EN+ES)
@@ -16,6 +16,7 @@ from variants import ingredient_variants as derive_variants
 
 APP = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 ROWS_DEFAULTS = [
+    "/workspace/recipes/capture/rows_v7.json",
     "/workspace/recipes/capture/rows_v6.json",
     "/workspace/recipes/capture/rows_v5.json",
     "/workspace/recipes/capture/rows.json",
@@ -26,8 +27,10 @@ if not ROWS:
 CACHE = os.environ.get("ES_CACHE", "/workspace/recipes/meta/es_cache.json")
 THUMBS_IN = os.environ.get("THUMBS", "/workspace/recipes/capture/thumbs")
 THUMBS_HD = "/workspace/recipes/capture/thumbs_hd"
-NOT_RECIPE = {"SL-069", "SL-094", "CK-017", "SL-034"}
-FORCED_DUPES = [("SL-078", "SL-112"), ("SL-091", "SL-111")]
+# v7 moved SL-069/SL-094/CK-017/SL-034 off the sheet (archived in DB, not in this seed).
+NOT_RECIPE = set()
+# v7 merged SL-112→SL-078 and SL-091→SL-111; do not flag the survivors as duplicates.
+FORCED_DUPES = []
 OVERRIDES_PATH = os.path.join(APP, "scripts/es_overrides.json")
 OUT = os.path.join(APP, "public/seed/recipes.json")
 
@@ -202,6 +205,8 @@ def parse_source(raw):
         types.append("substitute")
     if "post description" in low:
         types.append("post_description")
+    if re.search(r"\boriginal\b", low):
+        types.append("original")
     if re.search(r"\bvideo\b", low) and "video_text" not in types:
         types.append("video")
     is_sub = "equivalent_recipe" in types or "substitute" in types
@@ -282,15 +287,26 @@ rows = json.load(open(ROWS))
 os.makedirs(os.path.join(APP, "public/thumbs"), exist_ok=True)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 
+# Split children in v7 share a parent Facebook post_id. Keep the raw id on
+# uniquely-used posts (so existing recipe UUIDs stay stable) and suffix
+# shared ones as "{pid}#{code}" so fb_post_id remains unique.
+pid_counts = collections.Counter(
+    str(r.get("post_id") or "").strip() for r in rows if str(r.get("post_id") or "").strip()
+)
+
 recipes = []
 seen = set()
 real_photos = 0
 for row in rows:
-    pid = str(row.get("post_id") or "").strip()
-    if not pid or pid in seen:
-        continue
-    seen.add(pid)
     code = row["ID"]
+    if not code or code in seen:
+        continue
+    seen.add(code)
+    raw_pid = str(row.get("post_id") or "").strip()
+    if raw_pid and pid_counts[raw_pid] > 1:
+        pid = f"{raw_pid}#{code}"
+    else:
+        pid = raw_pid or code
     collection = "Cooking - SL" if str(code).startswith("SL") else "Cooking"
     caption = (row.get("Caption Text") or row.get("raw_caption") or "").strip() or None
     title_src = (row.get("Title") or "").strip()
@@ -372,7 +388,7 @@ for row in rows:
         has_macros = True
         macro_source = "estimated"
     thumb = None
-    src_thumb = os.path.join(THUMBS_IN, f"{pid}.jpg")
+    src_thumb = os.path.join(THUMBS_IN, f"{raw_pid}.jpg") if raw_pid else ""
     hd = os.path.join(THUMBS_HD, f"{code}.jpg")
     if os.path.exists(hd) and os.path.getsize(hd) > 2000:
         src_thumb = hd
@@ -417,7 +433,7 @@ for row in rows:
         "ingredient_tags": ing_tags,
         "equipment_tags": eq_tags,
         "ingredient_variants": variants,
-        "fb_url": (row.get("Source URL") or "").strip() or f"https://www.facebook.com/watch/?v={pid}",
+        "fb_url": (row.get("Source URL") or "").strip() or (f"https://www.facebook.com/watch/?v={raw_pid}" if raw_pid and raw_pid.isdigit() else None),
         "fb_post_id": pid,
         "thumbnail_url": thumb,
         "screenshot_url": None,

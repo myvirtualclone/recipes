@@ -212,16 +212,16 @@ export default function App() {
         onBack={() => (window.history.length > 1 ? window.history.back() : go('/'))}
         onEdit={() => go(`/r/${r.id}/edit`)}
         onTag={(tag) => {
-          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, tags: [tag] });
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, tags: [tag] });
           go('/');
         }}
         onKindTag={(kind, key) => {
           if (kind === 'ingredient' && key.includes(':')) {
-            setFilters({ ...EMPTY_FILTERS, sort: filters.sort, variantTags: [key] });
+            setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, variantTags: [key] });
           } else {
             setFilters({
               ...EMPTY_FILTERS,
-              sort: filters.sort,
+              sort: filters.sort, sortDir: filters.sortDir,
               ...(kind === 'ingredient' ? { ingTags: [key] } : { eqTags: [key] }),
             });
           }
@@ -230,7 +230,7 @@ export default function App() {
         onSetStatus={(s) => void setStatus(r, s)}
         onFav={() => void persist({ ...r, is_favorite: !r.is_favorite })}
         onCreator={(name) => {
-          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, author: name });
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, author: name });
           go('/');
         }}
       />
@@ -284,15 +284,15 @@ export default function App() {
         lang={lang}
         recipes={recipes}
         onOpenParent={(key) => {
-          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, ingTags: [key] });
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, ingTags: [key] });
           go('/');
         }}
         onOpenVariant={(key) => {
-          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, variantTags: [key] });
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, variantTags: [key] });
           go('/');
         }}
         onOpenCreator={(name) => {
-          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, author: name });
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, author: name });
           go('/');
         }}
       />
@@ -310,7 +310,7 @@ export default function App() {
         onAdd={() => go('/new')}
         onFav={(r) => void persist({ ...r, is_favorite: !r.is_favorite })}
         onCreator={(name) => {
-          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, author: name });
+          setFilters({ ...EMPTY_FILTERS, sort: filters.sort, sortDir: filters.sortDir, author: name });
         }}
       />
     );
